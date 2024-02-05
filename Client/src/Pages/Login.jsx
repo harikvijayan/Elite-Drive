@@ -1,9 +1,53 @@
+import axios from 'axios'
+import {useCookies} from "react-cookie"
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import {useNavigate, Link } from 'react-router-dom'
+import {  toast,Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login(){
 const [mail,setMail]=useState("")
 const [word,setWord]=useState("")
+const [cookies,setCookies]=useCookies(['access_token'])
+
+const nav=useNavigate()
+
+const handleLogin = async() => {
+  try{
+    const response = await axios.post("http://localhost:5000/auth/login",{email:mail,password:word})
+    setCookies("access_token",response.data.token)
+    window.localStorage.setItem("userID",response.data.userID)
+    toast.success('Successfully Logged in 😊', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+      });
+    nav('/home')
+
+  }
+  catch(error)
+  {
+    toast.error('Login Error !!!', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+      });
+  }
+}
+
+
   return (
     <div className='container'>
         <div>

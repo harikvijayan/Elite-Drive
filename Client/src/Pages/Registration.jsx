@@ -105,7 +105,7 @@ function Registration(){
         <div>
         <button onClick={addUser}>Submit</button>
         </div>
-        <p>alredy have an account?<Link to='/login'>login</Link></p>
+        <p>alredy have an account?<Link to='/'>login</Link></p>
       </div>  
     </div>
   

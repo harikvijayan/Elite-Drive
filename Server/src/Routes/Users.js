@@ -23,9 +23,10 @@ router.post("/register",async(req,res)=>{
 
 
 router.post("/login",async(req,res)=>{
+    try{
     const {email,password}=req.body
     const user=await userModel.findOne({email})
-
+    console.log(user);
     if(!user){
         return res.json({message:"user not found !!!"})
     }
@@ -38,6 +39,11 @@ router.post("/login",async(req,res)=>{
 
     const token=jwt.sign({id : user._id},"secret")
     res.json({token,userID:user._id})
+}
+catch(error)
+{
+    return res.json({message:"error login !!!"})
+}
 
 
 })

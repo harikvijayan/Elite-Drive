@@ -10,6 +10,8 @@ app.use(cors())
 app.use("/auth",Routes)
 
 mongoose.connect("mongodb+srv://harikv03:harivijayan123@products.ikfc7uu.mongodb.net/products?retryWrites=true&w=majority")
+        .then(()=>{console.log("DataBase Connected !!!");})
+        .catch(err=>console.log(err))
 
 app.listen(5000,()=>{
     console.log("SERVER STARTED !!!!");
