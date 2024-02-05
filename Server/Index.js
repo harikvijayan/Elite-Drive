@@ -9,7 +9,7 @@ app.use(cors())
 
 app.use("/auth",Routes)
 
-mongoose.connect("mongodb+srv://harikv03:harivijayan123@products.ikfc7uu.mongodb.net/products?retryWrites=true&w=majority")
+mongoose.connect("mongodb://127.0.0.1:27017/Users")
         .then(()=>{console.log("DataBase Connected !!!");})
         .catch(err=>console.log(err))
 

@@ -6,18 +6,18 @@ import {  toast,Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Login(){
-const [mail,setMail]=useState("")
-const [word,setWord]=useState("")
-const [cookies,setCookies]=useCookies(['access_token'])
+const [email,setMail]=useState("")
+const [password,setWord]=useState("")
+const [Cookies,setCookies]=useCookies(['access_token'])
 
 const nav=useNavigate()
 
 const handleLogin = async() => {
   try{
-    const response = await axios.post("http://localhost:5000/auth/login",{email:mail,password:word})
+    const response = await axios.post("http://localhost:5000/auth/login",{email,password})
     setCookies("access_token",response.data.token)
-    window.localStorage.setItem("userID",response.data.userID)
-    toast.success('Successfully Logged in 😊', {
+    localStorage.setItem("userID",response.data.userID)
+    toast.success(response.data.message, {
       position: "top-center",
       autoClose: 3000,
       hideProgressBar: false,
@@ -33,7 +33,7 @@ const handleLogin = async() => {
   }
   catch(error)
   {
-    toast.error('Login Error !!!', {
+    toast.error(error.response.data.message, {
       position: "top-center",
       autoClose: 3000,
       hideProgressBar: false,
@@ -54,7 +54,7 @@ const handleLogin = async() => {
             <div>
             <div className='box'>
             <input
-             value={mail}
+             value={email}
              placeholder='Email'
              type='email'
              onChange={(e)=>setMail(e.target.value)}
@@ -64,7 +64,7 @@ const handleLogin = async() => {
             <input
              type='text'
              placeholder='Password'
-             value={word}
+             value={password}
              onChange={(e)=>setWord(e.target.value)}
             />
             </div>

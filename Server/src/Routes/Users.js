@@ -1,9 +1,10 @@
 const express=require("express")
-const jwt=require("jsonwebtoken")
-const bcrypt=require("bcryptjs")
-const {userModel} =require('../Models/User.js')
-
 const router=express.Router()
+const JWT=require("jsonwebtoken")
+const bcrypt=require("bcryptjs")
+const {userModel} =require('../Models/User')
+
+
 
 router.post("/register",async(req,res)=>{
     const {username,password,email}=req.body;
@@ -24,25 +25,31 @@ router.post("/register",async(req,res)=>{
 
 router.post("/login",async(req,res)=>{
     try{
-    const {email,password}=req.body
-    const user=await userModel.findOne({email})
-    console.log(user);
-    if(!user){
-        return res.json({message:"user not found !!!"})
+    const {email,password} = req.body
+    if(!email || !password)
+    {
+        return res.status(400).json({message:"empty fields"})
     }
+    const user=await userModel.findOne({email})
+    console.log("user",user);
+   
+    if(!user){
+        return res.status(400).json({message:"user not found !!!"})
+    }
+   
     const isPasswordValid= await bcrypt.compare(password,user.password)
 
     if(!isPasswordValid)
     {
-        return res.json({message:"email or password is invalid.."})
+        return res.status(400).json({message:"email or password is invalid.."})
     }
 
-    const token=jwt.sign({id : user._id},"secret")
-    res.json({token,userID:user._id})
+    const token = JWT.sign({id : user._id},"secret")
+   return res.status(200).json({message:"Successfully logged-in",token:token,userID:user._id})
 }
 catch(error)
 {
-    return res.json({message:"error login !!!"})
+    return res.status(400).json({message:"error login !!!"})
 }
 
 
