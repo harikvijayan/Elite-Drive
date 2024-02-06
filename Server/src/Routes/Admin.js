@@ -2,24 +2,23 @@ const express=require("express")
 const router=express.Router()
 const JWT=require("jsonwebtoken")
 const bcrypt=require("bcryptjs")
-const {userModel} =require('../Models/User')
-
+const {adminModel} =require('../Models/Admin.js')
 
 
 router.post("/register",async(req,res)=>{
-    const {username,password,email}=req.body;
+    const {email,password}=req.body;
 
-    const user=await userModel.findOne({email})
+    const admin=await adminModel.findOne({email})
 
-    if(user){
+    if(admin){
         return res.json({message:" email already in use !!!"})
     }
 
     const hashedPassword=await bcrypt.hash(password,10)
 
-    const newUser=new userModel({username,password:hashedPassword,email})
-    await newUser.save()
-    res.json({message:"user registered successfully!!! "})
+    const newAdmin=new adminModel({email,password:hashedPassword})
+    await newAdmin.save()
+    res.json({message:"Admin registered successfully!!! "})
 })
 
 
@@ -30,22 +29,21 @@ router.post("/login",async(req,res)=>{
     {
         return res.status(400).json({message:"empty fields"})
     }
-    const user=await userModel.findOne({email})
-    
+    const admin=await adminModel.findOne({email})
    
-    if(!user){
-        return res.status(400).json({message:"user not found !!!"})
+    if(!admin){
+        return res.status(400).json({message:"Invalid Account !!!"})
     }
    
-    const isPasswordValid= await bcrypt.compare(password,user.password)
+    const isPasswordValid= await bcrypt.compare(password,admin.password)
 
     if(!isPasswordValid)
     {
         return res.status(400).json({message:"Invalid password !!"})
     }
 
-    const token = JWT.sign({id : user._id},"secret")
-   return res.status(200).json({message:"Successfully logged-in",token:token,userID:user._id})
+    const token = JWT.sign({id : admin._id},"secret")
+   return res.status(200).json({message:"Successfully logged-in",token:token,adminID:admin._id})
 }
 catch(error)
 {
@@ -54,8 +52,5 @@ catch(error)
 
 
 })
-
-
-
 
 module.exports=router

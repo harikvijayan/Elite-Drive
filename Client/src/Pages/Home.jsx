@@ -8,7 +8,7 @@ function Home(){
 
     const buttonClick = () =>{
     
-        setCookies("access_token"," ")
+        setCookies("access_token","")
         localStorage.removeItem("userID")
         nav('/')
     }
