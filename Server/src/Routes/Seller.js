@@ -7,8 +7,12 @@ const {sellerModel} =require('../Models/Seller.js')
 router.post("/register",async(req,res)=>{
     const {username,password,email,address,phoneno}=req.body;
 
+    
+    if(!username || !password || !email || !address || !phoneno )
+    {
+        return res.json({message:" empty fields !!!"})
+    }
     const seller=await sellerModel.findOne({email})
-
     if(seller){
         return res.json({message:" email already in use !!!"})
     }
@@ -17,7 +21,7 @@ router.post("/register",async(req,res)=>{
 
     const newSeller=new sellerModel({username,password:hashedPassword,email,address,phoneno})
     await newSeller.save()
-    res.json({message:"Seller registered successfully!!! "})
+    res.status(200).json({message:"Seller registered successfully!!! "})
 })
 
 
@@ -29,7 +33,7 @@ router.post("/login",async(req,res)=>{
     {
         return res.status(400).json({message:"empty fields"})
     }
-    const seller=await sellerModel.findOne({email})
+    const seller = await sellerModel.findOne({email})
     
    
     if(!seller){

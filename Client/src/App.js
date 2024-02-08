@@ -6,6 +6,8 @@ import  Registration  from './Pages/Registration';
 import Home from './Pages/Home';
 import AdminLogin from './Pages/AdminLogin';
 import AdminInterface from './Pages/AdminInterface';
+import SellerLog from './Pages/SellerLog';
+import SellerRegistration from './Pages/SellerRegistration';
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
             <Route path='/home' element={<Home/>} />
             <Route path='/adminlog' element={<AdminLogin/>} />
             <Route path='/admininter' element={<AdminInterface/>} />
+            <Route path='/sellerlog' element={<SellerLog/>} />
+            <Route path='/sellerreg' element={<SellerRegistration/>} />
+
 
           </Routes>
       </BrowserRouter>

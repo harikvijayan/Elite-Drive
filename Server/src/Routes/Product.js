@@ -21,4 +21,16 @@ router.post("/add",async(req,res)=>{
     res.json({message:"product added successfully!!! "})
 })
 
+router.delete("/remove/:id",async(req,res)=>{
+    try {
+        const { id } = req.params
+        const products = await productModel.findByIdAndDelete(id)
+        res.status(200).json(products,{message:"Product Removed Successsfully..."})
+        // res.status(200).json({message:"Product Removed Successsfully..."})
+    }
+    catch (error) {
+        res.status(400).json({message:"Product Can't be removed"})
+    }
+})
+
 module.exports=router
