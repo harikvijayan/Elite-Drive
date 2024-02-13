@@ -1,7 +1,6 @@
 const express=require("express")
 const router=express.Router()
-const JWT=require("jsonwebtoken")
-const bcrypt=require("bcryptjs")
+const {sellerModel} =require('../Models/Seller.js')
 const {productModel} =require('../Models/Products.js')
 
 router.post("/add",async(req,res)=>{
@@ -33,4 +32,13 @@ router.delete("/remove/:id",async(req,res)=>{
     }
 })
 
+router.put("/change/:id",async(req,res)=>{
+    try{
+
+    }
+    catch(err){
+        
+    }
+
+})
 module.exports=router

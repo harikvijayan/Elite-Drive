@@ -3,8 +3,9 @@ import React, { useState } from 'react'
 import { useCookies } from 'react-cookie'
 import {  toast,Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../Styles/AdminLog.css'
 
-function AdminLogin(){
+function AdminLog() {
     const[email,setEmail]=useState("")
     const[password,setPassword]=useState("")
     const[cookies,setCookies]=useCookies(['admin_token'])
@@ -47,33 +48,26 @@ function AdminLogin(){
 
 
   return (
-    <div className='container'>
-        <div>
-            <div>
-            <div className='box'>
-            <input
-             value={email}
-             placeholder='Email'
-             type='email'
-             onChange={(e)=>setEmail(e.target.value)}
-            />
-            </div>
-            <div className='box'>
-            <input
-             type='text'
-             placeholder='Password'
-             value={password}
-             onChange={(e)=>setPassword(e.target.value)}
-            />
-            </div>
-            <div>
-            <button onClick={()=>{handleLogin()}}>Login</button>
-            </div>
+    <div className='body'>
+        <div className="wrapper">
+            <form action="" className="form">
+                <h1 className="title">-- LOGIN --</h1>
+                <div className="inp">
+                    <input type="text" className="input" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                    <i className="fa-solid fa-user"></i>
+                </div>
+                <div className="inp">
+                    <input type="password" className="input" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                    <i className="fa-solid fa-lock"></i>
+                </div>
+                <button className="submit" onClick={handleLogin}>Login</button>
+            </form>
+            <div className="banner">
+                <h1 className="wel_text">Elite Drive</h1>
+                <p className="para">Welcome Admin !!!</p>
             </div>
         </div>
-
     </div>
   )
 }
-
-export default AdminLogin;
+export default AdminLog
