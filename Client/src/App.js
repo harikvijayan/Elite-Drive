@@ -4,10 +4,13 @@ import './App.css';
 import  Login  from './Pages/Login';
 import  Registration  from './Pages/Registration';
 import Home from './Pages/Home';
-import AdminLogin from './Pages/AdminLogin';
 import AdminInterface from './Pages/AdminInterface';
 import SellerLog from './Pages/SellerLog';
 import SellerRegistration from './Pages/SellerRegistration';
+import Seller from './Pages/Seller';
+import SellerReg from './Pages/SellerReg';
+import AdminLog from './Pages/AdminLog';
+
 
 function App() {
   return (
@@ -17,12 +20,15 @@ function App() {
             <Route path='/' element={<Login/>} />
             <Route path='/signup' element={<Registration/>} />
             <Route path='/home' element={<Home/>} />
-            <Route path='/adminlog' element={<AdminLogin/>} />
             <Route path='/admininter' element={<AdminInterface/>} />
             <Route path='/sellerlog' element={<SellerLog/>} />
             <Route path='/sellerreg' element={<SellerRegistration/>} />
+            <Route path='/seller' element={<Seller/>} />
+            <Route path='/sellerregistration' element={<SellerReg/>} />
+            <Route path='/adminlogin' element={<AdminLog/>} />
 
-
+            
+           
           </Routes>
       </BrowserRouter>
       <ToastContainer /> 
