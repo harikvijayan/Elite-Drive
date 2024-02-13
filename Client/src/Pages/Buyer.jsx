@@ -16,7 +16,7 @@ export default function Buyer() {
 							<div class="card-3d-wrapper">
 								<div class="card-front">
 									<div class="center-wrap">
-										<div class="section text-center">
+										<div class="section">
 											<h4 class="mb-4 pb-3">Log In</h4>
 											<div class="form-group">
 												<input type="email" class="form-style" placeholder="Email"/>
@@ -26,7 +26,7 @@ export default function Buyer() {
 												<input type="password" class="form-style" placeholder="Password"/>
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
-											<a href="https://www.web-leb.com/code" class="btn mt-4">Login</a>
+											<a href="https://www.web-leb.com/code" class="btn">Login</a>
                       <p class="mb-0 mt-4 text-center"><a href="https://www.web-leb.com/code" class="link">Forgot your password?</a></p>
 				      					</div>
 			      					</div>
@@ -51,7 +51,7 @@ export default function Buyer() {
 												<input type="password" class="form-style" placeholder="Password"/>
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
-											<a href="https://www.web-leb.com/code" class="btn mt-4">Register</a>
+											<a href="https://www.web-leb.com/code" class="btn">Register</a>
 				      					</div>
 			      					</div>
 			      				</div>

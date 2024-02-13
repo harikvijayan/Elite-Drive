@@ -26,15 +26,7 @@ h6 span{
   padding: 0 20px;
   font-weight: 700;
 }
-.section{
 
-display: grid;
-justify-content: center;
-align-items: center;
- 
-
- 
-}
 .container{
     display: grid;
     justify-content: center;
@@ -127,16 +119,22 @@ display: none;
  
   
 }
+.section{
+
+width: 100%;
+
+
+ 
+}
 .form-group{ 
 
-display: grid;
-justify-content: center;
-align-items: center;
-
-}
-.form-style {
-  padding: 13px 20px;
+width: 242px;
   
+  }
+.form-style {
+
+  padding: 1px 8px;
+  margin: 1px 0px;
   height: 48px;
   width: 100%;
   font-weight: 500;
@@ -170,20 +168,11 @@ align-items: center;
    transition: all 200ms linear;
 }
 .btn{  
-  border-radius: 4px;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  -webkit-transition : all 200ms linear;
-  transition: all 200ms linear;
-  padding: 0 30px;
-  letter-spacing: 1px;
-  background-color: #ffeba7;
-  color: #000000;
-  text-align: center;
-  margin: auto;
-
-  text-decoration: none;
+ display: flex;
+ justify-content: center;
+ text-decoration: none;
+ color: black;
+ background-color:#ffeba7 ;
 }
 .btn:hover{  
   background-color: #000000;
