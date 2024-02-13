@@ -27,9 +27,20 @@ h6 span{
   font-weight: 700;
 }
 .section{
+
   position: relative;
   width: 100%;
   display: block;
+display: grid;
+justify-content: center;
+align-items: center;
+ 
+
+ 
+}
+.container{
+    display: grid;
+    justify-content: center;
 }
 .full-height{
   min-height: 100vh;
@@ -90,16 +101,25 @@ display: none;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   transition: all 600ms ease-out; 
+  box-sizing: border-box;
+
 }
 .card-front, .card-back {
   width: 100%;
   height: 100%;
   background-color: #2b2e38;
+
   background-image: url('../Images/log.jpg');
   position: absolute;
   border-radius: 6px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  background-image: url('https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI2NjU4OTgzL29yaWdpbmFsXzVhOTdmMjA1YzUwZjE5OWNjYTE4OTNkZTlkYzUwNTM4LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjg1fSwiZmxhdHRlbiI6eyJiYWNrZ3JvdW5kIjp7InIiOjIwMywiZyI6MjAzLCJiIjoyMDN9fSwianBlZyI6eyJxdWFsaXR5Ijo4NX0sInJvdGF0ZSI6bnVsbH19');
+  position:absolute;
+  border-radius: 6px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
 }
 .card-back {
   transform: rotateY(180deg);
@@ -126,11 +146,32 @@ display: none;
 .form-style {
   padding: 13px 20px;
   padding-left: 55px;
+
+  top: 50%;
+  
+  left: 22%;
+  transform: translate3d(0, -50%, 35px) perspective(100px);
+  z-index: 20;
+ 
+  
+}
+.form-group{ 
+
+display: grid;
+justify-content: center;
+align-items: center;
+
+}
+.form-style {
+  padding: 13px 20px;
+  
+
   height: 48px;
   width: 100%;
   font-weight: 500;
   border-radius: 4px;
   font-size: 14px;
+
   line-height: 22px;
   letter-spacing: 0.5px;
   outline: none;
@@ -160,6 +201,7 @@ display: none;
 }
 .btn{  
   border-radius: 4px;
+
   height: 44px;
   font-size: 13px;
   font-weight: 600;
@@ -174,6 +216,14 @@ display: none;
   align-items: center;
   background-color: #ffeba7;
   color: #000000;
+
+  background-color: #ffeba7;
+  color: #000000;
+  text-align: center;
+  margin: auto;
+
+  text-decoration: none;
+
 }
 .btn:hover{  
   background-color: #000000;
