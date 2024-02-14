@@ -54,7 +54,7 @@ function AdminLog() {
 
 
   return (
-    <div className='body'>
+    <div className='admin-body'>
             <div className="wrapper">
                 <form onSubmit={handleSubmit} className="form">
                     <h1 className="title">-- LOGIN --</h1>

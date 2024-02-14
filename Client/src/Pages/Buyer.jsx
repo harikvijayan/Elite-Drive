@@ -3,7 +3,7 @@ import '../Styles/Buyer.css'
 
 export default function Buyer() {
   return (
-    <div>
+    <div className='buyer-body'>
         	<div class="section">
 		<div class="container">
 			<div class="row full-height justify-content-center">

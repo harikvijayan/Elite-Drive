@@ -12,6 +12,7 @@ import SellerReg from './Pages/SellerReg';
 import AdminLog from './Pages/AdminLog';
 import Buyer from './Pages/Buyer';
 import SellCar from './Pages/SellCar';
+import ReportSeller from './Pages/ReportSeller';
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
             <Route path='/sellerregistration' element={<SellerReg/>} />
             <Route path='/adminlogin' element={<AdminLog/>} />
             <Route path='/productadd' element={<SellCar/>} />
-
+            <Route path='/sellerreport' element={<ReportSeller/>} />
             <Route path='/buyer' element={<Buyer/>} />
  
           </Routes>
