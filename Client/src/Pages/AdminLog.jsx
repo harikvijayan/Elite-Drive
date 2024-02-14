@@ -52,14 +52,14 @@ function AdminLog() {
         <div className="wrapper">
             <form action="" className="form">
                 <h1 className="title">-- LOGIN --</h1>
-                <div className="inp">
+             
                     <input type="text" className="input" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
                     <i className="fa-solid fa-user"></i>
-                </div>
-                <div className="inp">
+             
+              
                     <input type="password" className="input" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
                     <i className="fa-solid fa-lock"></i>
-                </div>
+                
                 <button className="submit" onClick={handleLogin}>Login</button>
             </form>
             <div className="banner">
