@@ -11,6 +11,7 @@ import Seller from './Pages/Seller';
 import SellerReg from './Pages/SellerReg';
 import AdminLog from './Pages/AdminLog';
 import Buyer from './Pages/Buyer';
+import SellCar from './Pages/SellCar';
 
 
 function App() {
@@ -28,12 +29,10 @@ function App() {
             <Route path='/seller' element={<Seller/>} />
             <Route path='/sellerregistration' element={<SellerReg/>} />
             <Route path='/adminlogin' element={<AdminLog/>} />
+            <Route path='/productadd' element={<SellCar/>} />
 
             <Route path='/buyer' element={<Buyer/>} />
-
-
-            
-           
+ 
           </Routes>
       </BrowserRouter>
       <ToastContainer /> 

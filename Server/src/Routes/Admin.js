@@ -25,11 +25,13 @@ router.post("/register",async(req,res)=>{
 router.post("/login",async(req,res)=>{
     try{
     const {email,password} = req.body
+    const admin=await adminModel.findOne({email})
+    console.log(admin);
     if(!email || !password)
     {
         return res.status(400).json({message:"empty fields"})
     }
-    const admin=await adminModel.findOne({email})
+    
    
     if(!admin){
         return res.status(400).json({message:"Invalid Account !!!"})
