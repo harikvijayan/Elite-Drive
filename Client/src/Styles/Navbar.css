@@ -1,36 +1,41 @@
+*{
+    margin: 0;
+ 
+}
 .navbar-image{
-    height:38px;
-    width:38px;
-    
+    height:30px;
+    width:30px;
+    margin: 13px 8px;
 }
 .navbar-brand{
-    padding: 15px 15px;
-    
+  display: inline-flex;
     
 }
+
 .navbar-head{
-    display: inline;
-    padding-bottom: 10px;
+   letter-spacing: 3px;
 }
 .navbar-element{
-    text-decoration: none;
-    display: inline;
-    padding: 20px 30px;
-    
+list-style-type: none;
+
 
 }
 .navbar-elements{
-    display: flex;
-    margin-right: 0%;
+  display: flex;
+    justify-content: end;
+    gap: 25px;
+    color: white;
+    letter-spacing: 3px;
+    margin-right:10px ;
+flex-grow: 1;
     
 }
-.navbar-class{
-    display: flex;
-    
-    padding-right: 0%;
-}
+
 .navbar-container{
-    background-color: aquamarine;
-    height: 70px;
-    justify-content:space-between;
+   width: 100%;
+   background-color: black;
+ height: 60px;
+line-height: 60px;
+display: flex;
+  
 }

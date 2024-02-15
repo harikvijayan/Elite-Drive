@@ -5,10 +5,10 @@ import '../Styles/Navbar.css'
 function Navbar() {
   return (
     <div className='navbar-container'>
-        <div className='navbar-class'>
+    
             <div className='navbar-brand'>
-            <img className='navbar-image' src={logo} alt='logo'/>
-            <h2 className='navbar-head'>EliteDrive</h2>
+           <img className='navbar-image' src={logo} alt='logo'/>
+          <h2 className='navbar-head'>EliteDrive</h2>
             </div>
             <ul className='navbar-elements'>
                 <li className='navbar-element'>Home</li>
@@ -17,7 +17,8 @@ function Navbar() {
                 <li className='navbar-element'>Report</li>
             </ul>
         </div>
-    </div>
+  
+
   )
 }
 
