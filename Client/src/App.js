@@ -13,6 +13,7 @@ import AdminLog from './Pages/AdminLog';
 import Buyer from './Pages/Buyer';
 import SellCar from './Pages/SellCar';
 import ReportSeller from './Pages/ReportSeller';
+import Navbar from './Pages/Navbar';
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
             <Route path='/admininter' element={<AdminInterface/>} />
             <Route path='/sellerlog' element={<SellerLog/>} />
             <Route path='/sellerreg' element={<SellerRegistration/>} />
+
+            <Route path='/nav' element={<Navbar/>} />
 
             <Route path='/seller' element={<Seller/>} />
             <Route path='/sellerregistration' element={<SellerReg/>} />

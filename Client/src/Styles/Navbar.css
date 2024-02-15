@@ -1,0 +1,36 @@
+.navbar-image{
+    height:38px;
+    width:38px;
+    
+}
+.navbar-brand{
+    padding: 15px 15px;
+    
+    
+}
+.navbar-head{
+    display: inline;
+    padding-bottom: 10px;
+}
+.navbar-element{
+    text-decoration: none;
+    display: inline;
+    padding: 20px 30px;
+    
+
+}
+.navbar-elements{
+    display: flex;
+    margin-right: 0%;
+    
+}
+.navbar-class{
+    display: flex;
+    
+    padding-right: 0%;
+}
+.navbar-container{
+    background-color: aquamarine;
+    height: 70px;
+    justify-content:space-between;
+}

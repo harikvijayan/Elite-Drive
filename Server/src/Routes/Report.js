@@ -18,3 +18,5 @@ router.post("/add",async(req,res)=>{
     await newReport.save()
     res.json({message:"Report Submitted successfully!!! "})
 })
+
+module.exports=router
