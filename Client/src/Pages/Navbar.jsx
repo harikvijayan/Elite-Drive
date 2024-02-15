@@ -12,7 +12,7 @@ function Navbar() {
             </div>
             <ul className='navbar-elements'>
                 <li className='navbar-element'>Home</li>
-                <li className='navbar-element'>Intrest</li>
+                <li className='navbar-element'>Interest</li>
                 <li className='navbar-element'>Profile</li>
                 <li className='navbar-element'>Report</li>
             </ul>
