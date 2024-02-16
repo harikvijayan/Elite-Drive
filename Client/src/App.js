@@ -7,10 +7,8 @@ import Home from './Pages/Home';
 import AdminInterface from './Pages/AdminInterface';
 import SellerLog from './Pages/SellerLog';
 import SellerRegistration from './Pages/SellerRegistration';
-import Seller from './Pages/Seller';
-import SellerReg from './Pages/SellerReg';
 import AdminLog from './Pages/AdminLog';
-import Buyer from './Pages/Buyer';
+
 import SellCar from './Pages/SellCar';
 import ReportSeller from './Pages/ReportSeller';
 import Navbar from './Pages/Navbar';
@@ -26,16 +24,13 @@ function App() {
             <Route path='/home' element={<Home/>} />
             <Route path='/admininter' element={<AdminInterface/>} />
             <Route path='/sellerlog' element={<SellerLog/>} />
-            <Route path='/sellerreg' element={<SellerRegistration/>} />
-
-            <Route path='/nav' element={<Navbar/>} />
-
-            <Route path='/seller' element={<Seller/>} />
-            <Route path='/sellerregistration' element={<SellerReg/>} />
+            <Route path='/sellerreg' element={<SellerRegistration/>} /> 
             <Route path='/adminlogin' element={<AdminLog/>} />
             <Route path='/productadd' element={<SellCar/>} />
             <Route path='/sellerreport' element={<ReportSeller/>} />
-            <Route path='/buyer' element={<Buyer/>} />
+
+            <Route path='/nav' element={<Navbar/>} />
+            
  
           </Routes>
       </BrowserRouter>

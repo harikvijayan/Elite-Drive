@@ -39,6 +39,10 @@ router.post("/login",async(req,res)=>{
     if(!seller){
         return res.status(400).json({message:"user not found !!!"})
     }
+
+    if(seller.ban==true){
+        return res.status(400).json({message:"Your account has been banned"})
+    }
    
     const isPasswordValid= await bcrypt.compare(password,seller.password)
 

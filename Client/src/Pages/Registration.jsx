@@ -32,7 +32,7 @@ function Registration(){
             setNewusername("")
           }
           catch(error){
-            toast.error('Error SignUp !!!', {
+            toast.error(error.response.data.message, {
                 position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,

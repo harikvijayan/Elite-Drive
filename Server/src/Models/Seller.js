@@ -7,6 +7,7 @@ const sellerSchema=new mongoose.Schema({
     address:{type:String,required:true},
     phoneno:{type:Number,required:true,unique:true},
     password:{type:String,required:true},
+    ban:{type:Boolean,required:true,default:false}
     
     
 })

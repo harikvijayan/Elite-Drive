@@ -9,6 +9,11 @@ const {userModel} =require('../Models/User')
 router.post("/register",async(req,res)=>{
     const {username,password,email}=req.body;
 
+    
+
+    if(!username || !password || !email ){
+        return res.json({message:" Empty Fields !!!"})
+    }
     const user=await userModel.findOne({email})
 
     if(user){
@@ -42,6 +47,10 @@ router.post("/login",async(req,res)=>{
     if(!isPasswordValid)
     {
         return res.status(400).json({message:"Invalid password !!"})
+    }
+    if(user.ban==true)
+    {
+            return res.status(400).json({message:"your account has been banned "})
     }
 
     const token = JWT.sign({id : user._id},"secret")
