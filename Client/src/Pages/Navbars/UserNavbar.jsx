@@ -1,13 +1,13 @@
 import React from 'react'
 import {useCookies} from 'react-cookie'
-import logo from '../Icons/logo.png'
-import '../Styles/Navbar.css'
+import logo from '../../Icons/logo.png'
+import '../../Styles/UserNavbar.css'
 import { Link, useNavigate } from 'react-router-dom'
 import {  toast,Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-function Navbar() {
+function UserNavbar() {
   const [Cookies, setCookie] =useCookies(["access_token"])
   const nav=useNavigate()
 
@@ -63,4 +63,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default UserNavbar

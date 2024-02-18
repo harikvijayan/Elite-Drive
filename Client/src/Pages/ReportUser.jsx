@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 import '../Styles/ReportSeller.css'
 import logo from '../Icons/logo.png'
-import sellerID from '../Hooks/Seller.js';
+import userID from '../Hooks/User.js';
 import {  toast,Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
 
-function ReportSeller() {
+function ReportUser() {
     const[message,setMessage]=useState("")
-    const[loginid]=useState(sellerID)
+    const[loginid]=useState(userID)
 
 const submitReport = async() => {
     try{
-       const response = await axios.post("http://localhost:5000/reports/addbyseller",{report:message,sellerID:loginid})
+       const response = await axios.post("http://localhost:5000/reports/addbyuser",{report:message,userID:loginid})
        toast(response.data.message, {
         position: 'top-center',
         autoClose: 3000,
@@ -70,4 +70,4 @@ const submitReport = async() => {
     </div>
   )
 }
-export default ReportSeller
+export default ReportUser

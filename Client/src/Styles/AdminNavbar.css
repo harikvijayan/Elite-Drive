@@ -1,0 +1,54 @@
+
+.admin-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:black;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .admin-navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-flex;
+  }
+
+  .admin-navbar-head{
+    letter-spacing: 3px;
+    color: violet;
+ }
+
+  .admin-navbar-image{
+    height:30px;
+    width:30px;
+    margin: 0px 8px;
+}
+  
+  .admin-navbar-elements {
+    list-style: none;
+    display: flex;
+    color: violet;
+  }
+  
+  .admin-navbar-element {
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+
+  @media (max-width: 768px) {
+    .admin-navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-elements {
+      margin-top: 10px;
+    }
+  
+    .navbar-element {
+      margin: 5px 0;
+    }
+  }
+  

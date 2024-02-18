@@ -12,11 +12,11 @@ function SellerRegistration() {
   const [password, setPassword] = useState('');
   const [match, setMatch] = useState('');
 
-  const addSeller = async (req,res) => {
+  const addSeller = async () => {
     if (password === match) {
       try {
-        await axios.post("http://localhost:5000/seller/register", { username, email, phoneno, address, password });
-        toast.success('seller Registered Successfully 👨‍💼', {
+        const response = await axios.post("http://localhost:5000/seller/register", { username, email, phoneno, address, password });
+        toast(response.data.message, {
           position: 'top-center',
           autoClose: 3000,
           hideProgressBar: false,
@@ -32,7 +32,7 @@ function SellerRegistration() {
         setMatch('');
         setUsername('');
         setAddress('');
-        setContact('');
+        setPhoneno('');
       } catch (error) {
         toast.error(error.response.data.message, {
           position: 'top-center',
@@ -60,9 +60,10 @@ function SellerRegistration() {
       });
     }
   };
-
+  
   return (
     <div>
+      <h1>Seller Registration</h1>
       <div> 
                 <input
                     className='input-box'

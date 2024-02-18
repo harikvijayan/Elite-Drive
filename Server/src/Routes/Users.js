@@ -4,27 +4,37 @@ const JWT=require("jsonwebtoken")
 const bcrypt=require("bcryptjs")
 const {userModel} =require('../Models/User')
 
+const mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const passformat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+const txt = /.com/;
+
 
 
 router.post("/register",async(req,res)=>{
     const {username,password,email}=req.body;
-
     
 
-    if(!username || !password || !email ){
-        return res.json({message:" Empty Fields !!!"})
+    if (!username || !email || !password) {
+        return res.json({ message: "Fields are Empty" });
     }
-    const user=await userModel.findOne({email})
 
+   
+    const isEmailValid = mailformat.test(email) && txt.test(email);
+    if (!isEmailValid) {
+        return res.status(400).json({ message: "Enter a valid email" });
+    }
+    if (!password.match(passformat)) 
+    {
+        return res.status(400).json({message:" Password should contain Minimum 8 charactersAt least one uppercase character,At least one lowercase character,At least one digit,At least one special character ",});
+    }
+    const user=await userModel.findOne({email})   
     if(user){
         return res.json({message:" email already in use !!!"})
     }
-
     const hashedPassword=await bcrypt.hash(password,10)
-
     const newUser=new userModel({username,password:hashedPassword,email})
     await newUser.save()
-    res.json({message:"user registered successfully!!! "})
+    res.json({message:"user registered successfully👨‍💼!!! "})
 })
 
 

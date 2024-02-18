@@ -14,8 +14,8 @@ function Registration(){
         if(newpassword === match)
         {
           try{
-            await axios.post("http://localhost:5000/auth/register",{username:newusername,password:newpassword,email:mail})
-            toast.success('User Registered Successfully 👨‍💼', {
+            const response = await axios.post("http://localhost:5000/auth/register",{username:newusername,password:newpassword,email:mail})
+            toast(response.data.message), {
                 position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -25,7 +25,7 @@ function Registration(){
                 progress: undefined,
                 theme: "dark",
                 transition: Flip,
-                });
+                };
             setNewpassword("")
             setMail("")
             setMatch("")
@@ -66,6 +66,7 @@ function Registration(){
   return (
     <div>
         <div>
+          <h1>User Registration</h1>
         <div> 
           <input
             className='input-box'

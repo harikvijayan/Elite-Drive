@@ -11,7 +11,10 @@ import AdminLog from './Pages/AdminLog';
 
 import SellCar from './Pages/SellCar';
 import ReportSeller from './Pages/ReportSeller';
-import Navbar from './Pages/Navbar';
+
+import ReportUser from './Pages/ReportUser';
+import UserNavbar from './Pages/Navbars/UserNavbar';
+import AdminNavbar from './Pages/Navbars/AdminNavbar';
 
 
 function App() {
@@ -28,8 +31,9 @@ function App() {
             <Route path='/adminlogin' element={<AdminLog/>} />
             <Route path='/productadd' element={<SellCar/>} />
             <Route path='/sellerreport' element={<ReportSeller/>} />
-
-            <Route path='/nav' element={<Navbar/>} />
+            <Route path='/userreport' element={<ReportUser/>} />
+            <Route path='/usernav' element={<UserNavbar/>} />
+            <Route path='/adminnav' element={<AdminNavbar/>} />
             
  
           </Routes>

@@ -3,6 +3,9 @@ const router=express.Router()
 const JWT=require("jsonwebtoken")
 const bcrypt=require("bcryptjs")
 const {sellerModel} =require('../Models/Seller.js')
+const mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const passformat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+const txt = /.com/;
 
 router.post("/register",async(req,res)=>{
     const {username,password,email,address,phoneno}=req.body;
@@ -11,6 +14,14 @@ router.post("/register",async(req,res)=>{
     if(!username || !password || !email || !address || !phoneno )
     {
         return res.json({message:" empty fields !!!"})
+    }
+    const isEmailValid = mailformat.test(email) && txt.test(email);
+    if (!isEmailValid) {
+        return res.status(400).json({ message: "Enter a valid email" });
+    }
+    if (!password.match(passformat)) 
+    {
+        return res.status(400).json({message:" Password should contain Minimum 8 charactersAt least one uppercase character,At least one lowercase character,At least one digit,At least one special character ",});
     }
     const seller=await sellerModel.findOne({email})
     if(seller){
