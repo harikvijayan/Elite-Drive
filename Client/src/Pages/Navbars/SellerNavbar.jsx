@@ -1,9 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../../Styles/SellerNavbar.css';
+import React,{useState} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../Icons/logo.png'
+import '../../Styles/SellerNavbar.css';
+import {  toast,Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const SellerNavbar = () => {
+
+  const[Cookie,setCookie]=useState(["seller_token"])
+  const nav=useNavigate()
+
+  const LogOut = () => {
+    setCookie("seller_token","")
+        localStorage.removeItem("sellerID")
+        nav('/')
+        toast("You Have Been Logged Out"), {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Flip,
+          };
+  };
+
   return (
     <div className="seller-navbar-container">
       <div className='seller-navbar-brand'>
@@ -32,7 +57,7 @@ const SellerNavbar = () => {
           </Link>
         </li>
         <li className="seller-navbar-element">
-          <Link to="" className="seller-navbar-link">
+          <Link  className="seller-navbar-link" onClick={LogOut}>
             Logout
           </Link>
         </li>

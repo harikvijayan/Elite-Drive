@@ -7,9 +7,9 @@ import UserNavbar from './Navbars/UserNavbar.jsx';
 
 function Navbar() {
 
-  const userToken = localStorage.getItem("user_token");
-  const adminToken = localStorage.getItem("admin_token");
-  const sellerToken = localStorage.getItem("seller_token");
+  const userToken = localStorage.getItem("userID");
+  const adminToken = localStorage.getItem("adminID");
+  const sellerToken = localStorage.getItem("sellerID");
 
   if (!userToken && !adminToken && !sellerToken) 
   {
