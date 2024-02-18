@@ -1,66 +1,46 @@
-import React from 'react'
-import {useCookies} from 'react-cookie'
-import logo from '../Icons/logo.png'
-import '../Styles/Navbar.css'
-import { Link, useNavigate } from 'react-router-dom'
-import {  toast,Flip } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
+import React from 'react';
+import AdminNavbar from './Navbars/AdminNavbar.jsx';
+import HomeNavbar from './Navbars/DefaultNavbar.jsx';
+import SellerNavbar from './Navbars/SellerNavbar.jsx';
+import UserNavbar from './Navbars/UserNavbar.jsx';
 
-function Navbar() {
-  const [Cookies, setCookie] =useCookies(["access_token"])
-  const nav=useNavigate()
+function Navbar({ userRole }) {
 
-  const Logout = () => {
-    setCookie("access_token","")
-        localStorage.removeItem("userID")
-        nav('/')
-        toast("You Have Been Logged Out"), {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Flip,
-          };
-  };
+  const userToken = localStorage.getItem("user_token");
+  const adminToken = localStorage.getItem("admin_token");
+  const sellerToken = localStorage.getItem("seller_token");
 
-  const LogIn = () => {
+  if (!userToken && !adminToken && !sellerToken) 
+  {
+
+    return <HomeNavbar />;
+
+  }
+   else if (adminToken) 
+  {
+
+    return <AdminNavbar />;
+
+  } 
+  else if (userToken) 
+  { 
+
+    return <UserNavbar />;
+
+  }
+  else if (sellerToken) 
+  {
+
+    return <SellerNavbar />;
+
+  }
+  else 
+  {
     
-    nav('/');
-  };
+    return null;
 
-  return (
-    <div className='navbar-container'>
-    
-            <div className='navbar-brand'>
-           <img className='navbar-image' src={logo} alt='logo'/>
-          <h2 className='navbar-head'>EliteDrive</h2>
-            </div>
-            
-            <ul className='navbar-elements'>
-              {Cookies.access_token ? (
-              <>
-                <li className='navbar-element'><Link to='/sellerlog' className='navbar-link'> Sell Your Car</Link></li>
-                <li className='navbar-element'>Home</li>
-                <li className='navbar-element'>Interest</li>
-                <li className='navbar-element'>Profile</li>
-                <li className='navbar-element'>Report</li>
-                <li className='navbar-element' onClick={Logout}>LogOut</li>
-              </>
-              ) : (
-              <>
-                <li className='navbar-element' onClick={LogIn}> LogIn </li>
-              </>  
-              )}  
-            </ul>
-        </div>
-  
-
-  )
+  }
 }
 
-export default Navbar
+export default Navbar;

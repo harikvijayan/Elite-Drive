@@ -8,14 +8,14 @@ import 'react-toastify/dist/ReactToastify.css';
 function Login(){
 const [email,setMail]=useState("")
 const [password,setWord]=useState("")
-const [Cookies,setCookies]=useCookies(['access_token'])
+const [Cookies,setCookies]=useCookies(['user_token'])
 
 const nav=useNavigate()
 
 const handleLogin = async() => {
   try{
     const response = await axios.post("http://localhost:5000/auth/login",{email,password})
-    setCookies("access_token",response.data.token)
+    setCookies("user_token",response.data.token)
     localStorage.setItem("userID",response.data.userID)
     toast.success(response.data.message, {
       position: "top-center",

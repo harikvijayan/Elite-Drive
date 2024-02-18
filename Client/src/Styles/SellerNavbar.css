@@ -1,0 +1,47 @@
+
+.seller-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .seller-navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-flex;
+  }
+
+  .seller-navbar-head{
+    letter-spacing: 3px;
+    color: rgb(83, 241, 62);
+ }
+
+  .seller-navbar-image{
+    height:30px;
+    width:30px;
+    margin: 0px 8px;
+} 
+  
+
+  
+  .seller-navbar-elements {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  .seller-navbar-element {
+    margin-right: 20px;
+  }
+  
+  .seller-navbar-link {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .seller-navbar-link:hover {
+    text-decoration: underline;
+  }
+  

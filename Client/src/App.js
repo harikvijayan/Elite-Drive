@@ -15,12 +15,16 @@ import ReportSeller from './Pages/ReportSeller';
 import ReportUser from './Pages/ReportUser';
 import UserNavbar from './Pages/Navbars/UserNavbar';
 import AdminNavbar from './Pages/Navbars/AdminNavbar';
+import SellerNavbar from './Pages/Navbars/SellerNavbar';
+import HomeNavbar from './Pages/Navbars/DefaultNavbar';
+import Navbar from './Pages/Navbar';
 
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar/>
           <Routes>
             <Route path='/' element={<Login/>} />
             <Route path='/signup' element={<Registration/>} />
@@ -34,6 +38,8 @@ function App() {
             <Route path='/userreport' element={<ReportUser/>} />
             <Route path='/usernav' element={<UserNavbar/>} />
             <Route path='/adminnav' element={<AdminNavbar/>} />
+            <Route path='/sellernav' element={<SellerNavbar/>} />
+            <Route path='/defaultnav' element={<HomeNavbar/>} />
             
  
           </Routes>

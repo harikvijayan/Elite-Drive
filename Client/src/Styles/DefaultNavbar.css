@@ -1,0 +1,48 @@
+/* Updated styling for a more stylish navbar */
+.home-navbar-container {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .admin-navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-flex;
+  }
+
+  .admin-navbar-head{
+    letter-spacing: 3px;
+    color:skyblue;
+ }
+
+  .admin-navbar-image{
+    height:30px;
+    width:30px;
+    margin: 0px 8px;
+}
+  
+  .home-navbar-elements {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  .home-navbar-element {
+    margin-right: 20px;
+  }
+  
+  .home-navbar-link {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .home-navbar-link:hover {
+    background-color: #333;
+  }
+  

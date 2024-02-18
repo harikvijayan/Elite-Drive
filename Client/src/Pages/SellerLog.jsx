@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function SellerLog(){
     const[email,setMail]=useState("")
     const[password,setWord]=useState("")
-    const [Cookies,setCookies]=useCookies(['seller_token'])
+    const [Cookies,setCookies]=useCookies(["seller_token"])
 
 const nav=useNavigate()
 
