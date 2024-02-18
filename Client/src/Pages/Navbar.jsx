@@ -5,7 +5,7 @@ import HomeNavbar from './Navbars/DefaultNavbar.jsx';
 import SellerNavbar from './Navbars/SellerNavbar.jsx';
 import UserNavbar from './Navbars/UserNavbar.jsx';
 
-function Navbar({ userRole }) {
+function Navbar() {
 
   const userToken = localStorage.getItem("user_token");
   const adminToken = localStorage.getItem("admin_token");

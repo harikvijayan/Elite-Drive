@@ -28,11 +28,6 @@ function UserNavbar() {
           };
   };
 
-  const LogIn = () => {
-    
-    nav('/');
-  };
-
   return (
     <div className='navbar-container'>
     
@@ -40,22 +35,13 @@ function UserNavbar() {
            <img className='navbar-image' src={logo} alt='logo'/>
           <h2 className='navbar-head'>EliteDrive</h2>
             </div>
-            
             <ul className='navbar-elements'>
-              {Cookies.access_token ? (
-              <>
                 <li className='navbar-element'><Link to='/sellerlog' className='navbar-link'> Sell Your Car</Link></li>
                 <li className='navbar-element'>Home</li>
                 <li className='navbar-element'>Interest</li>
                 <li className='navbar-element'>Profile</li>
                 <li className='navbar-element'>Report</li>
                 <li className='navbar-element' onClick={Logout}>LogOut</li>
-              </>
-              ) : (
-              <>
-                <li className='navbar-element' onClick={LogIn}> LogIn </li>
-              </>  
-              )}  
             </ul>
         </div>
   
