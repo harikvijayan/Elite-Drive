@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import  axios from 'axios'
 import {  toast,Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../Styles/UserRegistration.css'
 
 function Registration(){
     const[newusername,setNewusername]=useState("")
@@ -64,39 +65,39 @@ function Registration(){
 
     }
   return (
-    <div>
-        <div>
-          <h1>User Registration</h1>
-        <div> 
+    <div className='user-reg-container'>
+        <div className='user-reg-form'>
+          <h1 className='user-reg-head'>User Registration</h1>
+        <div className='user-reg-box'> 
           <input
-            className='input-box'
+            className='user-reg-input-box'
             type='text'
             value={newusername}
             placeholder='Username'
             onChange={(e)=>setNewusername(e.target.value)}
           />
         </div>
-        <div> 
+        <div className='user-reg-box'> 
           <input
-            className='input-box'
+            className='user-reg-input-box'
             type='text'
             value={mail}
             placeholder='Email'
             onChange={(e)=>setMail(e.target.value)}
           />
         </div>
-        <div>
+        <div className='user-reg-box'>
         <input
-        className='input-box'
+        className='user-reg-input-box'
         type='text'
         value={newpassword}
         placeholder='Password'
         onChange={(e)=>setNewpassword(e.target.value)}
         />
         </div>
-        <div>
+        <div className='user-reg-box'>
         <input
-          className='input-box'
+          className='user-reg-input-box'
           type='text'
           placeholder='Re-enter Password'
           value={match}
@@ -104,9 +105,9 @@ function Registration(){
         />
         </div>
         <div>
-        <button onClick={addUser}>Submit</button>
+        <button className='user-reg-button' onClick={addUser}>Submit</button>
         </div>
-        <p>alredy have an account?<Link to='/'>login</Link></p>
+        <p className='user-reg-para'>alredy have an account?<Link to='/'>login</Link></p>
       </div>  
     </div>
   

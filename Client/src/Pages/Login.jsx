@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import {useNavigate, Link } from 'react-router-dom'
 import {  toast,Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../Styles/UserLogin.css'
 
 function Login(){
 const [email,setMail]=useState("")
@@ -49,20 +50,22 @@ const handleLogin = async() => {
 
 
   return (
-    <div className='container'>
-        <div>
-            <h1>User Login</h1>
+    <div className='user-container'>
+        <div className='user-form-container'>
+            <h1 className='user-form-header'>User Login</h1>
             <div>
-            <div className='box'>
+            <div className='user-box'>
             <input
+            className='user-form-input'
              value={email}
              placeholder='Email'
              type='email'
              onChange={(e)=>setMail(e.target.value)}
             />
             </div>
-            <div className='box'>
+            <div className='user-box'>
             <input
+            className='user-form-input'
              type='text'
              placeholder='Password'
              value={password}
@@ -70,10 +73,10 @@ const handleLogin = async() => {
             />
             </div>
             <div>
-            <button onClick={()=>{handleLogin()}}>Login</button>
+            <button className='user-login-button' onClick={()=>{handleLogin()}}>Login</button>
             </div>
             <div>
-              <p>Doesn't have an account?<Link to='/signup'>signup</Link> </p>
+              <p className='user-form-link'>Doesn't have an account?<Link to='/signup'>signup</Link> </p>
             </div>
             </div>
         </div>

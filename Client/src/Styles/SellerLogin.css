@@ -1,0 +1,74 @@
+.sell-log-container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1538690560694-c770d02e202c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  }
+  
+  .sell-log-form-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    
+    
+  }
+  
+  .sell-log-form {
+    text-align: center;
+    
+  }
+  
+  .sell-log-head {
+    color: blue;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .sell-log-box {
+    margin-bottom: 15px;
+  }
+  
+  .sell-log-input {
+    width: 275px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .sell-log-button-container {
+    margin-top: 15px;
+  }
+  
+  .sell-log-button {
+    width: 100%;
+    padding: 10px;
+    background-color: darkblue;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .sell-log-button:hover {
+    background-color: #78e5ec;
+  }
+  
+  .sell-log-para {
+    margin-top: 10px;
+    color: #e72626;
+  }
+  
+  .sell-log-para a {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  
+  .sell-log-para a:hover {
+    text-decoration: underline;
+  }
+  

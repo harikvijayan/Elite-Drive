@@ -1,0 +1,63 @@
+.user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://wallpapercave.com/wp/wp8762917.jpg");
+  }
+  
+  .user-form-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .user-form-header {
+    text-align: center;
+    color: orangered;
+  }
+  
+  .user-box {
+    margin-bottom: 15px;
+  }
+  
+  .user-form-input {
+    width: 275px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .user-login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: orange;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .user-login-button:hover {
+    background-color: orangered;
+  }
+  
+  .user-form-link {
+    text-align: center;
+    margin-top: 10px;
+    color: #da1212;
+  }
+  
+  .user-form-link a {
+    color: #4ce4b1;
+    text-decoration: none;
+  }
+  
+  .user-form-link a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,67 @@
+.sell-reg-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://wallpaperbat.com/img/37972-dark-car-wallpaper-4k-for-pc.jpg");
+  }
+  
+  .sell-reg-form-container {
+    background-color:rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .sell-reg-head {
+    color: blue;
+    margin-bottom: 20px;
+  }
+  
+  .sell-reg-box {
+    margin-bottom: 15px;
+  }
+  
+  .sell-reg-input {
+    width: 275px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+  }
+  
+  .sell-reg-button {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .sell-reg-button:hover {
+    background-color: rgb(90, 236, 241);
+  }
+  
+  .sell-reg-para {
+    margin-top: 10px;
+    color: #51d38c;
+  }
+  
+  .sell-reg-para a {
+    color: #e41a57;
+    text-decoration: none;
+  }
+  
+  .sell-reg-para a:hover {
+    text-decoration: underline;
+  }
+  
