@@ -12,7 +12,7 @@ const HomeNavbar = () => {
       </div> 
       <ul className="home-navbar-elements">
         <li className="home-navbar-element">
-          <Link to="/" className="home-navbar-link">
+          <Link to="/login" className="home-navbar-link">
             User Login
           </Link>
         </li>

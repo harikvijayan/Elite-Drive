@@ -18,6 +18,7 @@ import AdminNavbar from './Pages/Navbars/AdminNavbar';
 import SellerNavbar from './Pages/Navbars/SellerNavbar';
 import HomeNavbar from './Pages/Navbars/DefaultNavbar';
 import Navbar from './Pages/Navbar';
+import UserHome from './Pages/UserHome';
 
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
             <Route path='/adminnav' element={<AdminNavbar/>} />
             <Route path='/sellernav' element={<SellerNavbar/>} />
             <Route path='/defaultnav' element={<HomeNavbar/>} />
+            <Route path='/userhome' element={<UserHome/>} />
+            
             
  
           </Routes>

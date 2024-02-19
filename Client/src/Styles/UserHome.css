@@ -1,0 +1,53 @@
+
+
+.user-home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+  }
+  
+  .user-home-carousel {
+    width: 100%; 
+    margin-top: 3.9%; 
+  }
+
+  .user-carousel-tag{
+    font-size: 20px;
+  }
+  
+  .user-home-carousel img {
+    width: 100%;
+    height: auto;
+  }
+
+  .user-home-brands {
+    margin-top: 20px; 
+  }
+  
+  .user-brand-list {
+    display: block;
+   
+  }
+  
+  .user-brand-container {
+   
+  }
+  
+  .user-brand-image {
+   
+   width:100px
+    
+  }
+  
+  
+  
+ 
+  .user-home-elements {
+    
+  }
+  
+  .user-home-others {
+    
+  }
+  
