@@ -26,9 +26,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
           <Routes>
-            <Route path='/' element={<Login/>} />
+            <Route path='/login' element={<Login/>} />
             <Route path='/signup' element={<Registration/>} />
-            <Route path='/home' element={<Home/>} />
+            <Route path='/' element={<Home/>} />
             <Route path='/admininter' element={<AdminInterface/>} />
             <Route path='/sellerlog' element={<SellerLog/>} />
             <Route path='/sellerreg' element={<SellerRegistration/>} /> 

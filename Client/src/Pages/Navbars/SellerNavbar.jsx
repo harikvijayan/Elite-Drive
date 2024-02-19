@@ -37,22 +37,27 @@ const SellerNavbar = () => {
       </div>
       <ul className="seller-navbar-elements">
         <li className="seller-navbar-element">
-          <Link to="" className="seller-navbar-link">
+          <Link to="sellerhome" className="seller-navbar-link">
             Home
           </Link>
         </li>
         <li className="seller-navbar-element">
-          <Link to="" className="seller-navbar-link">
+          <Link to="sellerprofile" className="seller-navbar-link">
             Profile
           </Link>
         </li>
         <li className="seller-navbar-element">
-          <Link to="/" className="seller-navbar-link">
+          <Link to="/productmanage" className="seller-navbar-link">
             Product Management
           </Link>
         </li>
         <li className="seller-navbar-element">
-          <Link to="" className="seller-navbar-link">
+          <Link to="/productadd" className="seller-navbar-link">
+            Sell My Car
+          </Link>
+        </li>
+        <li className="seller-navbar-element">
+          <Link to="/sellerreport" className="seller-navbar-link">
             Report
           </Link>
         </li>

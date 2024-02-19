@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import 'react-toastify/dist/ReactToastify.css';
 import '../Styles/SellCar.css'
 import sellerID from '../Hooks/Seller';
+import {  toast,Flip ,Bounce} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 function SellCar() {
     const[name,setName]=useState("")
@@ -16,33 +18,54 @@ function SellCar() {
     const[owner,setOwner]=useState("")
     const[loginid]=useState(sellerID)
 
-    const handleSubmit =async() =>{
-        try{
-            await axios.post("http://localhost:5000/product/add",{name,brand,color,price,photo,mileage,year,fuel,enginecc,owner,loginid})
-            toast.success('Product Added  Successfully ', {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-                transition: Flip,
+    console.log(loginid); 
+
+    const handleSubmit = async () => {
+        try {
+            const response = await axios.post("http://localhost:5000/product/add", {name, brand, color, price, photo, mileage, year, fuel, enginecc, owner, loginid});
+    
+            if (response && response.data) {
+                console.log(response);
+                toast(response.data.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Flip,
                 });
-                setName("")
-                setBrand("")
-                setColor("")
-                setPhoto("")
-                setPrice("")
-                setMileage("")
-                setFuel("")
-                setEnginecc("")
-                setYear("")
-                setOwner("")
-        }
-        catch(err){
-            toast.error(err.response.data.message, {
+    
+                // Reset form fields
+                setName("");
+                setBrand("");
+                setColor("");
+                setPhoto("");
+                setPrice("");
+                setMileage("");
+                setFuel("");
+                setEnginecc("");
+                setYear("");
+                setOwner("");
+            } else {
+                console.error("Invalid response format:", response);
+                toast.error("An unexpected error occurred. Please try again later.", {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                });
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            toast.error(error.response?.data?.message || 'An error occurred', {
                 position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -52,9 +75,10 @@ function SellCar() {
                 progress: undefined,
                 theme: "light",
                 transition: Bounce,
-                });
+            });
         }
     }
+    
 
   return (
     <div>

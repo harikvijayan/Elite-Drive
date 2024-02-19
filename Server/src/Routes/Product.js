@@ -15,7 +15,7 @@ router.post("/add",async(req,res)=>{
         return res.status(400).json({message:"Login required"})
     }
 
-    const newProduct=new productModel({name,brand,color,price,photo,mileage,year,fuel,enginecc,owner})
+    const newProduct=new productModel({name,brand,color,price,photo,mileage,year,fuel,enginecc,owner,loginid})
     await newProduct.save()
     res.json({message:"product added successfully!!! "})
 })

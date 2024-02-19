@@ -30,7 +30,7 @@ const handleLogin = async() => {
       theme: "colored",
       transition: Bounce,
       });
-    // nav('/home')
+   
 
   }
   catch(error)
