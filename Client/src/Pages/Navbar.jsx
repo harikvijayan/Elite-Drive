@@ -1,12 +1,9 @@
-
-import React from 'react';
 import AdminNavbar from './Navbars/AdminNavbar.jsx';
 import HomeNavbar from './Navbars/DefaultNavbar.jsx';
 import SellerNavbar from './Navbars/SellerNavbar.jsx';
 import UserNavbar from './Navbars/UserNavbar.jsx';
 
 function Navbar() {
-
   const userToken = localStorage.getItem("userID");
   const adminToken = localStorage.getItem("adminID");
   const sellerToken = localStorage.getItem("sellerID");
@@ -25,8 +22,8 @@ function Navbar() {
   } 
   else if (userToken) 
   { 
-
     return <UserNavbar />;
+
 
   }
   else if (sellerToken) 

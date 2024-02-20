@@ -65,13 +65,41 @@ router.post("/login",async(req,res)=>{
 
     const token = JWT.sign({id : user._id},"secret")
    return res.status(200).json({message:"Successfully logged-in",token:token,userID:user._id})
-}
-catch(error)
-{
+    }
+    catch(error)
+    {
     return res.status(400).json({message:"error login !!!"})
-}
+    }
 
 
+})
+
+
+
+router.get("/getusers",async(req,res)=>{
+    try{
+    const userData = await userModel.find({})
+    return res.status(200).send(userData)
+    }
+    catch(error)
+    {
+        return res.status(400).json({message:"Error Occured"})
+    }
+})
+
+router.get('/getuser/:id',async(req,res)=>{
+    try{
+        const {id}=req.params
+        console.log(id);
+        const userDetail = await userModel.findOne({ _id: id });
+
+        console.log(userDetail);
+        return res.status(200).send(userDetail)
+    }
+    catch(error)
+    {
+        return res.status(400).json({message:"Error Occured"})
+    }
 })
 
 
