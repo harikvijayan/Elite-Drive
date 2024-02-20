@@ -31,6 +31,17 @@ router.delete("/remove/:id",async(req,res)=>{
     }
 })
 
+router.get('/getallcars',async(req,res)=>{
+    try{
+    const allProducts=await productModel.find({})
+    return res.status(200).send(allProducts)
+    }
+    catch(err)
+    {
+        return res.json({message:"error in fetching all products"})
+    }
+})
+
 router.put("/change/:id",async(req,res)=>{
     try{
 

@@ -1,10 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Styles/UserHome.css'
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import axios from 'axios';
+import { IoColorPalette } from "react-icons/io5";
+import { BsFuelPump } from "react-icons/bs";
+import { SiCoronaengine } from "react-icons/si";
+import { SlCalender } from "react-icons/sl";
+import { PiEngineBold } from "react-icons/pi"
+import { IoIosPerson } from "react-icons/io";
 
 
 function UserHome() {
+  const[products,setProducts]=useState([])
+
+
+
+
+useEffect(()=>{
+  getAllCommodities()
+},[])
+
+const getAllCommodities = async() => {
+
+  try{
+    const response = await axios.get("http://localhost:5000/product/getallcars")
+    setProducts(response.data)
+
+  }
+  catch(err)
+  {
+    console.log(err);
+  }
+
+}
+
+
   return (
     <div className='user-home-container'>
         <div className='user-home-carousel'>
@@ -71,6 +102,24 @@ function UserHome() {
 
         </div>
         <div className='user-home-elements'>
+        <div className="user-product-list">
+        {products.map((product, index) => (
+          <div key={index} className="user-product-card">
+            <img className='user-product-image' src={product.photo} alt={product.brand} />
+            <h2 className='user-product-name'>{product.name}</h2>
+            <h3 className='user-product-brand'>{product.brand}</h3>
+            <h4 className='user-product-price'> ₹{product.price}</h4>
+            <div className='user-product-sec2'>
+              <p className='user-product-color'><IoColorPalette />{product.color}</p>
+              <p className='user-product-fuel'><BsFuelPump />{product.fuel}</p>
+              <p className='user-product-mileage'><SiCoronaengine />{product.mileage}KM</p>
+              <p className='user-product-year'><SlCalender />{product.year}</p>
+              <p className='user-product-engine'><PiEngineBold />{product.enginecc}</p>
+              <p className='user-product-owner'><IoIosPerson />{product.owner}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
         </div>
         <div className='user-home-others'>

@@ -36,9 +36,6 @@ function UserNavbar() {
           <h2 className='navbar-head'>EliteDrive</h2>
             </div>
             <ul className='navbar-elements'>
-                <li className='navbar-element'>
-                  <Link to='/sellerlog' className='navbar-link'> Sell Your Car</Link>
-                </li>
                 <li className='navbar-element'>Home</li>
                 <li className='navbar-element'>Interest</li>
                 <li className='navbar-element'>Profile</li>

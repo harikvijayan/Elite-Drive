@@ -45,7 +45,7 @@ const submitReport = async() => {
 }
 
   return (
-    <div className='report-body'>
+<div className='report-body'>
         <div className='report-container'>
             <div className='report-first'>
                 <div className='report-second'>
@@ -54,14 +54,17 @@ const submitReport = async() => {
                         <img className='report-image' src={logo} alt='logo'/>
                         <h1 className='report-name'>EliteDrive</h1>
                         </div>
-                        <p className='report-para'>We are Elite Drive, South India's first choice pre owned luxury automobile dealer for many of the moto enthusiasts in Kerala.</p>
-                        <p className='report-para'> Our illustrious list of pre owned luxury car brands includes Porsche, We are Royal Drive, South India's first choice pre 
-                         owned luxury automobile dealer for many of the moto enthusiasts in Kerala. Our illustrious list of pre owned luxury cars...</p>
+                        <p className='report-para'>"Hello EliteDrive community! Your satisfaction is our priority. If you've encountered any issues or have feedback regarding our premium second-hand cars, we're here to assist you. Your input helps us improve and ensures your experience with EliteDrive is nothing short of exceptional. Please feel free to report any problems or share your feedback here. Thank you for being a part of the EliteDrive family!"</p>
                     </div>
                     <div className='report-form'>
                         <h1 className='report-head'>Report Your Problem..</h1>
                         <input className='report-input' type='text' value={message} onChange={(e)=>setMessage(e.target.value)}/>
                         <button className='report-Button' onClick={submitReport}>Submit</button>
+                    </div>
+                    <div className='report-mapping-container'> 
+                        <div className='report-map-table'>
+
+                        </div>
                     </div>
 
                 </div>
