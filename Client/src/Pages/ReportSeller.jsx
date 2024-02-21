@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Styles/ReportSeller.css'
 import logo from '../Icons/logo.png'
-import sellerID from '../Hooks/Seller.js';
+import sellerID from '../Hooks/Seller';
 import {  toast,Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
@@ -9,11 +9,34 @@ import axios from 'axios';
 
 function ReportSeller() {
     const[message,setMessage]=useState("")
+    const[mail,setMail]=useState([])
+    const[report,setReport]=useState([])
     const[loginid]=useState(sellerID)
+    const sellID=sellerID()
+    console.log(loginid);
+
+useEffect(()=>{
+    fetchUser();
+    fetchReport();
+})
+
+const fetchUser = async() =>{
+    try{
+        const response=await axios.get(`http://localhost:5000/seller/getseller/${sellID}`)
+        setMail(response.data.email)
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+}
+console.log(mail);
+
+
 
 const submitReport = async() => {
     try{
-       const response = await axios.post("http://localhost:5000/reports/addbyseller",{report:message,sellerID:loginid})
+       const response = await axios.post("http://localhost:5000/sellerreport/addbyseller",{sellerreport:message,loginid,email:mail})
        toast(response.data.message, {
         position: 'top-center',
         autoClose: 3000,
@@ -25,7 +48,7 @@ const submitReport = async() => {
         theme: 'dark',
         transition: Flip,
       });
-
+     setMessage("")
     }
     catch(err)
     {
@@ -44,6 +67,12 @@ const submitReport = async() => {
     
 }
 
+
+const fetchReport = async() =>{
+    const response = await axios.get(`http://localhost:5000/sellerreport/getsellerreport/${sellID}`)
+    setReport(response.data.sellerreport)
+}
+console.log(report);
   return (
     <div className='report-body'>
         <div className='report-container'>
@@ -63,9 +92,29 @@ const submitReport = async() => {
                     </div>
                     <div className='report-mapping-container'> 
                         <div className='report-map-table'>
+                            <h3 className='report-map-heading'>Your Recent Reports..</h3>
+                            <table className='map-report-table'>
+                                <thead className='map-report-head'>
+                                    <tr>
+                                        <th className='map-report-h'>SL No.</th>
+                                        <th className='map-report-h'>Report</th>
+                                        <th className='map-report-h'>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody className='map-report-tbody'>
+                                {report.map((a)=>(
+                                <tr className='map-report-row' key={a._id} >
+                                    <td className='map-report-data'>1</td>
+                                    <td className='map-report-data'>{a.sellerreport}</td>
+                                    <td className='map-report-data'>{a.seen ? "Received" : "Pending"}</td>
+                                </tr> 
+                                ))}
+                                </tbody>
+                            </table>
 
                         </div>
                     </div>
+
 
                 </div>
             </div>

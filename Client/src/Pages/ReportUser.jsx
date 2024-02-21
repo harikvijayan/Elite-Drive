@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Styles/ReportSeller.css'
 import logo from '../Icons/logo.png'
 import userID from '../Hooks/User.js';
@@ -9,11 +9,26 @@ import axios from 'axios';
 
 function ReportUser() {
     const[message,setMessage]=useState("")
+    const[mail,setMail]=useState("")
     const[loginid]=useState(userID)
+    const useID=userID()
+
+useEffect(()=>{
+        fetchUser();       
+    },[])
+    console.log("id",useID);
+    console.log("mail",mail);
+const fetchUser = async() =>{
+    const response = await axios.get(`http://localhost:5000/auth/getuser/${useID}`)
+    setMail(response.data.email)
+}
+
+
+
 
 const submitReport = async() => {
     try{
-       const response = await axios.post("http://localhost:5000/reports/addbyuser",{report:message,userID:loginid})
+       const response = await axios.post("http://localhost:5000/userreport/addbyuser",{userreport:message,loginid,email:mail})
        toast(response.data.message, {
         position: 'top-center',
         autoClose: 3000,
@@ -25,7 +40,7 @@ const submitReport = async() => {
         theme: 'dark',
         transition: Flip,
       });
-
+      fetchUser()
     }
     catch(err)
     {
@@ -63,6 +78,23 @@ const submitReport = async() => {
                     </div>
                     <div className='report-mapping-container'> 
                         <div className='report-map-table'>
+                            <table className='map-report-table'>
+                                <thead className='map-report-head'>
+                                    <tr>
+                                        <th className='map-report-h'>SL No.</th>
+                                        <th className='map-report-h'>Report</th>
+                                        <th className='map-report-h'>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody className='map-report-tbody'>
+                                <tr className='map-report-row' >
+                                    <td className='map-report-data'>1</td>
+                                    <td className='map-report-data'>report mapped</td>
+                                    <td className='map-report-data'>status</td>
+                                    \
+                                </tr> 
+                                </tbody>
+                            </table>
 
                         </div>
                     </div>

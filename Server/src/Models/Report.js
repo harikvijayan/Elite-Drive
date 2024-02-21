@@ -4,6 +4,7 @@ const mongoose=require('mongoose')
 const userReportSchema=new mongoose.Schema({
     userreport:{type:String,required:true},
     loginid:{type:mongoose.Schema.Types.ObjectId,ref:"users",required:true},
+    email:{type:String,required:true},
     seen:{type:Boolean,required:true,default:false}
     
 })
@@ -11,6 +12,7 @@ const userReportSchema=new mongoose.Schema({
 const sellerReportSchema=new mongoose.Schema({
     sellerreport:{type:String,required:true},
     loginid:{type:mongoose.Schema.Types.ObjectId,ref:"sellers",required:true},
+    email:{type:String,required:true},
     seen:{type:Boolean,required:true,default:false}
     
 })

@@ -90,7 +90,6 @@ router.get("/getusers",async(req,res)=>{
 router.get('/getuser/:id',async(req,res)=>{
     try{
         const {id}=req.params
-        console.log(id);
         const userDetail = await userModel.findOne({ _id: id });
 
         console.log(userDetail);

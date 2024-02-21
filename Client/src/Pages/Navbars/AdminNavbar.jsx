@@ -37,8 +37,8 @@ function AdminNavbar() {
       <ul className="admin-navbar-elements">
         <li className="admin-navbar-element"><Link to='/usermanage' className='admin-navbar-link'>User Management</Link></li>
         <li className="admin-navbar-element"><Link to='/sellermanage' className='admin-navbar-link'>Seller Management</Link></li>
-        <li className="admin-navbar-element">Seller Report</li>
-        <li className="admin-navbar-element">User Report</li>
+        <li className="admin-navbar-element"><Link to='/userreportmanage' className='admin-navbar-link'>User Reports</Link></li>
+        <li className="admin-navbar-element"><Link to='/sellreportmanage' className='admin-navbar-link'>Seller Reports</Link></li>
         <li className="admin-navbar-element">Product Management</li>
         <li className="admin-navbar-element" onClick={Logout}>LogOut</li>
       </ul>

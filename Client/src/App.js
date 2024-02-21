@@ -22,6 +22,8 @@ import UserHome from './Pages/UserHome';
 import UserProfileEdit from './Pages/UserProfileEdit';
 import UserManagement from './Pages/UserManagement';
 import SellerManagement from './Pages/SellerManagement';
+import SellerReport from './Pages/SellerReport';
+import UserReport from './Pages/UserReport';
 
 
 
@@ -49,7 +51,8 @@ function App() {
             <Route path='/useredit' element={<UserProfileEdit/>} />
             <Route path='/usermanage' element={<UserManagement/>} />
             <Route path='/sellermanage' element={<SellerManagement/>} />
-            
+            <Route path='/sellreportmanage' element={<SellerReport/>} />
+            <Route path='/userreportmanage' element={<UserReport/>} />
             
  
           </Routes>

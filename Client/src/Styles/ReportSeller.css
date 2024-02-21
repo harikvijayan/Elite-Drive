@@ -1,4 +1,4 @@
-/* Add your global styles here if needed */
+
 
 .report-body {
     font-family: 'Arial', sans-serif;
@@ -37,7 +37,7 @@
   }
   
   .report-image {
-    width: 45px; /* Adjust the size as needed */
+    width: 45px; 
     height: auto;
     margin-right: 10px;
   }
@@ -91,7 +91,41 @@
     margin-top: 20px;
   }
   
-  .report-map-table {
-    /* Add styles for the mapping container or table as needed */
-  }
+  .report-mapping-container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.report-map-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.map-report-table {
+    width: 100%;
+}
+
+.map-report-head th {
+    background-color: #f2f2f2;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.map-report-row td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: whitesmoke;
+}
+
+.report-map-heading{
+  color: burlywood;
+  margin-left: 200px;
+}
+
+
+
   

@@ -39,7 +39,7 @@ function UserNavbar() {
                 <li className='navbar-element'>Home</li>
                 <li className='navbar-element'>Interest</li>
                 <li className='navbar-element'>Profile</li>
-                <li className='navbar-element'>Report</li>
+                <li className='navbar-element'><Link to='/userreport' className='admin-navbar-link'>Report</Link></li>
                 <li className='navbar-element' onClick={Logout}>LogOut</li>
             </ul>
         </div>

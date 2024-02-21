@@ -3,24 +3,30 @@ const router=express.Router()
 const {userReportModel,sellerReportModel} =require('../Models/Report.js')
 
 router.post("/addbyseller",async(req,res)=>{
-    const {sellerreport,loginid}=req.body;
+    const {sellerreport,loginid,email}=req.body;
 
     if(!sellerreport)
     {
-        return res.json({message:" empty fields !!!"})
+        return res.json({message:" empty field !!!"})
     }
     if(!loginid)
     {
         return res.status(400).json({message:"Seller Login required"})
     }
+    if(!email)
+    {
+        return res.status(400).json({message:"Seller Login required"})
+    }
 
-    const newReport=new sellerReportModel({sellerreport})
+    const newReport=new sellerReportModel({sellerreport,loginid,email})
     await newReport.save()
     res.json({message:"Report Submitted successfully!!! "})
 })
 
 router.post("/addbyuser",async(req,res)=>{
-    const {userreport,loginid}=req.body;
+    try
+    {
+    const {userreport,loginid,email}=req.body;
 
     if(!userreport)
     {
@@ -30,10 +36,19 @@ router.post("/addbyuser",async(req,res)=>{
     {
         return res.status(400).json({message:"User Login required"})
     }
+    if(!email)
+    {
+        return res.status(400).json({message:"Email  required"})
+    }
 
-    const newReport=new userReportModel({userreport})
+    const newReport=new userReportModel({userreport,loginid,email})
     await newReport.save()
     res.json({message:"Report Submitted successfully!!! "})
+    }
+    catch(error)
+    {
+        return res.status(400).json(error)
+    }
 })
 
 router.get("/getuserreport",async(req,res)=>{
@@ -50,7 +65,7 @@ router.get("/getuserreport",async(req,res)=>{
 router.get("/getuserreport/:id",async(req,res)=>{
     try{
         const {id}=req.params
-        const userReport = await userReportModel.findOne({ _id: id });
+        const userReport = await userReportModel.findOne({ loginid: id });
         return res.status(200).send(userReport)
     }
     catch(error)
@@ -73,13 +88,44 @@ router.get("/getsellerreport",async(req,res)=>{
 router.get("/getsellerreport/:id",async(req,res)=>{
     try{
         const {id}=req.params
-        const sellerReport = await sellerReportModel.findOne({ _id: id });
+        const sellerReport = await sellerReportModel.findOne({ loginid: id });
         return res.status(200).send(sellerReport)
     }
     catch(error)
     {
         return res.status(400).json({message:"Error Occured"})
     }
+})
+
+
+router.put('/seensellerreport/:id',async(req,res)=>{
+    try {
+        const { id } = req.params;
+        const { seen } = req.body;
+        const data = await sellerReportModel.findByIdAndUpdate(id, { seen });
+        if (seen === true) {
+          return res.status(200).json({ message: "Report Marked as Read", data });
+        } else {
+          return res.status(200).json({ message: "Report Marked as UnRead ", data });
+        }
+      } catch (error) {
+        return res.status(200).json({message:"Report Operation Not Available"});
+      }
+})
+
+router.put('/seenuserreport/:id',async(req,res)=>{
+    try {
+        const { id } = req.params;
+        const { seen } = req.body;
+        const data = await userReportModel.findByIdAndUpdate(id, { seen });
+        if (seen === true) {
+          return res.status(200).json({ message: "Report Marked as Read", data });
+        } else {
+          return res.status(200).json({ message: "Report Marked as UnRead ", data });
+        }
+      } catch (error) {
+        return res.status(200).json({message:"Report Operation Not Available"});
+      }
 })
 
 module.exports=router
