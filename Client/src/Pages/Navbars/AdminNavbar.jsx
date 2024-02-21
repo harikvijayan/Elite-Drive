@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import logo from '../../Icons/logo.png'
 import '../../Styles/AdminNavbar.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import {  toast,Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -35,8 +35,8 @@ function AdminNavbar() {
         <h3 className='admin-navbar-head'>EliteDrive</h3>
       </div>
       <ul className="admin-navbar-elements">
-        <li className="admin-navbar-element">User Management</li>
-        <li className="admin-navbar-element">Seller Management</li>
+        <li className="admin-navbar-element"><Link to='/usermanage' className='admin-navbar-link'>User Management</Link></li>
+        <li className="admin-navbar-element"><Link to='/sellermanage' className='admin-navbar-link'>Seller Management</Link></li>
         <li className="admin-navbar-element">Seller Report</li>
         <li className="admin-navbar-element">User Report</li>
         <li className="admin-navbar-element">Product Management</li>

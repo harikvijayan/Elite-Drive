@@ -102,6 +102,21 @@ router.get('/getuser/:id',async(req,res)=>{
     }
 })
 
+router.put('/changeban/:id',async(req,res)=>{
+    try {
+        const { id } = req.params;
+        const { ban } = req.body;
+        const data = await userModel.findByIdAndUpdate(id, { ban });
+        if (ban === true) {
+          return res.status(200).json({ message: "Successfully Banned User", data });
+        } else {
+          return res.status(200).json({ message: "Successfully Un-Banned User", data });
+        }
+      } catch (error) {
+        return res.status(200).json({message:"Ban Operation Not Possible"});
+      }
+})
+
 
 
 

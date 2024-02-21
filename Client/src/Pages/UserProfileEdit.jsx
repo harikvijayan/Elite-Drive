@@ -5,6 +5,7 @@ import axios from 'axios'
 
 function UserProfileEdit() {
     const[userData,setUserData]=useState("")
+    const[toggle,setToggle]=useState(0)
     const useID=userID()
     console.log("users id",useID);
 
@@ -28,7 +29,13 @@ const userDetail = async() =>{
 console.log("user data",userData);
 
   return (
-    <div>UserProfileEdit</div>
+    <div className='user-edit-container'>
+        <div className='user-edit-section'>
+          <div className='user-edit-form'>
+            <h2 className='user-edit-title'>Your Profile</h2>
+          </div>
+        </div>
+    </div>
   )
 }
 

@@ -20,6 +20,9 @@ import HomeNavbar from './Pages/Navbars/DefaultNavbar';
 import Navbar from './Pages/Navbar';
 import UserHome from './Pages/UserHome';
 import UserProfileEdit from './Pages/UserProfileEdit';
+import UserManagement from './Pages/UserManagement';
+import SellerManagement from './Pages/SellerManagement';
+
 
 
 function App() {
@@ -44,6 +47,8 @@ function App() {
             <Route path='/defaultnav' element={<HomeNavbar/>} />
             <Route path='/userhome' element={<UserHome/>} />
             <Route path='/useredit' element={<UserProfileEdit/>} />
+            <Route path='/usermanage' element={<UserManagement/>} />
+            <Route path='/sellermanage' element={<SellerManagement/>} />
             
             
  

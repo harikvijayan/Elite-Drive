@@ -75,4 +75,48 @@ catch(error)
 
 
 
+router.get("/getsellers",async(req,res)=>{
+    try{
+    const sellerData = await sellerModel.find({})
+    return res.status(200).send(sellerData)
+    }
+    catch(error)
+    {
+        return res.status(400).json({message:"Error Occured"})
+    }
+})
+
+router.get('/getseller/:id',async(req,res)=>{
+    try{
+        const {id}=req.params
+       
+        const sellerDetail = await sellerModel.findOne({ _id: id });
+
+        console.log(sellerDetail);
+        return res.status(200).send(sellerDetail)
+    }
+    catch(error)
+    {
+        return res.status(400).json({message:"Error Occured"})
+    }
+})
+
+router.put('/changeban/:id',async(req,res)=>{
+    try {
+        const { id } = req.params;
+        const { ban } = req.body;
+        const data = await sellerModel.findByIdAndUpdate(id, { ban });
+        if (ban === true) {
+          return res.status(200).json({ message: "Successfully Banned Seller", data });
+        } else {
+          return res.status(200).json({ message: "Successfully Un-Banned Seller", data });
+        }
+      } catch (error) {
+        return res.status(200).json({message:"Ban Operation Not Possible"});
+      }
+})
+
+
+
+
 module.exports=router

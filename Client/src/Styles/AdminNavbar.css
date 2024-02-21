@@ -38,6 +38,12 @@
     margin: 0 10px;
     cursor: pointer;
   }
+
+  .admin-navbar-link{
+    list-style: none;
+    color: violet;
+    text-decoration: none;
+  }
   
 
   @media (max-width: 768px) {
