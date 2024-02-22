@@ -26,6 +26,7 @@ import SellerReport from './Pages/SellerReport';
 import UserReport from './Pages/UserReport';
 import SellerProfileEdit from './Pages/SellerProfileEdit';
 import SellerProductManage from './Pages/SellerProductManage';
+import CarDetail from './Pages/CarDetail';
 
 
 
@@ -56,6 +57,8 @@ function App() {
             <Route path='/usernav' element={<UserNavbar/>} />
             <Route path='/userhome' element={<UserHome/>} />
             <Route path='/useredit' element={<UserProfileEdit/>} />
+            <Route path='/cardetail' element={<CarDetail/>} />
+
            
             {/* Seller Pages */}
             <Route path='/sellerlog' element={<SellerLog/>} />

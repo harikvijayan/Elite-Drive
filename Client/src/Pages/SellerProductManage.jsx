@@ -23,8 +23,12 @@ const sellerProducts = async () => {
 
 console.log("cars",products);
   return (
-    <div>
-        <h1>seller products</h1>
+    <div className='product-add-container'>
+        <div className='product-add-section'>
+            <div className='product-add-form'>
+                
+            </div>
+        </div>
     </div>
   )
 }

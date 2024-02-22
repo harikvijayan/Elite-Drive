@@ -45,10 +45,8 @@ router.get('/getallcars',async(req,res)=>{
 
 router.get('/getsellerproduct/:id',async(req,res)=>{
     try{
-    const {sellID}=req.params
-    console.log("id",sellID);
-    const sellerProducts=await productModel.findOne({loginid:sellID})
-    console.log("pro",sellerProducts);
+    const {id}=req.params
+    const sellerProducts=await productModel.find({loginid:id})
     return res.status(200).send(sellerProducts)
     }
     catch(err)
