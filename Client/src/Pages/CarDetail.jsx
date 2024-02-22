@@ -14,8 +14,8 @@ export default function CarDetail() {
         </div>
         <div className="card-details">
           <h3 className="card-brand-name">
-            Nike Air Max <br />
-            <span className="card-brand">Men's Shoe</span>
+            GLA  <br />
+            <span className="card-brand">Mercedes Benz</span>
           </h3>
           <h4 className="card-car-detail">Car Details</h4>
           <ul className="card-size">
