@@ -30,6 +30,7 @@ const handleLogin = async() => {
       transition: Bounce,
       });
     nav('/userhome')
+    window.location.reload()
 
   }
   catch(error)

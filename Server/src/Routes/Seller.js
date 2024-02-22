@@ -117,6 +117,85 @@ router.put('/changeban/:id',async(req,res)=>{
 })
 
 
+router.post('/sellerpassmatch/:id',async(req,res)=>{
+    try{
+        const {id}=req.params
+        const {password}=req.body
+
+        if(!password)
+        {
+            return res.status(400).json({message:"Empty Field !!!"})
+        }
+        const seller = await sellerModel.findOne({ _id: id });
+
+        if(!seller)
+        {
+            return res.status(200).json({message:"Seller not found !!!"})
+        }
+
+        const isPasswordValid= await bcrypt.compare(password,seller.password)
+
+        if(!isPasswordValid)
+        {
+            return res.status(400).json({message:"Invalid password !!"})
+        }
+
+        return res.status(200).json({message:"You can now update your Password",status:true})
+    }
+    catch(error)
+    {
+        return res.status(400).json({message:"Error Occured"})
+    }
+})
+
+router.put('/sellerpassupdate/:id',async(req,res)=>{
+    try
+     {
+        const { id } = req.params;
+        const { password } = req.body;
+        
+        if(!password)
+        {
+            return res.status(400).json({message:"Empty Field"})
+        }
+        if(!password.match(passformat)) 
+        {
+            return res.status(400).json({message:" Password should contain Minimum 8 characters,At least one lowercase character,At least one digit,At least one special character ",});
+        }
+        const hashedPassword=await bcrypt.hash(password,10)
+        await sellerModel.findByIdAndUpdate(id,{password:hashedPassword});
+        
+        res.json({message:"Password Updated successfully"})
+
+
+      } 
+      catch (error) 
+      {
+        return res.status(200).json({message:"Update Not Possible"});
+      }
+})
+
+router.put('/sellermailupdate/:id',async(req,res)=>{
+    try
+     {
+        const { id } = req.params;
+        const { username,email,address,phoneno } = req.body;
+       
+        if(!username || !email || !address || !phoneno)
+        {
+            return res.status(400).json({message:"Empty Field"})
+        }
+        await sellerModel.findByIdAndUpdate(id,{username,email,address,phoneno});
+        
+        res.json({message:"Profile Updated successfully👨"})
+
+      } 
+      catch (error) 
+      {
+        return res.status(200).json({message:"Update Not Possible"});
+      }
+})
+
 
 
 module.exports=router

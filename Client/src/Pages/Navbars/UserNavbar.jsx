@@ -15,6 +15,7 @@ function UserNavbar() {
     setCookie("access_token","")
         localStorage.removeItem("userID")
         nav('/')
+        window.location.reload()
         toast("You Have Been Logged Out"), {
           position: "top-center",
           autoClose: 3000,

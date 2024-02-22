@@ -24,6 +24,8 @@ import UserManagement from './Pages/UserManagement';
 import SellerManagement from './Pages/SellerManagement';
 import SellerReport from './Pages/SellerReport';
 import UserReport from './Pages/UserReport';
+import SellerProfileEdit from './Pages/SellerProfileEdit';
+import SellerProductManage from './Pages/SellerProductManage';
 
 
 
@@ -33,28 +35,37 @@ function App() {
       <BrowserRouter>
         <Navbar />
           <Routes>
+
+              {/* no man */}
+             <Route path='/defaultnav' element={<HomeNavbar/>} />
+             <Route path='/' element={<Home/>} />
+
+             {/* Admin pages */}
+             <Route path='/admininter' element={<AdminInterface/>} />
+             <Route path='/adminlogin' element={<AdminLog/>} />
+             <Route path='/adminnav' element={<AdminNavbar/>} />
+             <Route path='/usermanage' element={<UserManagement/>} />
+             <Route path='/sellermanage' element={<SellerManagement/>} />
+             <Route path='/sellreportmanage' element={<SellerReport/>} />
+             <Route path='/userreportmanage' element={<UserReport/>} />
+
+              {/* User Pages */}
             <Route path='/login' element={<Login/>} />
             <Route path='/signup' element={<Registration/>} />
-            <Route path='/' element={<Home/>} />
-            <Route path='/admininter' element={<AdminInterface/>} />
-            <Route path='/sellerlog' element={<SellerLog/>} />
-            <Route path='/sellerreg' element={<SellerRegistration/>} /> 
-            <Route path='/adminlogin' element={<AdminLog/>} />
-            <Route path='/productadd' element={<SellCar/>} />
-            <Route path='/sellerreport' element={<ReportSeller/>} />
             <Route path='/userreport' element={<ReportUser/>} />
             <Route path='/usernav' element={<UserNavbar/>} />
-            <Route path='/adminnav' element={<AdminNavbar/>} />
-            <Route path='/sellernav' element={<SellerNavbar/>} />
-            <Route path='/defaultnav' element={<HomeNavbar/>} />
             <Route path='/userhome' element={<UserHome/>} />
             <Route path='/useredit' element={<UserProfileEdit/>} />
-            <Route path='/usermanage' element={<UserManagement/>} />
-            <Route path='/sellermanage' element={<SellerManagement/>} />
-            <Route path='/sellreportmanage' element={<SellerReport/>} />
-            <Route path='/userreportmanage' element={<UserReport/>} />
-            
- 
+           
+            {/* Seller Pages */}
+            <Route path='/sellerlog' element={<SellerLog/>} />
+            <Route path='/sellerreg' element={<SellerRegistration/>} /> 
+            <Route path='/productadd' element={<SellCar/>} />
+            <Route path='/sellerreport' element={<ReportSeller/>} />
+            <Route path='/sellernav' element={<SellerNavbar/>} />
+            <Route path='/sellerprofile' element={<SellerProfileEdit/>} />
+            <Route path='/productmanage' element={<SellerProductManage/>} />
+
           </Routes>
       </BrowserRouter>
       <ToastContainer /> 

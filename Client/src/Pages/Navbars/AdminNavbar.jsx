@@ -15,6 +15,7 @@ function AdminNavbar() {
     setCookie("admin_token","")
         localStorage.removeItem("adminID")
         nav('/')
+        window.location.reload()
         toast("You Have Been Logged Out"), {
           position: "top-center",
           autoClose: 3000,

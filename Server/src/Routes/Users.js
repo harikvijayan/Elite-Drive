@@ -117,6 +117,81 @@ router.put('/changeban/:id',async(req,res)=>{
 })
 
 
+router.post('/userpassmatch/:id',async(req,res)=>{
+    try{
+        const {id}=req.params
+        const {password}=req.body
 
+        if(!password)
+        {
+            return res.status(400).json({message:"Empty Field !!!"})
+        }
+        const user = await userModel.findOne({ _id: id });
+
+        if(!user)
+        {
+            return res.status(200).json({message:"User not found !!!"})
+        }
+
+        const isPasswordValid= await bcrypt.compare(password,user.password)
+
+        if(!isPasswordValid)
+        {
+            return res.status(400).json({message:"Invalid password !!"})
+        }
+
+        return res.status(200).json({message:"You can now update your Password",status:true})
+    }
+    catch(error)
+    {
+        return res.status(400).json({message:"Error Occured"})
+    }
+})
+
+router.put('/userpassupdate/:id',async(req,res)=>{
+    try
+     {
+        const { id } = req.params;
+        const { password } = req.body;
+        if(!password)
+        {
+            return res.status(400).json({message:"Empty Field"})
+        }
+        if(!password.match(passformat)) 
+        {
+            return res.status(400).json({message:" Password should contain Minimum 8 characters,At least one lowercase character,At least one digit,At least one special character ",});
+        }
+        const hashedPassword=await bcrypt.hash(password,10)
+        await userModel.findByIdAndUpdate(id,{password:hashedPassword});
+        
+        res.json({message:"Password Updated successfully👨"})
+        
+
+
+      } 
+      catch (error) 
+      {
+        return res.status(200).json({message:"Update Not Possible"});
+      }
+})
+
+router.put('/usermailupdate/:id',async(req,res)=>{
+    try
+     {
+        const { id } = req.params;
+        const { username,email } = req.body;
+        if(!username || !email)
+        {
+            return res.status(400).json({message:"Empty Field"})
+        }
+        await userModel.findByIdAndUpdate(id,{username,email});
+        res.status(200).json({message:"Profile Updated successfully👨"})
+
+      } 
+    catch (error) 
+      {
+        return res.status(200).json({message:"Update Not Possible"});
+      }
+})
 
 module.exports=router

@@ -10,7 +10,7 @@ import axios from 'axios';
 function ReportSeller() {
     const[message,setMessage]=useState("")
     const[mail,setMail]=useState([])
-    const[report,setReport]=useState([])
+    const [report, setReport] = useState([]);
     const[loginid]=useState(sellerID)
     const sellID=sellerID()
     console.log(loginid);
@@ -70,9 +70,9 @@ const submitReport = async() => {
 
 const fetchReport = async() =>{
     const response = await axios.get(`http://localhost:5000/sellerreport/getsellerreport/${sellID}`)
-    setReport(response.data.sellerreport)
+    setReport(response.data)
 }
-console.log(report);
+console.log("report",report);
   return (
     <div className='report-body'>
         <div className='report-container'>
@@ -96,20 +96,19 @@ console.log(report);
                             <table className='map-report-table'>
                                 <thead className='map-report-head'>
                                     <tr>
-                                        <th className='map-report-h'>SL No.</th>
                                         <th className='map-report-h'>Report</th>
                                         <th className='map-report-h'>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody className='map-report-tbody'>
-                                {report.map((a)=>(
-                                <tr className='map-report-row' key={a._id} >
-                                    <td className='map-report-data'>1</td>
-                                    <td className='map-report-data'>{a.sellerreport}</td>
-                                    <td className='map-report-data'>{a.seen ? "Received" : "Pending"}</td>
-                                </tr> 
+                                {report.map((rep) => (
+                                    <tr className='map-report-row' key={rep._id}>
+                                     <td className='map-report-data'>{rep.sellerreport}</td>
+                                     <td className='map-report-data'>{rep.seen ? "Received" : "Pending"}</td>
+                                    </tr>
                                 ))}
                                 </tbody>
+
                             </table>
 
                         </div>

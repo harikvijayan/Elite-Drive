@@ -42,6 +42,21 @@ router.get('/getallcars',async(req,res)=>{
     }
 })
 
+
+router.get('/getsellerproduct/:id',async(req,res)=>{
+    try{
+    const {sellID}=req.params
+    console.log("id",sellID);
+    const sellerProducts=await productModel.findOne({loginid:sellID})
+    console.log("pro",sellerProducts);
+    return res.status(200).send(sellerProducts)
+    }
+    catch(err)
+    {
+        return res.status(400).json({message:"error in fetching all products"})
+    }
+})
+
 router.put("/change/:id",async(req,res)=>{
     try{
 
