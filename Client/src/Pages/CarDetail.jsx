@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/CardDetail.css';
+// import '../Styles/CardDetail.css';
 
 export default function CarDetail() {
   return (

@@ -34,7 +34,7 @@
 	position: relative;
 	min-width: 300px;
 	height: 100%;
-	background: #fff;
+	background: #161515;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -44,11 +44,13 @@
 {
 	max-width: 250px;
 	transition: 0.5s ease-in-out;
+    border-radius: 10px;
 }
-.card-image:hover 
+/* .card-image:hover 
 {
 	transform: rotate(-35deg) translateX(-20px);
-}
+    
+} */
 .card-details 
 {
 	position: absolute;
@@ -90,18 +92,19 @@
 {
 	font-size: 0.65em;
 	font-weight: 300;
-	opacity: 0.85;
+	/* opacity: 0.85; */
 	text-transform: none;
 }
 .card-car-detail
 {
-	color: #fff;
+	color: #020202;
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: 0.9em;
 	line-height: 1em;
 	margin-top: 20px;
 	margin-bottom: 10px;
+	background-color: aqua;
 }
 
 .card-size

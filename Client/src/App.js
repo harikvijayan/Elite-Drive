@@ -4,7 +4,7 @@ import './App.css';
 import  Login  from './Pages/Login';
 import  Registration  from './Pages/Registration';
 import Home from './Pages/Home';
-import AdminInterface from './Pages/AdminInterface';
+// import AdminInterface from './Pages/AdminInterface';
 import SellerLog from './Pages/SellerLog';
 import SellerRegistration from './Pages/SellerRegistration';
 import AdminLog from './Pages/AdminLog';
@@ -27,6 +27,7 @@ import UserReport from './Pages/UserReport';
 import SellerProfileEdit from './Pages/SellerProfileEdit';
 import SellerProductManage from './Pages/SellerProductManage';
 import CarDetail from './Pages/CarDetail';
+import AdminProManage from './Pages/AdminProManage';
 
 
 
@@ -42,13 +43,14 @@ function App() {
              <Route path='/' element={<Home/>} />
 
              {/* Admin pages */}
-             <Route path='/admininter' element={<AdminInterface/>} />
+             {/* <Route path='/admininter' element={<AdminInterface/>} /> */}
              <Route path='/adminlogin' element={<AdminLog/>} />
              <Route path='/adminnav' element={<AdminNavbar/>} />
              <Route path='/usermanage' element={<UserManagement/>} />
              <Route path='/sellermanage' element={<SellerManagement/>} />
              <Route path='/sellreportmanage' element={<SellerReport/>} />
              <Route path='/userreportmanage' element={<UserReport/>} />
+             <Route path='/adminpromanage' element={<AdminProManage/>} />
 
               {/* User Pages */}
             <Route path='/login' element={<Login/>} />

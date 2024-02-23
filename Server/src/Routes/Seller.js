@@ -92,7 +92,6 @@ router.get('/getseller/:id',async(req,res)=>{
        
         const sellerDetail = await sellerModel.findOne({ _id: id });
 
-        console.log(sellerDetail);
         return res.status(200).send(sellerDetail)
     }
     catch(error)

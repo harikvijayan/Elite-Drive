@@ -12,6 +12,7 @@ const productSchema=new mongoose.Schema({
     fuel:{type:String,required:true},
     enginecc:{type:Number,required:true},
     owner:{type:Number,required:true},  
+    sold:{type:Boolean,required:true,default:false},
     loginid:{type:mongoose.Schema.Types.ObjectId,ref:"sellers",required:true}  
     
 })

@@ -28,7 +28,7 @@ function AdminNavbar() {
           transition: Flip,
           };
   };
-
+                                      
   return (
     <nav className="admin-navbar">
       <div className='admin-navbar-brand'>
@@ -40,7 +40,7 @@ function AdminNavbar() {
         <li className="admin-navbar-element"><Link to='/sellermanage' className='admin-navbar-link'>Seller Management</Link></li>
         <li className="admin-navbar-element"><Link to='/userreportmanage' className='admin-navbar-link'>User Reports</Link></li>
         <li className="admin-navbar-element"><Link to='/sellreportmanage' className='admin-navbar-link'>Seller Reports</Link></li>
-        <li className="admin-navbar-element">Product Management</li>
+        <li className="admin-navbar-element"><Link to='/adminpromanage' className='admin-navbar-link'>Product Management</Link></li>
         <li className="admin-navbar-element" onClick={Logout}>LogOut</li>
       </ul>
     </nav>
