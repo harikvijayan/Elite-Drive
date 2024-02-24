@@ -28,6 +28,7 @@ import SellerProfileEdit from './Pages/SellerProfileEdit';
 import SellerProductManage from './Pages/SellerProductManage';
 import CarDetail from './Pages/CarDetail';
 import AdminProManage from './Pages/AdminProManage';
+import Intrest from './Pages/Intrest';
 
 
 
@@ -60,6 +61,7 @@ function App() {
             <Route path='/userhome' element={<UserHome/>} />
             <Route path='/useredit' element={<UserProfileEdit/>} />
             <Route path='/cardetail' element={<CarDetail/>} />
+            <Route path='/intrest' element={<Intrest/>} />
 
            
             {/* Seller Pages */}

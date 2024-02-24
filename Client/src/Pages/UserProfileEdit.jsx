@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import userID from '../Hooks/User.js'
 import axios from 'axios'
-import '../Styles/UserEdit.css'
+import '../Styles/UprofileEdit.css'
 import { Flip, toast } from 'react-toastify'
 
 
@@ -134,6 +134,7 @@ const updateProfile = async() => {
 const cancelProfile = async() => {
   setToggle(0)
   setMatchtoggle(0)
+  setPasstoggle(0)
 }
 
 const passChange = async() => {
@@ -193,6 +194,7 @@ console.log("user data",userData);
 
   return (
     <div className='user-edit-container'>
+      <h2 className='user-head'>Welcome {userData.username}!!!</h2>
         <div className='user-edit-section'>
           <div className='user-edit-form'>
             <h2 className='user-edit-title'>Your Profile</h2>
@@ -229,6 +231,7 @@ console.log("user data",userData);
           <div className='user-edit-section-container'>
             <input
              type='text'
+             className='user-in'
              value={password}
              placeholder='Previous Password'
              onChange={(e)=>setPassword(e.target.value)}
@@ -239,7 +242,7 @@ console.log("user data",userData);
             </div>
           </div>
         ):(
-          <div>
+          <div >
 
           </div>
         )}

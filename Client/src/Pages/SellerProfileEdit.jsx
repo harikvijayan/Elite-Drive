@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import sellerID from '../Hooks/Seller.js'
 import axios from 'axios'
+import '../Styles/UprofileEdit.css'
 import { Flip, toast } from 'react-toastify'
 
 
@@ -193,6 +194,7 @@ const cancelNewPassword = async() => {
   return (
     <div className='user-edit-container'>
         <div className='user-edit-section'>
+          <h2 className='user-head'>Welcome {sellerData.username}...</h2>
           <div className='user-edit-form'>
             <h2 className='user-edit-title'>Your Profile</h2>
             {toggle ?(
@@ -240,6 +242,7 @@ const cancelNewPassword = async() => {
           <div className='user-edit-section-container'>
             <input
              type='text'
+             className='user-in'
              value={password}
              placeholder='Previous Password'
              onChange={(e)=>setPassword(e.target.value)}

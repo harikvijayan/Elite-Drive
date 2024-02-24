@@ -53,45 +53,29 @@ const fetchIntrest = async () => {
 
 console.log(intrest);
 
-const intrestButton = async(itemid) =>
-{
-    if(intrest.includes(itemid))
-    {
-      try
-      {
-        const response = await axios.put(`http://localhost:5000/auth/removefromintrest/${useID}`,{itemid})
-        getAllCommodities()
-        toast.success(response.data.message,{
-          transition: Flip
-        })
-        fetchIntrest()
-      }
-      catch(error)
-      {
-        toast(error.response.data.message,{
-          transition: Flip
-        })
-      }
+const intrestButton = async (itemid) => {
+  const isItemInIntrest = intrest.some((ele) => ele._id === itemid);
+
+  if (isItemInIntrest) {
+    try {
+      const response = await axios.put(`http://localhost:5000/auth/removefromintrest/${useID}`, { itemid });
+      getAllCommodities();
+      toast.success(response.data.message, { transition: Flip });
+      fetchIntrest();
+    } catch (error) {
+      toast(error.response.data.message, { transition: Flip });
     }
-    else
-    {
-      try
-      {
-        const response = await axios.put(`http://localhost:5000/auth/addtointrest/${useID}`,{itemid})
-        getAllCommodities()
-        toast.success(response.data.message,{
-          transition: Flip
-        })
-        fetchIntrest()
-      }
-      catch(error)
-      {
-        toast(error.response.data.message,{
-          transition: Flip
-        })
-      }
+  } else {
+    try {
+      const response = await axios.put(`http://localhost:5000/auth/addtointrest/${useID}`, { itemid });
+      getAllCommodities();
+      toast.success(response.data.message, { transition: Flip });
+      fetchIntrest();
+    } catch (error) {
+      toast(error.response.data.message, { transition: Flip });
     }
-}
+  }
+};
 
 
 
@@ -177,7 +161,7 @@ const intrestButton = async(itemid) =>
               <p className='user-product-owner'><IoIosPerson />{product.owner}</p>
             </div> */}
             <div className='user-home-buttons'>
-              <button className='user-home-button' onClick={(e)=>{intrestButton(product._id);e.preventDefault()}}>{intrest.includes(product._id)?"Remove":"Add"}</button>
+              <button className='user-home-button' onClick={(e)=>{intrestButton(product._id);e.preventDefault()}}>{intrest.some((ele) => ele._id === product._id) ? "Remove" : "Add"}</button>
             </div>
           </div>
         ))}

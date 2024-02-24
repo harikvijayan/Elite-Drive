@@ -199,11 +199,11 @@ router.get('/getallintrest/:id',async(req,res)=>{
     try
     {
     const {id}=req.params
-    console.log("id",id);
-    const user = await userModel.find({_id:id})
-    console.log("user",user);
-    const product = await productModel.find({_id:{$in: user.intrest}})
-    console.log("product",product);
+
+    const user = await userModel.findById({_id:id})
+  
+    const product = await productModel.find({_id : { $in : user.intrest }})
+   
     res.status(200).send(product)
     }
     catch(error)

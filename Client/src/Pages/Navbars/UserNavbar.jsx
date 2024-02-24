@@ -37,9 +37,9 @@ function UserNavbar() {
           <h2 className='navbar-head'>EliteDrive</h2>
             </div>
             <ul className='navbar-elements'>
-                <li className='navbar-element'>Home</li>
-                <li className='navbar-element'>Interest</li>
-                <li className='navbar-element'>Profile</li>
+                <li className='navbar-element'><Link to='/userhome' className='admin-navbar-link'>Home</Link></li>
+                <li className='navbar-element'><Link to='/intrest' className='admin-navbar-link'>Intrest</Link></li>
+                <li className='navbar-element'><Link to='/useredit' className='admin-navbar-link'>Profile</Link></li>
                 <li className='navbar-element'><Link to='/userreport' className='admin-navbar-link'>Report</Link></li>
                 <li className='navbar-element' onClick={Logout}>LogOut</li>
             </ul>
