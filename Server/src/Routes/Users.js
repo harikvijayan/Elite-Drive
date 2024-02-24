@@ -3,6 +3,7 @@ const router=express.Router()
 const JWT=require("jsonwebtoken")
 const bcrypt=require("bcryptjs")
 const {userModel} =require('../Models/User')
+const{productModel}=require('../Models/Products.js')
 
 const mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const passformat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
@@ -193,5 +194,64 @@ router.put('/usermailupdate/:id',async(req,res)=>{
         return res.status(200).json({message:"Update Not Possible"});
       }
 })
+
+router.get('/getallintrest/:id',async(req,res)=>{
+    try
+    {
+    const {id}=req.params
+    console.log("id",id);
+    const user = await userModel.find({_id:id})
+    console.log("user",user);
+    const product = await productModel.find({_id:{$in: user.intrest}})
+    console.log("product",product);
+    res.status(200).send(product)
+    }
+    catch(error)
+    {
+        res.status(400).json({message:"Unable to fetch products"})
+    }
+})
+
+router.put('/addtointrest/:id',async (req, res) => {
+    try 
+    {
+      const { id } = req.params;
+    //   console.log("ids",id);
+      const user = await userModel.findById({_id : id});
+    //   console.log("user",user)
+      const product = await productModel.findById(req.body.itemid);
+    //   console.log("product", product);
+    if (!user.intrest.includes(product._id))
+    {
+        user.intrest.push(product._id);
+        await user.save();
+        res.status(200).json({ message: "successfully added to your intrests" });
+    } 
+    else 
+    {
+        res.status(400).json({ message: "Item already in intrests" });
+    }
+    } 
+    catch (error) 
+    {
+      res.status(400).json({ message: "unable to add to your intrests", error });
+    }
+  })
+
+
+router.put('/removefromintrest/:id',async (req, res) => {
+    try
+    {
+      const { id } = req.params;
+      const { itemid } = req.body;
+  
+      await userModel.updateOne({ _id: id }, { $pull: { intrest: itemid } });
+      res.status(200).json({message: "Successfully removed from intrests"});
+    } 
+    catch (error) 
+    {
+      return res.status(400).json({ message: "Unable to remove" });
+    }
+  })
 
 module.exports=router

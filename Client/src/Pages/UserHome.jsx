@@ -2,26 +2,32 @@ import React, { useEffect, useState } from 'react';
 import '../Styles/UserHome.css'
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import userID from '../Hooks/User.js'
 import axios from 'axios';
-import { IoColorPalette } from "react-icons/io5";
-import { BsFuelPump } from "react-icons/bs";
-import { SiCoronaengine } from "react-icons/si";
-import { SlCalender } from "react-icons/sl";
-import { PiEngineBold } from "react-icons/pi"
-import { IoIosPerson } from "react-icons/io";
+import { Flip, toast } from 'react-toastify'
+
+// import { IoColorPalette } from "react-icons/io5";
+// import { BsFuelPump } from "react-icons/bs";
+// import { SiCoronaengine } from "react-icons/si";
+// import { SlCalender } from "react-icons/sl";
+// import { PiEngineBold } from "react-icons/pi"
+// import { IoIosPerson } from "react-icons/io";
 
 
 function UserHome() {
   const[products,setProducts]=useState([])
-
+  const[intrest,setIntrest]=useState([])
+  const useID=userID()
 
 
 
 useEffect(()=>{
   getAllCommodities()
+  fetchIntrest()
 },[])
 
-const getAllCommodities = async() => {
+const getAllCommodities = async() => 
+{
 
   try{
     const response = await axios.get("http://localhost:5000/product/getallcars")
@@ -34,6 +40,59 @@ const getAllCommodities = async() => {
   }
 
 }
+
+const fetchIntrest = async () => {
+  try {
+    const response = await axios.get(`http://localhost:5000/auth/getallintrest/${useID}`);
+    setIntrest(response.data);
+  } catch (error) {
+    console.error("Error fetching intrest:", error);
+  }
+};
+
+
+console.log(intrest);
+
+const intrestButton = async(itemid) =>
+{
+    if(intrest.includes(itemid))
+    {
+      try
+      {
+        const response = await axios.put(`http://localhost:5000/auth/removefromintrest/${useID}`,{itemid})
+        getAllCommodities()
+        toast.success(response.data.message,{
+          transition: Flip
+        })
+        fetchIntrest()
+      }
+      catch(error)
+      {
+        toast(error.response.data.message,{
+          transition: Flip
+        })
+      }
+    }
+    else
+    {
+      try
+      {
+        const response = await axios.put(`http://localhost:5000/auth/addtointrest/${useID}`,{itemid})
+        getAllCommodities()
+        toast.success(response.data.message,{
+          transition: Flip
+        })
+        fetchIntrest()
+      }
+      catch(error)
+      {
+        toast(error.response.data.message,{
+          transition: Flip
+        })
+      }
+    }
+}
+
 
 
   return (
@@ -109,13 +168,16 @@ const getAllCommodities = async() => {
             <h2 className='user-product-name'>{product.name}</h2>
             <h3 className='user-product-brand'>{product.brand}</h3>
             <h4 className='user-product-price'> ₹{product.price}</h4>
-            <div className='user-product-sec2'>
+            {/* <div className='user-product-sec2'>
               <p className='user-product-color'><IoColorPalette />{product.color}</p>
               <p className='user-product-fuel'><BsFuelPump />{product.fuel}</p>
               <p className='user-product-mileage'><SiCoronaengine />{product.mileage}KM</p>
               <p className='user-product-year'><SlCalender />{product.year}</p>
               <p className='user-product-engine'><PiEngineBold />{product.enginecc}</p>
               <p className='user-product-owner'><IoIosPerson />{product.owner}</p>
+            </div> */}
+            <div className='user-home-buttons'>
+              <button className='user-home-button' onClick={(e)=>{intrestButton(product._id);e.preventDefault()}}>{intrest.includes(product._id)?"Remove":"Add"}</button>
             </div>
           </div>
         ))}

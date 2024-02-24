@@ -38,6 +38,11 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+
+  .sell-log-input::placeholder{
+    color: black;
+    letter-spacing: 3px;
+  }
   
   .sell-log-button-container {
     margin-top: 15px;

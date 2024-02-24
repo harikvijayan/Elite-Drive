@@ -31,6 +31,11 @@
     border-radius: 4px;
   }
   
+.user-reg-input-box::placeholder{
+  color: black;
+  letter-spacing: 2px;
+}
+
   .user-reg-button {
     width: 100%;
     padding: 10px;

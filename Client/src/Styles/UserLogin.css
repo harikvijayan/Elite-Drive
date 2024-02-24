@@ -31,6 +31,12 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+
+  .user-form-input::placeholder
+  {
+    color: black;
+    letter-spacing: 2px;
+  }
   
   .user-login-button {
     width: 100%;

@@ -79,8 +79,8 @@
   
   .user-product-name,
   .user-product-brand,
-  .user-product-price,
-  .user-product-sec2 {
+  .user-product-price
+  {
     margin-top: 10px;
   }
 
@@ -96,35 +96,10 @@
     color: blue;
   }
   
-  .user-product-sec2 {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .user-product-color,
-  .user-product-fuel,
-  .user-product-mileage,
-  .user-product-year,
-  .user-product-engine,
-  .user-product-owner {
-    flex: 0 0 50%;
-    margin-bottom: 8px;
-    color: #555;
-  }
-  
-  /* Add icons styles as needed */
-  .user-product-color IoColorPalette,
-  .user-product-fuel BsFuelPump,
-  .user-product-mileage SiCoronaengine,
-  .user-product-year SlCalender,
-  .user-product-engine PiEngineBold,
-  .user-product-owner IoIosPerson {
-    margin-right: 5px;
-  }
+
+
   
   
   
-  .user-home-others {
-    
-  }
+  
   

@@ -35,6 +35,11 @@
     border-radius: 4px;
     
   }
+
+  .sell-reg-input::placeholder{
+    color: black;
+    letter-spacing: 3px;
+  }
   
   .sell-reg-button {
     width: 100%;

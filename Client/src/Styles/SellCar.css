@@ -32,6 +32,11 @@
     border-radius: 4px;
     font-size: 14px;
   }
+
+  .input-seller::placeholder{
+    color: black;
+    letter-spacing: 3px;
+  }
   
   .form-button-handle {
     margin-top: 20px;
