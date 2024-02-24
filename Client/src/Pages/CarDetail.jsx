@@ -11,7 +11,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 function CarDetail() {
-    const[product,setProduct]=useState([])
+    const[car,setCar]=useState({})
     const {productID}= useParams()
     console.log("productID",productID);
   useEffect(()=>{
@@ -23,18 +23,17 @@ function CarDetail() {
     try
     {
     const response = await axios.get(`http://localhost:5000/product/getmyproduct/${productID}`)
-    setProduct(response.data)
+    setCar(response.data)
     }
     catch(error)
     {
     console.log(error);
     }
   }
-console.log("product",product);
+console.log("product",car);
 
   return (
     <div className="card-body">
-      {product.map((car)=>(
        <div className="card-container">
            <div className="card-imgBx">
                <img className="card-image" src={car.photo} alt="car"/>
@@ -58,7 +57,6 @@ console.log("product",product);
            </div>
          </div>
        </div>
-       ))}
      </div>
   )}
 export default CarDetail
