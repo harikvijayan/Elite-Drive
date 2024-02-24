@@ -29,8 +29,9 @@ function AdminLog() {
                 theme: "light",
                 transition: Bounce,
                 });
+                nav('/adminhome')
                 window.location.reload()
-                nav('/admininter')
+                
 
         }
         catch(error){

@@ -1,7 +1,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Bounce,Flip, toast } from 'react-toastify'
-
+import '../Styles/AdminPromanage.css'
+import { IoColorPalette } from "react-icons/io5";
+import { BsFuelPump } from "react-icons/bs";
+import { SiCoronaengine } from "react-icons/si";
+import { SlCalender } from "react-icons/sl";
+import { PiEngineBold } from "react-icons/pi"
+import { IoIosPerson } from "react-icons/io";
 
 
 
@@ -54,34 +60,35 @@ export default function AdminProManage() {
 console.log(products);
   return (
     <div className='adm-pro-container'>
-        {products.length !== 0 ?(
-        <div className='adm-pro-section'>
-            <h1 className='adm-pro-title'>Commodities For Sale</h1>
-            {products.map((car)=>(
-            <div className='adm-pro-sector' key={car._id}>
-                <img className='adm-pro-img' src={car.photo} alt='pro-img' />
-                <div className='adm-pro-detail'>
-                    <h2 className='adm-pro-model'>{car.name}</h2>
-                    <h3 className='adm-pro-brand'>{car.brand}</h3>
-                    <h4 className='adm-pro-price'>{car.price}</h4>
-                    <div className='adm-pro-specs'>
-                        <p className='adm-pro-thing'>{car.color}</p>
-                        <p className='adm-pro-thing'>{car.mileage}</p>
-                        <p className='adm-pro-thing'>{car.year}</p>
-                        <p className='adm-pro-thing'>{car.enginecc}</p>
-                        <p className='adm-pro-thing'>{car.fuel}</p>
-                        <p className='adm-pro-thing'>{car.owner}</p>
-                    </div>
-                </div>
-                <button className='adm-del-button' onClick={()=>{proDelete(car._id)}}>Delete</button>
+  {products.length !== 0 ? (
+    <div className='adm-pro-section'>
+      <h1 className='adm-pro-title'>Commodities For Sale</h1>
+      {products.map((car) => (
+        <div className={`adm-pro-sector ${car.sold ? 'sold-product' : ''}`} key={car._id}>
+          {car.sold && <div className="sold-tag">Sold</div>}
+          <img className='adm-pro-img' src={car.photo} alt='pro-img' />
+          <div className='adm-pro-detail'>
+            <h2 className='adm-pro-model'>{car.name}</h2>
+            <h3 className='adm-pro-brand'>{car.brand}</h3>
+            <h4 className='adm-pro-price'>₹ {car.price}</h4>
+            <div className='adm-pro-specs'>
+              <p className='adm-pro-thing'><IoColorPalette className='admin-home-icon' />{car.color}</p>
+              <p className='adm-pro-thing'><SiCoronaengine className='admin-home-icon' />{car.mileage}</p>
+              <p className='adm-pro-thing'><SlCalender className='admin-home-icon' />{car.year}</p>
+              <p className='adm-pro-thing'><PiEngineBold className='admin-home-icon' />{car.enginecc}</p>
+              <p className='adm-pro-thing'><BsFuelPump className='admin-home-icon' />{car.fuel}</p>
+              <p className='adm-pro-thing'><IoIosPerson className='admin-home-icon' />{car.owner}</p>
             </div>
-            ))}
+          </div>
+          <button className='adm-del-button' onClick={() => { proDelete(car._id) }}>Delete</button>
         </div>
-        ):(
-        <div className='adm-none-section'>
-         <img className='adm-none-image' src='https://media4.giphy.com/media/xUStFKHmuFPYk/giphy.gif?cid=6c09b952ptbdvvq0cujux7qpjxaz0visn254mhzijgyahqrb&ep=v1_gifs_search&rid=giphy.gif&ct=g' alt='none-img'/>
-        </div>
-    )}
+      ))}
     </div>
+  ) : (
+    <div className='adm-none-section'>
+      <img className='adm-none-image' src='https://media4.giphy.com/media/xUStFKHmuFPYk/giphy.gif?cid=6c09b952ptbdvvq0cujux7qpjxaz0visn254mhzijgyahqrb&ep=v1_gifs_search&rid=giphy.gif&ct=g' alt='none-img' />
+    </div>
+  )}
+</div>
   )
 }

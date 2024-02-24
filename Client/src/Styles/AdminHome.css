@@ -1,24 +1,50 @@
 
-
+  
 .admin-home-container {
-    max-width: 500px;
-    /* margin: 0 auto; */
-    padding: 20px;
-    background: hotpink;
-    margin:auto
-    
-  }
-  
-  .admin-home-content {
-    padding: 20px;
-    text-align: center;
-    background: #000;
-    margin: 10%;
-  }
-  
-  .admin-home-title {
-    color: #333;
-  }
-  
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh; /* Set the height as needed */
+  background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/07/Cars-hd-wallpapers-hd-1080p-desktop.jpg");
+  background-size: cover;
+}
 
+.admin-home-section {
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+  box-shadow: 0 0 10px violet; /* Optional: Add a box shadow for a subtle effect */
+}
+
+.admin-home-content {
+  max-width: 400px; /* Set the maximum width as needed */
+}
+
+.admin-home-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  margin-bottom: 10px;
+  color: antiquewhite;
   
+}
+
+.admin-home-logo {
+  width: 30px; /* Set the logo width as needed */
+  height: auto;
+  margin-right: 5px;
+  margin-left: 100px;
+}
+
+.admin-home-para {
+  line-height: 1.5;
+  color: rgb(55, 223, 167);
+  font-family: monospace;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+
+.admin-home-p {
+  margin: 0;
+}

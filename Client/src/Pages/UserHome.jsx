@@ -5,6 +5,10 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import userID from '../Hooks/User.js'
 import axios from 'axios';
 import { Flip, toast } from 'react-toastify'
+import like from '../Icons/Liked.png'
+import dis from '../Icons/Disliked.png'
+import { Link } from 'react-router-dom';
+
 
 // import { IoColorPalette } from "react-icons/io5";
 // import { BsFuelPump } from "react-icons/bs";
@@ -145,29 +149,27 @@ const intrestButton = async (itemid) => {
 
         </div>
         <div className='user-home-elements'>
-        <div className="user-product-list">
-        {products.map((product, index) => (
-          <div key={index} className="user-product-card">
-            <img className='user-product-image' src={product.photo} alt={product.brand} />
-            <h2 className='user-product-name'>{product.name}</h2>
-            <h3 className='user-product-brand'>{product.brand}</h3>
-            <h4 className='user-product-price'> ₹{product.price}</h4>
-            {/* <div className='user-product-sec2'>
-              <p className='user-product-color'><IoColorPalette />{product.color}</p>
-              <p className='user-product-fuel'><BsFuelPump />{product.fuel}</p>
-              <p className='user-product-mileage'><SiCoronaengine />{product.mileage}KM</p>
-              <p className='user-product-year'><SlCalender />{product.year}</p>
-              <p className='user-product-engine'><PiEngineBold />{product.enginecc}</p>
-              <p className='user-product-owner'><IoIosPerson />{product.owner}</p>
-            </div> */}
-            <div className='user-home-buttons'>
-              <button className='user-home-button' onClick={(e)=>{intrestButton(product._id);e.preventDefault()}}>{intrest.some((ele) => ele._id === product._id) ? "Remove" : "Add"}</button>
+            <div className="user-product-list">
+                {products.map((product, index) => (
+                <div key={index} className={`user-product-card ${product.sold ? 'sold-home-product' : ''}`}>
+                <Link className='product-user-link' to={`/cardetail/${product._id}`}>
+                  {product.sold && <div className="sold-tag">Sold</div>}
+                  <div className="user-product-container">
+                    <img className='user-product-image' src={product.photo} alt={product.brand} />
+                    <button className='user-home-like-button' onClick={(e) => { intrestButton(product._id); e.preventDefault() }}>
+                        {intrest.some((ele) => ele._id === product._id) ? <img className='product-like' src={like} alt='like' />: <img className='product-like' src={dis} alt='dislike' />}
+                    </button>
+                  </div>
+                  <h2 className='user-product-name'>{product.name}</h2>
+                  <h3 className='user-home-product-brand'>{product.brand}</h3>
+                  <h4 className='user-home-product-price'>₹ {product.price}</h4> 
+                  </Link> 
+                </div>
+                ))}
             </div>
-          </div>
-        ))}
-      </div>
-
         </div>
+
+
         <div className='user-home-others'>
 
         </div>

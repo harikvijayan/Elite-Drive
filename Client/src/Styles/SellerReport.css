@@ -2,7 +2,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding-top: 70px;
+    background-color: black;
+    height: 100vh;
   }
   
   .sell-report-section {

@@ -59,16 +59,27 @@ router.get('/getsellerproduct/:id',async(req,res)=>{
 router.get('/getspecproduct/:id',async(req,res)=>{
     try{
     const {id}=req.params
-  
     const sellerProducts=await productModel.findOne({_id:id})
-    
     return res.status(200).send(sellerProducts)
     }
     catch(err)
     {
-        return res.status(400).json({message:"error in fetching all products"})
+        return res.status(400).json({message:"error in fetching the product"})
     }
 })
+
+
+router.get('/getmyproduct/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      console.log("id", id);
+      const sellerProducts = await productModel.findOne({ _id:id});
+      console.log("product", sellerProducts);
+      return res.status(200).send(sellerProducts);
+    } catch (err) {
+      return res.status(400).json({ message: "error in fetching the product" });
+    }
+  })
 
 router.put("/sold/:id",async(req,res)=>{
     try{

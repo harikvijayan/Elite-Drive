@@ -1,16 +1,20 @@
 
 
 .user-manage-container {
-    max-width: 900px;
+    max-width:100%;
     margin: 0 auto;
     padding: 20px;
+    height: 100vh;
+    background-color: black
+
   }
   
   .user-manage-section {
-    background-color: #f4f4f4;
+    background-color:whitesmoke;
     padding: 20px;
     border-radius: 5px;
-    margin-top: 50px;
+    margin-top: 100px;
+
   }
   
   .user-manage-title-div {
@@ -19,7 +23,7 @@
   }
   
   .user-manage-title {
-    color: #333;
+    color: #000000;
   }
   
   .user-manage-info {

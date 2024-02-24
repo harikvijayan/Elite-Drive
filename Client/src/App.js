@@ -29,6 +29,7 @@ import SellerProductManage from './Pages/SellerProductManage';
 import CarDetail from './Pages/CarDetail';
 import AdminProManage from './Pages/AdminProManage';
 import Intrest from './Pages/Intrest';
+import AdminHome from './Pages/AdminHome';
 
 
 
@@ -52,6 +53,7 @@ function App() {
              <Route path='/sellreportmanage' element={<SellerReport/>} />
              <Route path='/userreportmanage' element={<UserReport/>} />
              <Route path='/adminpromanage' element={<AdminProManage/>} />
+             <Route path='/adminhome' element={<AdminHome/>} />
 
               {/* User Pages */}
             <Route path='/login' element={<Login/>} />
@@ -60,7 +62,7 @@ function App() {
             <Route path='/usernav' element={<UserNavbar/>} />
             <Route path='/userhome' element={<UserHome/>} />
             <Route path='/useredit' element={<UserProfileEdit/>} />
-            <Route path='/cardetail' element={<CarDetail/>} />
+            <Route path='/cardetail/:productID' element={<CarDetail/>} />
             <Route path='/intrest' element={<Intrest/>} />
 
            

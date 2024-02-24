@@ -31,7 +31,8 @@
   }
   
   .user-brand-container {
-   
+   display: flex;
+   flex-wrap: wrap;
   }
   
   .user-brand-image {
@@ -51,18 +52,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    max-width: 1200px; /* Adjust max-width based on your design */
-    margin: 0 auto; /* Center the product list within the container */
+    max-width: 1200px; 
+    margin: 0 auto;
   }
   
   .user-product-card {
-    border: 1px solid #ccc;
+    border: 1px solid #24dff8;
+    position: relative;
     border-radius: 8px;
     margin: 10px;
     padding: 10px;
     width: 300px;
+    height: 300px;
     justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px orangered;
     transition: transform 0.2s ease-in-out;
   
     &:hover {
@@ -72,31 +75,72 @@
   
   .user-product-image {
     width: 100%;
-    height: 150px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
+    z-index: -1;
   }
   
   .user-product-name,
   .user-product-brand,
   .user-product-price
   {
-    margin-top: 10px;
+    margin-top: 30px;
   }
 
   .user-product-name{
-    color:yellow;
+    color:rgb(250, 250, 3);
+    font-weight: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
-  .user-product-brand{
-    color: gray;
+  .user-home-product-brand{
+    color: whitesmoke;
   }
 
-  .user-product-price{
-    color: blue;
+  .user-home-product-price{
+      color: blue;
   }
   
+  .sold-home-product::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red; 
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .sold-tag {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: red;
+    color: white; 
+    padding: 5px;
+    border-radius: 5px;
+  }
 
+  
+.user-product-container {
+  position: relative;
+}
+
+.user-home-like-button {
+  position: absolute;
+  border: none;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+.product-like{
+  height: 30px;
+  width: 30px;
+}
 
   
   
