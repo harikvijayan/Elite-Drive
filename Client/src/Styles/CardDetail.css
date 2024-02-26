@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
 }
-.card-body
+.body-container
 {
 	display: flex;
 	justify-content: center;
@@ -14,7 +14,7 @@
 	background: linear-gradient(#4ba9e9 0,#4ba9e9 50%,#fff 50%,#fff 100%);
 	min-height: 100vh;
 }
-.card-container
+.detail-card 
 {
 	position: relative;
 	width: 300px;
@@ -25,33 +25,37 @@
 	overflow: hidden;
 	transition: 0.5s ease-in-out;
 }
-.card-container:hover 
+.detail-card:hover 
 {
 	width: 600px;
 }
-.card-imgBx 
+.detail-card 
+.detail-imgBx
 {
 	position: relative;
 	min-width: 300px;
 	height: 100%;
-	background: #161515;
+	background: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	z-index: 10;
 }
-.card-image
+.detail-card 
+.detail-imgBx
+.detail-img
 {
 	max-width: 250px;
 	transition: 0.5s ease-in-out;
-    border-radius: 10px;
 }
-/* .card-image:hover 
+.detail-card:hover 
+.detail-imgBx
+.detail-img
 {
 	transform: rotate(-35deg) translateX(-20px);
-    
-} */
-.card-details 
+}
+.detail-card 
+.detail-details
 {
 	position: absolute;
 	left: 0;
@@ -64,11 +68,13 @@
 	flex-direction: column;
 	transition: 0.5s ease-in-out;
 }
-.card-details:hover
+.detail-card:hover 
+.detail-details
 {
 	left: 300px;
 }
-.card-details::before 
+.detail-card 
+.detail-details::before 
 {
 	content: '';
 	position: absolute;
@@ -80,7 +86,9 @@
   border-left: 10px solid #fff;
 	z-index: 1;
 }
-.card-brand-name
+.detail-card 
+.detail-details
+.detail-h3
 {
 	color: #fff;
 	text-transform: uppercase;
@@ -88,31 +96,41 @@
 	font-size: 1.5em;
 	line-height: 1em;
 }
-.card-brand
+.detail-card 
+.detail-details 
+.detail-h3
+.detail-span
 {
 	font-size: 0.65em;
 	font-weight: 300;
-	/* opacity: 0.85; */
+	opacity: 0.85;
 	text-transform: none;
 }
-.card-car-detail
+.detail-card 
+.detail-details
+.detail-h4
 {
-	color: #020202;
+	color: #fff;
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: 0.9em;
 	line-height: 1em;
 	margin-top: 20px;
 	margin-bottom: 10px;
-	background-color: aqua;
 }
-
-.card-size
+p 
+{
+	color: #fff;
+	font-size: 0.8em;
+	opacity: 0.85;
+}
+.detail-size
 {
 	display: flex;
 	gap: 10px;
 }
-.card-set
+.detail-size
+.detail-li
 {
 	list-style: none;
 	color: #fff;
@@ -127,13 +145,14 @@
 	font-weight: 500;
 	opacity: 0.5;
 }
-.size li:hover 
+.detail-size
+.detail-li:hover 
 {
 	background: #fff;
 	color: #4ba9e9;
 	opacity: 1;
 }
-.card-group 
+.detail-group
 {
 	position: relative;
 	display: flex;
@@ -141,19 +160,32 @@
 	margin-top: 20px;
 	align-items: center;
 }
-.card-price-symbol
+.detail-card 
+.detail-details
+.detail-h2
 {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: 2em;
 }
-.card-price-rupee
+.detail-card  
+.detail-details
+.detail-h2
+.detail-sup
 {
 	font-weight: 300;
 }
-
-.card-hyper
+.detail-card 
+.detail-details
+.detail-h2
+.detail-small
+{
+	font-size: 0.75em;
+}
+.detail-card 
+.detail-details
+.detail-a
 {
 	display: inline-flex;
 	padding: 10px 25px;

@@ -2,9 +2,10 @@
 
 .home-container {
     display: flex;
+    padding-top: 30px;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 120vh;
     background-size: cover;
     background-image: url("https://www.hdwallpapers.in/download/rolls_royce_ghost_black_badge_car_4k_8k_hd_cars-HD.jpg");
   }

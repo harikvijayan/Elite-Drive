@@ -2,7 +2,10 @@ import React, { useEffect,useState} from 'react'
 import userID from '../Hooks/User.js'
 import '../Styles/Intrests.css'
 import axios from 'axios';
+import like from '../Icons/Liked.png'
+import dis from '../Icons/Disliked.png'
 import { Flip, toast } from 'react-toastify'
+import { Link } from 'react-router-dom';
 
 export default function () {
   const[intrest,setIntrest]=useState([])
@@ -46,6 +49,9 @@ export default function () {
           console.error("Error fetching intrest:", error);
         }
       };
+
+
+      
       
 
   return (
@@ -55,14 +61,17 @@ export default function () {
             {intrest.length !== 0 ?(
                 <div className='int-con-sec'>
                 {intrest.map((product, index) => (
-                <div key={index} className="user-product-card">
+                <div key={index} className={`user-product-card ${product.sold ? 'sold-home-product' : ''}`}>
+                <Link className='product-user-link' to={`/cardetail/${product._id}`}>
+                  {product.sold && <div className="sold-tag">Sold</div>}
                 <img className='user-product-image' src={product.photo} alt={product.brand} />
+                <button className='user-home-like-button' onClick={(e) => { intrestButton(product._id); e.preventDefault() }}>
+                        {intrest.some((ele) => ele._id === product._id) ? <img className='product-like' src={like} alt='like' />: <img className='product-like' src={dis} alt='dislike' />}
+                </button>
                 <h2 className='user-product-name'>{product.name}</h2>
                 <h3 className='user-product-brand'>{product.brand}</h3>
                 <h4 className='user-product-price'> ₹{product.price}</h4>
-                <div className='user-home-buttons'>
-                    <button className='user-home-button' onClick={(e)=>{intrestButton(product._id);e.preventDefault()}}>{intrest.some((ele) => ele._id === product._id) ? "Remove" : "Add"}</button>
-                </div>
+                </Link>
                 </div>
                 ))}
                 </div>

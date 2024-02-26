@@ -33,30 +33,29 @@ function CarDetail() {
 console.log("product",car);
 
   return (
-    <div className="card-body">
-       <div className="card-container">
-           <div className="card-imgBx">
-               <img className="card-image" src={car.photo} alt="car"/>
-           </div>
-           <div className="card-details">
-             <h3 className="card-brand-name">{car.name}<br /><span className="card-brand">{car.brand}</span></h3>
-             <h4 className="card-car-detail">Car Details</h4>
-               <ul className="card-size">
-                 <li className="card-set"><IoColorPalette className='pro-home-icon' />{car.color}</li>
-                 <li className="card-set"><SiCoronaengine className='pro-home-icon' />{car.mileage}</li>
-                 <li className="card-set"><SlCalender className='pro-home-icon' />{car.year}</li>
-               </ul>
-               <ul className="card-size">
-                 <li className="card-set"><PiEngineBold className='pro-home-icon' />{car.enginecc}</li>
-                 <li className="card-set"><BsFuelPump className='pro-home-icon' />{car.fuel}</li>
-                 <li className="card-set"><IoIosPerson className='pro-home-icon' />{car.owner}</li>
-               </ul>
-           <div className="card-group">
-             <h2 className="card-price-symbol"><sup className="card-price-rupee">₹</sup>{car.price}</h2>
-             <a className="card-hyper" href="#">Connect Seller</a>
-           </div>
-         </div>
-       </div>
-     </div>
+    <div className="body-container">
+	<div className="detail-card">
+		<div className="detail-imgBx">
+			<img className="detail-img" src="shoe.jpg"/>
+		</div>
+		<div class="detail-details">
+			<h3 className="detail-h3">Name<br/><span className="detail-span">Brand</span></h3>
+			<h4 className="detail-h4">Car Details</h4>
+			<h4 className="detail-h4">Specifications</h4>
+			<ul class="detail-size">
+				<li className="detail-li">color</li>
+				<li className="detail-li">fuel</li>
+				<li className="detail-li">year</li>
+				<li className="detail-li">Mileage</li>
+				<li className="detail-li">Owner</li>
+				<li className="detail-li">Engine CC</li>
+			</ul>
+			<div class="detail-group">
+				<h2 className="detail-h2"><sup className="detail-sup">₹</sup>199<small className="detail-small">.99</small></h2>
+				<a className="detail-a" href="#">Contact Seller</a>
+			</div>
+		</div>
+	</div>
+</div>
   )}
 export default CarDetail

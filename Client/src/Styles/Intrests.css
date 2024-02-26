@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color:black;
+    padding-top: 150px;
   }
   
   .int-home-section {
@@ -82,3 +83,24 @@
     border-radius: 8px;
   }
   
+  .sold-tag {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: red;
+    color: white; 
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .sold-home-product::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red; 
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+  }
