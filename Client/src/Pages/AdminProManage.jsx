@@ -72,13 +72,14 @@ console.log(products);
             <h3 className='adm-pro-brand'>{car.brand}</h3>
             <h4 className='adm-pro-price'>₹ {car.price}</h4>
             <div className='adm-pro-specs'>
-              <p className='adm-pro-thing'><IoColorPalette className='admin-home-icon' />{car.color}</p>
-              <p className='adm-pro-thing'><SiCoronaengine className='admin-home-icon' />{car.mileage}</p>
-              <p className='adm-pro-thing'><SlCalender className='admin-home-icon' />{car.year}</p>
-              <p className='adm-pro-thing'><PiEngineBold className='admin-home-icon' />{car.enginecc}</p>
-              <p className='adm-pro-thing'><BsFuelPump className='admin-home-icon' />{car.fuel}</p>
-              <p className='adm-pro-thing'><IoIosPerson className='admin-home-icon' />{car.owner}</p>
+              <p className='adm-pro-thing'><IoColorPalette className='admin-home-icon' /><br/>{car.color}</p>
+              <p className='adm-pro-thing'><SiCoronaengine className='admin-home-icon' /><br/>{car.mileage}Km</p>
+              <p className='adm-pro-thing'><SlCalender className='admin-home-icon' /><br/>{car.year}</p><br/>
+              <p className='adm-pro-thing'><PiEngineBold className='admin-home-icon' /><br/>{car.enginecc}cc</p>
+              <p className='adm-pro-thing'><BsFuelPump className='admin-home-icon' /><br/>{car.fuel}</p>
+              <p className='adm-pro-thing'><IoIosPerson className='admin-home-icon' /><br/>{car.owner}</p>
             </div>
+            <h6 className='adm-pro-sellerid'>Seller ID: {car.loginid}</h6>
           </div>
           <button className='adm-del-button' onClick={() => { proDelete(car._id) }}>Delete</button>
         </div>

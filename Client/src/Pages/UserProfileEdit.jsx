@@ -113,7 +113,7 @@ const updateProfile = async() => {
       theme: "dark",
       transition: Flip,
       };
-     
+     userDetail()
   }
   catch(error)
   {

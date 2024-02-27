@@ -3,17 +3,18 @@
 .home-container {
     display: flex;
     padding-top: 30px;
-    justify-content: center;
+    justify-content:end;
     align-items: center;
-    height: 120vh;
+    min-height: 100vh;
+    padding-right: 50px;
     background-size: cover;
-    background-image: url("https://www.hdwallpapers.in/download/rolls_royce_ghost_black_badge_car_4k_8k_hd_cars-HD.jpg");
+    background-image: url("https://images.pexels.com/photos/10054995/pexels-photo-10054995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   }
   
   .home-section {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: black;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px red;
     text-align: center;
     width: 80%;
     max-width: 400px;
@@ -22,7 +23,7 @@
   }
   
   .home-header {
-    color: wheat;
+    color: orangered;
     font-size: 24px;
     margin-bottom: 20px;
   }
@@ -32,13 +33,14 @@
   }
   
   .home-para-section {
-    color: white;
+    color: rgb(230, 226, 222);
     font-size: 18px;
+    font-weight: bolder;
     letter-spacing: 2px;
   }
   
   .home-button-section {
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
   .home-button {

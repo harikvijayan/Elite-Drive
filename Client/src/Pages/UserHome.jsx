@@ -111,8 +111,45 @@ const intrestButton = async (itemid) => {
         <img src="https://images.unsplash.com/photo-1549632891-a0bea6d0355b?q=80&w=1463&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 6" />
         <p className="legend">Range Rover Sport HSE</p>
       </div>
+      <div>
+        <img src="https://w0.peakpx.com/wallpaper/239/44/HD-wallpaper-ford-ford-everest-car-suv-silver-car.jpg" alt="Slide 6" />
+        <p className="legend">Ford Endeavour</p>
+      </div>
+      <div>
+        <img src="https://i.pinimg.com/originals/15/e5/22/15e522c2973bf7958d3e73cb510e5e0a.jpg" alt="Slide 6" />
+        <p className="legend">G Wagon</p>
+      </div>
+      <div>
+        <img src="https://images.pexels.com/photos/4062200/pexels-photo-4062200.jpeg?cs=srgb&dl=pexels-erik-mclean-4062200.jpg&fm=jpg" alt="Slide 6" />
+        <p className="legend">Land Rover Range Rover</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/flagged/photo-1553505192-acca7d4509be?ixlib=rb-4.0.3" alt="Slide 6" />
+        <p className="legend">BMW</p>
+      </div>
+      <div>
+        <img src="https://c.wallhere.com/photos/08/f7/sunset_sun_vw_bug_volkswagen_50mm_nikon_low-887029.jpg!d" alt="Slide 6" />
+        <p className="legend">An Old Legend</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1608341089966-92c09e62214f?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGF1ZGl8ZW58MHx8MHx8fDA%3D" alt="Slide 6" />
+        <p className="legend">Audi</p>
+      </div>
+      <div>
+        <img src="https://w.forfun.com/fetch/f9/f9500607611e4eff53592aa40ce5a05a.jpeg" alt="Slide 6" />
+        <p className="legend">Mercedes Benz</p>
+      </div>
+      <div>
+        <img src="https://wallpapers.com/images/hd/shiny-black-maserati-2ggnus7cijbxr3r2.jpg" alt="Slide 6" />
+        <p className="legend">Maserati</p>
+      </div>
+      <div>
+        <img src="https://wallpapercave.com/wp/wp9083161.jpg" alt="Slide 6" />
+        <p className="legend">Mini Cooper</p>
+      </div>
     </Carousel>
         </div>
+        <h1 className='user-home-br-head'>--- Our Brands ---</h1>
         <div className='user-home-brands'>
           <div className='user-brand-div1'>
           <ul className='user-brand-list'>
@@ -149,13 +186,14 @@ const intrestButton = async (itemid) => {
 
         </div>
         <div className='user-home-elements'>
+         
             <div className="user-product-list">
                 {products.map((product, index) => (
                 <div key={index} className={`user-product-card ${product.sold ? 'sold-home-product' : ''}`}>
                 <Link className='product-user-link' to={`/cardetail/${product._id}`}>
                   {product.sold && <div className="sold-tag">Sold</div>}
                   <div className="user-product-container">
-                    <img className='user-product-image' src={product.photo} alt={product.brand} />
+                    <img className='user-product-images' src={product.photo} alt={product.brand} />
                     <button className='user-home-like-button' onClick={(e) => { intrestButton(product._id); e.preventDefault() }}>
                         {intrest.some((ele) => ele._id === product._id) ? <img className='product-like' src={like} alt='like' />: <img className='product-like' src={dis} alt='dislike' />}
                     </button>

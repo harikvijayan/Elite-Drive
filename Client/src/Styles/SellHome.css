@@ -1,0 +1,56 @@
+.sell-home-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://img.freepik.com/premium-photo/front-view-generic-brandless-moder-car_110488-502.jpg?w=826");
+  }
+  
+  .sell-home-section {
+    backdrop-filter:blur(10px) ;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 50px black;
+    width: 80%;
+    max-width: 500px;
+    margin-left: 50px;
+  }
+  
+  .sell-home-title {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 15px;
+    margin-left: 60px;
+  }
+  
+  .sell-home-para-section {
+    margin-bottom: 20px;
+    
+  }
+  
+  .sell-home-para {
+    font-size: 16px;
+    color: rgb(245, 230, 230);
+  }
+  
+  .sell-home-but {
+    text-align: center;
+  }
+  
+  .sell-home-button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sell-home-button:hover {
+    background-color: #ffffff;
+    color: black;
+  }
+  

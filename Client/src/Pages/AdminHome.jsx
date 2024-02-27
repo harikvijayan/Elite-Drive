@@ -9,7 +9,7 @@ export default function AdminHome() {
                 <div className='admin-home-content'>
                     <h2 className='admin-home-brand'><img className='admin-home-logo' src={logo} alt='logo'/>EliteDrive</h2>
                     <div className='admin-home-para'>
-                        <p className='admin-home-p'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque porro recusandae sint voluptatum inventore nihil, itaque maiores provident, ad atque cumque cupiditate voluptas natus quae sit hic laboriosam officiis dolores?</p>
+                        <p className='admin-home-p'>Welcome to EliteDrive, your premier destination for buying and selling second-hand premium vehicles in India.We redefine the automotive experience by offering a curated selection of top-tier, pre-owned vehicles that combine luxury, performance, and reliability. Our commitment to excellence ensures that every vehicle on EliteDrive meets the highest standards, making us the go-to destination for those seeking quality and sophistication in their automotive choices. Explore the epitome of luxury and reliability with EliteDrive – where every drive is an elite experience!</p>
                     </div>
                 </div>
             </div>

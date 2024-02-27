@@ -2,12 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    background-color: black;
+    padding-top: 100px;
   }
   
   .container-field-form {
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
+    background-color: gray;
+    border: 1px solid #000000;
     padding: 20px;
     border-radius: 8px;
     width: 400px;
@@ -43,7 +45,7 @@
   }
   
   .btn-sell {
-    background-color: #4caf50;
+    background-color: #000000;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -53,7 +55,8 @@
   }
   
   .btn-sell:hover {
-    background-color: #45a049;
+    background-color: #ffffff;
+    color: black;
   }
   
 

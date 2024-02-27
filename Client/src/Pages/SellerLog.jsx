@@ -30,8 +30,9 @@ const handleLogin = async() => {
       theme: "colored",
       transition: Bounce,
       });
+      nav('/sellerhome')
       window.location.reload()
-
+    
   }
   catch(error)
   {

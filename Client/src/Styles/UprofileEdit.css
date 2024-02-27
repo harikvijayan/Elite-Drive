@@ -1,4 +1,3 @@
-/* UprofileEdit.css */
 
 .user-edit-container {
     display: flex;
@@ -7,8 +6,8 @@
     padding-left: 20px;
     background-color: #000000;
     padding-top: 200px; 
-    width: 100%;
-    height: 100vh;
+    min-width: 100%;
+    min-height: 100vh;
   }
   
   .user-head {
@@ -88,27 +87,76 @@
     align-items: center;
   }
 
- .user-edit-section-2{
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    width: 20%;
-    margin-bottom: 20px;
-    padding:20px 430px;
- }
 
- .pre-pass-section{
-    margin-top: 10px;
- }
-  
- .previous-password-button{
-    margin-left: 20px;
- }
 
- .user-in::placeholder{
-    color: gray;
- }
+.user-edit-section-2 {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  width: 20%;
+  margin-bottom: 20px;
+  padding: 20px;
+}
 
- .new-pass-input::placeholder{
-    color: gray;
- }
+.user-edit-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-in,
+.new-pass-input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #4b94dd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.pre-pass-section {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around; 
+}
+
+.previous-password-button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.previous-password-button:hover {
+  background-color: #218838;
+}
+
+.new-pass-button {
+  background-color: #e44d26;
+}
+
+.user-edit-section-2 {
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  width: 20%;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.password-confirm-sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.new-pass-input::placeholder,
+.user-in::placeholder {
+  color: gray;
+}

@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #0e0d0d;
+    padding: 50px 60px;
   }
   
   .adm-pro-section {
@@ -13,7 +14,7 @@
   .adm-pro-title {
     font-size: 24px;
     margin-bottom: 20px;
-    color: aqua;
+    color: orangered;
   }
   
   .adm-pro-sector {
@@ -21,10 +22,12 @@
     align-items: center;
     border: 1px solid #ddd;
     position: relative;
+    width:70%;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 15px;
-    background-color: #6e9c24;
+    background-color: #6feed2;
+    margin-left: 200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
@@ -48,6 +51,7 @@
   
   .adm-pro-detail {
     flex: 1;
+
   }
   
   .adm-pro-model {
@@ -59,7 +63,7 @@
   .adm-pro-brand {
     font-size: 21px;
     margin-bottom: 5px;
-    color: #2cfcd9;
+    color: #fc672c;
   }
   
   .adm-pro-price {
@@ -72,6 +76,7 @@
   .adm-pro-specs {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 10px;
   }
   
@@ -81,12 +86,12 @@
     margin-left: 10px;
     margin-bottom: 15px;
     padding-bottom: 10px;
-
+    color: #000000;
   }
   
   .adm-del-button {
     background-color: #ff6347;
-    color: #fff;
+    color: #000000;
     border: none;
     padding: 8px 16px;
     border-radius: 4px;
@@ -107,5 +112,5 @@
     width: 25px;
     height: 25px;
     margin-left: 10px;
-    color: beige;
+    color: rgb(0, 0, 0);
   }

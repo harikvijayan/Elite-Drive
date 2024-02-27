@@ -1,0 +1,160 @@
+.product-add-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+    padding-top: 100px;
+    min-height: 100vh;
+  }
+  
+  .product-add-title {
+    font-size: 24px;
+    color: orangered;
+    margin-bottom: 20px;
+  }
+  
+  .product-add-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  
+  .product-add-map {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; 
+  }
+  
+  .product-image-sec {
+    margin-bottom: 20px;
+  }
+  
+  .product-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .product-detail-sec {
+    text-align: center;
+  }
+  
+  .product-model-sec {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .product-brand-sec {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .product-spec-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .product-spec-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-right: 2px;
+  }
+  
+  .product-spec-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .product-sold-sec {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .product-sold-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .product-sold-button:hover {
+    background-color: #218838;
+  }
+  
+  .product-edit-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 300px;
+  }
+  
+  .product-add-form-edit {
+    display: grid;
+    gap: 15px;
+  }
+  
+  .product-add-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .product-add-f-sec {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .product-add-fbutton {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-right: 2px;
+  }
+  
+  .product-add-fbutton:hover {
+    background-color: #000000;
+  }
+  
+  .product-none-section {
+    height: 200px; 
+  }
+  
+  .product-spec-button-d {
+    background-color: red;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-right: 2px;
+  }
+  

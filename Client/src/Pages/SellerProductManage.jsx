@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import sellerID from '../Hooks/Seller'
+import '../Styles/SellProManage.css'
 import { Flip, toast ,Bounce} from 'react-toastify'
 
 function SellerProductManage() {
@@ -40,6 +41,17 @@ const proEdit = async(id) => {
    try
    {
     setToggle(1)
+    toast("You can edit your product now !!!"), {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Flip,
+        };
     setProductid(id)
     const response = await axios.get(`http://localhost:5000/product/getspecproduct/${id}`)
     setCar(response.data)
@@ -84,6 +96,8 @@ const proUpdate = async(id) =>{
         theme: "dark",
         transition: Flip,
         };
+        setToggle(0)
+        sellerProducts()
    }
    catch(error)
     {
@@ -158,6 +172,7 @@ const proDelete = async(id) =>{
 console.log("cars",products);
   return (
     <div className='product-add-container'>
+        <h2 className='product-add-title'>Your Cars For Sell</h2>
         <div className='product-add-section' >
         {products.map((pro)=>(   
           <div className='product-add-map' key={pro._id}>
@@ -170,7 +185,7 @@ console.log("cars",products);
              </div>   
              <div className='product-spec-buttons'>
                 <button className='product-spec-button' onClick={()=>{proEdit(pro._id)}}>Edit</button>
-                <button className='product-spec-button' onClick={()=>{proDelete(pro._id)}}>Delete</button>
+                <button className='product-spec-button-d' onClick={()=>{proDelete(pro._id)}}>Delete</button>
              </div>
              <div className='product-sold-sec'>
                 <button className='product-sold-button' onClick={()=>{proSoldButton(pro._id,pro.sold)}}>{pro.sold ? "Unsold":"Sold"}</button>

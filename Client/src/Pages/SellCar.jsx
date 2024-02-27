@@ -87,7 +87,7 @@ function SellCar() {
                 <div className='field-form-seller'>
                     <h4 className='moye-moye'>Car Details</h4>
                   
-                    <input className='input-seller' placeholder="Name" type='text' value={name}  onChange={(e)=>setName(e.target.value)}/>
+                    <input className='input-seller' placeholder="Model" type='text' value={name}  onChange={(e)=>setName(e.target.value)}/>
                  
                     <input className='input-seller' type='text' value={brand} placeholder='Brand' onChange={(e)=>setBrand(e.target.value)}/>
                

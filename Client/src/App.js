@@ -30,6 +30,7 @@ import CarDetail from './Pages/CarDetail';
 import AdminProManage from './Pages/AdminProManage';
 import Intrest from './Pages/Intrest';
 import AdminHome from './Pages/AdminHome';
+import SellerHome from './Pages/SellerHome';
 
 
 
@@ -70,6 +71,7 @@ function App() {
             <Route path='/sellerlog' element={<SellerLog/>} />
             <Route path='/sellerreg' element={<SellerRegistration/>} /> 
             <Route path='/productadd' element={<SellCar/>} />
+            <Route path='/sellerhome' element={<SellerHome/>} />
             <Route path='/sellerreport' element={<ReportSeller/>} />
             <Route path='/sellernav' element={<SellerNavbar/>} />
             <Route path='/sellerprofile' element={<SellerProfileEdit/>} />
