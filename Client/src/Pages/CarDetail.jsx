@@ -63,6 +63,7 @@ console.log("value",toggle);
 
   return (
     <div className="body-container">
+	{!toggle ? ( 
 	<div className="detail-card">
 		<div className="detail-imgBx">
 			<img className="detail-img" src={car.photo} alt='car'/>
@@ -89,25 +90,34 @@ console.log("value",toggle);
 			</div>
 		</div>
 	</div>
+	):(
 	<div className='another-section'>
-	{toggle ? (
 		<div className='pro-sell-container'>
+			{seller.ban === false ? (  
 			<div className='pro-sell-section'>
-				<h3 className='pro-sell-detail'>UserName : {seller.username}</h3>
-				<h3 className='pro-sell-detail'>Email : {seller.email}</h3>
-				<h3 className='pro-sell-detail'>Contact No : {seller.phoneno}</h3>
-				<h3 className='pro-sell-detail'>Address : {seller.address}</h3>
+				<h3 className='pro-sell-detail'>UserName :<h4 className='pro-sell-h4'>{seller.username}</h4></h3>
+				<h3 className='pro-sell-detail'>Email : <h4 className='pro-sell-h4'>{seller.email}</h4></h3>
+				<h3 className='pro-sell-detail'>Contact No : <h4 className='pro-sell-h4'>{seller.phoneno}</h4></h3>
+				<h3 className='pro-sell-detail'>Address :<h4 className='pro-sell-h4'> {seller.address}</h4></h3>
+				<div>
+					<button className='pro-sell-cancel' onClick={()=>{cancelButton()}}>Cancel</button>
+				</div>
+			</div>
+			):(
 			<div>
-				<button className='pro-sell-cancel' onClick={()=>{cancelButton()}}>Cancel</button>
+				<p className='pro-sell-ban'>
+				"This seller is banned because of violation of privacy concerns and fraudulent activities,<br/>
+				including unauthorized access to customer information, misappropriation of sensitive data,<br/>
+				and engaging in deceptive practices to exploit and compromise the trust of the users"<br/>
+				</p>
+				<div>
+					<button className='pro-sell-cancel' onClick={()=>{cancelButton()}}>Cancel</button>
+				</div>
 			</div>
-			</div>
+			)}
 		</div>
-	) : (
-		<div className='nothing-container'>
-
-		</div>
-	)}
 	</div>
+	 )}
 </div>
   )}
 export default CarDetail

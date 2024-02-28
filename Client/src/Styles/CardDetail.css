@@ -13,6 +13,8 @@
 	align-items: center;
 	background: linear-gradient(rgb(255, 255, 255) 0,rgb(255, 255, 255) 50%,#000000 50%,#000000 100%);
 	min-height: 100vh;
+	background-color: #000000;
+
 }
 .detail-card 
 {
@@ -205,31 +207,37 @@ p
 }
 
 .another-section {
-	margin-top:300px;
+	
 	display: flex;
 	justify-content: center;
+
   }
   
   .pro-sell-container {
 	background-color: #f8f9fa;
-	border: 1px solid #dee2e6;
+	border: 3px solid #000000;
 	border-radius: 8px;
 	padding: 20px;
 	width: 400px; 
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	margin-top: 20px;
-	z-index: 1;
+
   }
   
   .pro-sell-section {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: start;
   }
   
   .pro-sell-detail {
-	margin: 10px 0;
-	color: #495057;
+	margin: 10px;
+	color: orangered;
+	margin-left: 0%;
+  }
+
+  .pro-sell-h4{
+	color: #000000;
+	margin-left: 150px;
   }
   
   .pro-sell-cancel {
@@ -240,6 +248,7 @@ p
 	border-radius: 5px;
 	cursor: pointer;
 	margin-top: 10px;
+	margin-left: 130px;
 	transition: background-color 0.3s ease-in-out;
   }
   
@@ -247,3 +256,7 @@ p
 	background-color: #c82333;
   }
   
+  .pro-sell-ban{
+	color: black;
+	justify-content: center;
+  }
