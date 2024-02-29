@@ -226,7 +226,7 @@ p
   .pro-sell-section {
 	display: flex;
 	flex-direction: column;
-	align-items: start;
+	align-items: flex-start;
   }
   
   .pro-sell-detail {

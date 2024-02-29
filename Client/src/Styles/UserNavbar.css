@@ -24,7 +24,7 @@ list-style-type: none;
 .navbar-elements{
   display: flex;
     justify-content: flex-end;
-    gap: 25px;
+    gap: 75px;
     color: white;
     letter-spacing: 3px;
     margin-right:10px ;
@@ -51,4 +51,24 @@ list-style-type: none;
   background-color:orange;
   color: black;
   border-radius: 10px;
+}
+
+.lo-nav{
+  height: 25px;
+  width:30px;
+  margin-top: 21px;
+  color: yellow;
+}
+
+.lo-navu{
+  height: 30px;
+  width:30px;
+  margin-top: 15px;
+  color: yellow;
+}
+
+.nav-fav{
+  height: 30px;
+  width:30px;
+  margin-top: 15px;
 }

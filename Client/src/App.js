@@ -31,6 +31,7 @@ import AdminProManage from './Pages/AdminProManage';
 import Intrest from './Pages/Intrest';
 import AdminHome from './Pages/AdminHome';
 import SellerHome from './Pages/SellerHome';
+import Search from './Pages/Search';
 
 
 
@@ -65,7 +66,7 @@ function App() {
             <Route path='/useredit' element={<UserProfileEdit/>} />
             <Route path='/cardetail/:productID' element={<CarDetail/>} />
             <Route path='/intrest' element={<Intrest/>} />
-
+            <Route path='/search' element={<Search/>} />
            
             {/* Seller Pages */}
             <Route path='/sellerlog' element={<SellerLog/>} />

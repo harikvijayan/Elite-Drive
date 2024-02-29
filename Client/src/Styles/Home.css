@@ -3,7 +3,7 @@
 .home-container {
     display: flex;
     padding-top: 30px;
-    justify-content:end;
+    justify-content:flex-end;
     align-items: center;
     min-height: 100vh;
     padding-right: 50px;

@@ -5,7 +5,7 @@ const bcrypt=require("bcryptjs")
 const {userModel} =require('../Models/User')
 const{productModel}=require('../Models/Products.js')
 
-const mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const mailformat = /^[a-zA-Z0-9.!#$%&.’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const passformat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
 const txt = /.com/;
 
@@ -35,7 +35,7 @@ router.post("/register",async(req,res)=>{
     const hashedPassword=await bcrypt.hash(password,10)
     const newUser=new userModel({username,password:hashedPassword,email})
     await newUser.save()
-    res.json({message:"user registered successfully👨‍💼!!! "})
+    res.json({message:"user registered successfully 👨‍💼!!! "})
 })
 
 
