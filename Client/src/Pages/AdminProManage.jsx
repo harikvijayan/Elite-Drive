@@ -80,6 +80,7 @@ console.log(products);
               <p className='adm-pro-thing'><IoIosPerson className='admin-home-icon' /><br/>{car.owner}</p>
             </div>
             <h6 className='adm-pro-sellerid'>Seller ID: {car.loginid}</h6>
+            <h4 className='adm-pro-status'>Vehicle Status : {car.sold ? " SOLD " : " UNSOLD "}</h4>
           </div>
           <button className='adm-del-button' onClick={() => { proDelete(car._id) }}>Delete</button>
         </div>

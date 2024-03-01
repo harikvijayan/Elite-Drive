@@ -10,15 +10,8 @@ import dis from '../Icons/Disliked.png'
 import { Link } from 'react-router-dom';
 
 
-// import { IoColorPalette } from "react-icons/io5";
-// import { BsFuelPump } from "react-icons/bs";
-// import { SiCoronaengine } from "react-icons/si";
-// import { SlCalender } from "react-icons/sl";
-// import { PiEngineBold } from "react-icons/pi"
-// import { IoIosPerson } from "react-icons/io";
-
-
 function UserHome() {
+  const[toggle,setToggle]=useState(0)
   const[products,setProducts]=useState([])
   const[intrest,setIntrest]=useState([])
   const useID=userID()
@@ -28,6 +21,8 @@ function UserHome() {
 useEffect(()=>{
   getAllCommodities()
   fetchIntrest()
+  setToggle(0)
+
 },[])
 
 const getAllCommodities = async() => 
@@ -36,7 +31,7 @@ const getAllCommodities = async() =>
   try{
     const response = await axios.get("http://localhost:5000/product/getallcars")
     setProducts(response.data)
-
+    setToggle(0)
   }
   catch(err)
   {
@@ -55,7 +50,20 @@ const fetchIntrest = async () => {
 };
 
 
-console.log(intrest);
+const sortHigh = async() => {
+     const sortToHigh=[...products]
+     sortToHigh.sort((a,b)=>a.price - b.price)
+     setProducts(sortToHigh)
+     setToggle(1)
+}
+
+const sortLow = async() => {
+  setToggle(0)
+  const sortToLow=[...products]
+  sortToLow.sort((a,b)=>b.price - a.price)
+  setProducts(sortToLow)
+  
+}
 
 const intrestButton = async (itemid) => {
   const isItemInIntrest = intrest.some((ele) => ele._id === itemid);
@@ -185,12 +193,19 @@ const intrestButton = async (itemid) => {
           </div>
 
         </div>
+        <div className='dropdown'>
+            <button className='drop-btn' >Sort</button>
+            <div className='dropdown-content'>
+              <button onClick={()=>{sortHigh()}} className='a-sort'>↑</button>
+              <button onClick={()=>{sortLow()}} className='a-sort'>↓</button>
+            </div>
+        </div>
         <div className='user-home-elements'>
-         
-            <div className="user-product-list">
+          {toggle ? ( 
+          <div className="user-product-list">
                 {products.map((product, index) => (
                 <div key={index} className={`user-product-card ${product.sold ? 'sold-home-product' : ''}`}>
-                <Link className='product-user-link' to={`/cardetail/${product._id}`}>
+                  <Link className='product-user-link' to={`/cardetail/${product._id}`}>
                   {product.sold && <div className="sold-tag">Sold</div>}
                   <div className="user-product-container">
                     <img className='user-product-images' src={product.photo} alt={product.brand} />
@@ -204,12 +219,27 @@ const intrestButton = async (itemid) => {
                   </Link> 
                 </div>
                 ))}
+          </div>
+          ):( 
+            <div className="user-product-list">
+            {products.map((product, index) => (
+            <div key={index} className={`user-product-card ${product.sold ? 'sold-home-product' : ''}`}>
+              <Link className='product-user-link' to={`/cardetail/${product._id}`}>
+              {product.sold && <div className="sold-tag">Sold</div>}
+              <div className="user-product-container">
+                <img className='user-product-images' src={product.photo} alt={product.brand} />
+                <button className='user-home-like-button' onClick={(e) => { intrestButton(product._id); e.preventDefault() }}>
+                    {intrest.some((ele) => ele._id === product._id) ? <img className='product-like' src={like} alt='like' />: <img className='product-like' src={dis} alt='dislike' />}
+                </button>
+              </div>
+              <h2 className='user-product-name'>{product.name}</h2>
+              <h3 className='user-home-product-brand'>{product.brand}</h3>
+              <h4 className='user-home-product-price'>₹ {product.price}</h4> 
+              </Link> 
             </div>
-        </div>
-
-
-        <div className='user-home-others'>
-
+            ))}
+      </div>
+          )}
         </div>
         
     </div>

@@ -92,8 +92,6 @@ router.get('/getuser/:id',async(req,res)=>{
     try{
         const {id}=req.params
         const userDetail = await userModel.findOne({ _id: id });
-
-        console.log(userDetail);
         return res.status(200).send(userDetail)
     }
     catch(error)
@@ -216,11 +214,8 @@ router.put('/addtointrest/:id',async (req, res) => {
     try 
     {
       const { id } = req.params;
-    //   console.log("ids",id);
       const user = await userModel.findById({_id : id});
-    //   console.log("user",user)
       const product = await productModel.findById(req.body.itemid);
-    //   console.log("product", product);
     if (!user.intrest.includes(product._id))
     {
         user.intrest.push(product._id);

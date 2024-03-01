@@ -49,7 +49,7 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-    margin-top: 100px;
+    margin-top: 30px;
   }
   
   .user-product-list {
@@ -160,5 +160,57 @@
   color: wheat;
   
 }
+
+.drop-btn{
+  background-color: orangered;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  border: 1px solid rgb(255, 250, 250);
+  cursor: pointer;
+  height: 30px;
+  width: 70px;
+  border-radius: 10px;
+}
+
+.dropdown{
+  position: relative;
+  display: inline-block;
+  margin-top: 100px;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color:rgb(255, 255, 255) ;
+  min-width: 75px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content
+.a-sort{
+  color: black;
+  padding: 12px 33px;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid white;
+}
   
-  
+.dropdown-content
+.a-sort:hover{
+  background: #000000;
+  color: bisque;
+}
+
+.dropdown:hover
+.dropdown-content{
+  display: block;
+}
+
+
+.drop-btn:hover{
+  background-color: black;
+  color: orangered;
+}
