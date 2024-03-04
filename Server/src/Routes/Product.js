@@ -3,9 +3,9 @@ const router=express.Router()
 const {productModel} =require('../Models/Products.js')
 
 router.post("/add",async(req,res)=>{
-    const {name,brand,color,price,photo,mileage,year,fuel,enginecc,owner,loginid}=req.body;
+    const {name,brand,color,price,photo,mileage,year,fuel,enginecc,km,owner,loginid}=req.body;
 
-    if(!name || !brand || !color || !price || !photo || !mileage || !year || !fuel || !enginecc || !owner)
+    if(!name || !brand || !color || !price || !photo || !mileage || !km || !year || !fuel || !enginecc || !owner)
     {
         return res.json({message:" empty fields !!!"})
     }
@@ -14,7 +14,7 @@ router.post("/add",async(req,res)=>{
         return res.status(400).json({message:"Login required"})
     }
 
-    const newProduct=new productModel({name,brand,color,price,photo,mileage,year,fuel,enginecc,owner,loginid})
+    const newProduct=new productModel({name,brand,color,price,photo,mileage,year,fuel,enginecc,km,owner,loginid})
     await newProduct.save()
     res.json({message:"product added successfully!!! "})
 })
@@ -105,13 +105,13 @@ router.put('/sellproupdate/:id',async(req,res)=>{
     try
      {
         const { id } = req.params;
-        const { name,brand,color,price,photo,mileage,fuel,owner,enginecc,year,loginid } = req.body;
+        const { name,brand,color,price,photo,mileage,fuel,owner,enginecc,year,loginid ,km} = req.body;
        
-        if(!name || !brand || !color || !price || !photo || !mileage || !fuel || !owner || !enginecc || !year)
+        if(!name || !brand || !color || !price || !photo || !mileage || !fuel || !owner || !enginecc || !km || !year)
         {
             return res.status(400).json({message:"Empty Field"})
         }
-        await productModel.findByIdAndUpdate(id,{name,brand,color,price,photo,mileage,fuel,owner,enginecc,year,loginid});
+        await productModel.findByIdAndUpdate(id,{name,brand,color,price,photo,mileage,fuel,km,owner,enginecc,year,loginid});
         
         res.json({message:"Product Updated successfully👨"})
 
@@ -120,6 +120,27 @@ router.put('/sellproupdate/:id',async(req,res)=>{
       {
         return res.status(200).json({message:"Update Not Possible"});
       }
+})
+
+router.post('/search',async(req,res)=>{
+try
+{
+    const {search} = req.body
+    console.log("search",search);
+    const products = await productModel.find({})
+    const searchProducts = products.filter((item)=>{
+        const results=search.toLowerCase();
+        return (
+            item.brand.toLowerCase().includes(results) ||
+            item.name.toLowerCase().includes(results)
+        )
+    })
+    return res.status(200).json({searchProducts})
+}
+catch(error)
+{
+    return res.status(400).json({message:"Unable to search.."})
+}
 })
 
 module.exports=router

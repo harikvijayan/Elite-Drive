@@ -6,6 +6,7 @@ import like from '../Icons/Liked.png'
 import dis from '../Icons/Disliked.png'
 import { Flip, toast } from 'react-toastify'
 import { Link } from 'react-router-dom';
+import { IoMdSpeedometer } from "react-icons/io";
 
 export default function () {
   const[intrest,setIntrest]=useState([])
@@ -71,6 +72,7 @@ export default function () {
                 <h2 className='user-product-name'>{product.name}</h2>
                 <h3 className='user-product-brand'>{product.brand}</h3>
                 <h4 className='user-product-price'> ₹{product.price}</h4>
+                <h3 className='user-product-brand'><IoMdSpeedometer />{product.km}</h3>
                 </Link>
                 </div>
                 ))}

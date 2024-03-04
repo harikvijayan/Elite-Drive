@@ -46,8 +46,8 @@ function UserNavbar() {
                 <li className='navbar-element'><Link to='/search' className='admin-navbar-link'><FaSearch className='lo-nav' /></Link></li>
                 <li className='navbar-element'><Link to='/userhome' className='admin-navbar-link'><FaHome className='lo-navu'/></Link></li>
                 <li className='navbar-element'><Link to='/intrest' className='admin-navbar-link'><img src={fav} className='nav-fav'/></Link></li>
-                <li className='navbar-element'><Link to='/useredit' className='admin-navbar-link'><ImProfile className='lo-navu'/></Link></li>
                 <li className='navbar-element'><Link to='/userreport' className='admin-navbar-link'><GoReport className='lo-navu'/></Link></li>
+                <li className='navbar-element'><Link to='/useredit' className='admin-navbar-link'><ImProfile className='lo-navu'/></Link></li>
                 <li className='navbar-element' onClick={Logout}><AiOutlineLogout className='lo-navu' /></li>
             </ul>
         </div>

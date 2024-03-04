@@ -8,7 +8,7 @@ import { Flip, toast } from 'react-toastify'
 import like from '../Icons/Liked.png'
 import dis from '../Icons/Disliked.png'
 import { Link } from 'react-router-dom';
-
+import { IoMdSpeedometer } from "react-icons/io";
 
 function UserHome() {
   const[toggle,setToggle]=useState(0)
@@ -215,32 +215,34 @@ const intrestButton = async (itemid) => {
                   </div>
                   <h2 className='user-product-name'>{product.name}</h2>
                   <h3 className='user-home-product-brand'>{product.brand}</h3>
+                  <h3 className='user-home-product-brand'><IoMdSpeedometer />{product.km}</h3>
                   <h4 className='user-home-product-price'>₹ {product.price}</h4> 
                   </Link> 
                 </div>
                 ))}
           </div>
           ):( 
-            <div className="user-product-list">
-            {products.map((product, index) => (
-            <div key={index} className={`user-product-card ${product.sold ? 'sold-home-product' : ''}`}>
-              <Link className='product-user-link' to={`/cardetail/${product._id}`}>
-              {product.sold && <div className="sold-tag">Sold</div>}
-              <div className="user-product-container">
-                <img className='user-product-images' src={product.photo} alt={product.brand} />
-                <button className='user-home-like-button' onClick={(e) => { intrestButton(product._id); e.preventDefault() }}>
-                    {intrest.some((ele) => ele._id === product._id) ? <img className='product-like' src={like} alt='like' />: <img className='product-like' src={dis} alt='dislike' />}
-                </button>
-              </div>
-              <h2 className='user-product-name'>{product.name}</h2>
-              <h3 className='user-home-product-brand'>{product.brand}</h3>
-              <h4 className='user-home-product-price'>₹ {product.price}</h4> 
-              </Link> 
-            </div>
-            ))}
-      </div>
+          <div className="user-product-list">
+              {products.map((product, index) => (
+                <div key={index} className={`user-product-card ${product.sold ? 'sold-home-product' : ''}`}>
+                 <Link className='product-user-link' to={`/cardetail/${product._id}`}>
+                  {product.sold && <div className="sold-tag">Sold</div>}
+                    <div className="user-product-container">
+                      <img className='user-product-images' src={product.photo} alt={product.brand} />
+                      <button className='user-home-like-button' onClick={(e) => { intrestButton(product._id); e.preventDefault() }}>
+                        {intrest.some((ele) => ele._id === product._id) ? <img className='product-like' src={like} alt='like' />: <img className='product-like' src={dis} alt='dislike' />}
+                      </button>
+                    </div>
+                    <h2 className='user-product-name'>{product.name}</h2>
+                    <h3 className='user-home-product-brand'>{product.brand}</h3>
+                    <h3 className='user-home-product-brand'><IoMdSpeedometer />{product.km}</h3>
+                    <h4 className='user-home-product-price'>₹ {product.price}</h4>
+                 </Link> 
+                </div>
+                ))}
+           </div>
           )}
-        </div>
+          </div>
         
     </div>
   )

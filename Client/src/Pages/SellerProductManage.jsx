@@ -10,6 +10,7 @@ function SellerProductManage() {
     const sellID=sellerID()
     const[toggle,setToggle]=useState(0)
     const[car,setCar]=useState(0)
+    const[km,setKm]=useState("")
     const[name,setName]=useState("")
     const[brand,setBrand]=useState("")
     const[color,setColor]=useState("")
@@ -65,6 +66,7 @@ const proEdit = async(id) => {
     setYear(response.data.year)
     setOwner(response.data.owner)
     setFuel(response.data.fuel)
+    setKm(response.data.km)
 
    }
    catch(error)
@@ -84,7 +86,7 @@ const editCancel = async() => {
 const proUpdate = async(id) =>{
    try
    {
-    const response = await axios.put(`http://localhost:5000/product/sellproupdate/${id}`,{name,brand,price,color,photo,year,enginecc,mileage,owner,fuel,loginid:sellID});
+    const response = await axios.put(`http://localhost:5000/product/sellproupdate/${id}`,{name,brand,price,color,photo,year,enginecc,mileage,owner,km,fuel,loginid:sellID});
     toast(response.data.message), {
         position: "top-center",
         autoClose: 3000,
@@ -216,6 +218,13 @@ console.log("cars",products);
                  className='product-add-input'
                  placeholder='Color'
                  onChange={(e)=>setColor(e.target.value)}
+                />
+                <input
+                 type='number'
+                 value={km}
+                 className='product-add-input'
+                 placeholder='Kilometers'
+                 onChange={(e)=>setKm(e.target.value)}
                 />
                 <input
                  type='text'

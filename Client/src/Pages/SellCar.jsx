@@ -12,6 +12,7 @@ function SellCar() {
     const[price,setPrice]=useState("")
     const[photo,setPhoto]=useState("")
     const[mileage,setMileage]=useState("")
+    const[km,setKm]=useState("")
     const[year,setYear]=useState("")
     const[fuel,setFuel]=useState("")
     const[enginecc,setEnginecc]=useState("")
@@ -22,7 +23,7 @@ function SellCar() {
 
     const handleSubmit = async () => {
         try {
-            const response = await axios.post("http://localhost:5000/product/add", {name, brand, color, price, photo, mileage, year, fuel, enginecc, owner, loginid});
+            const response = await axios.post("http://localhost:5000/product/add", {name, brand, color, price, photo, mileage, year, fuel, km, enginecc, owner, loginid});
     
             if (response && response.data) {
                 console.log(response);
@@ -49,6 +50,7 @@ function SellCar() {
                 setEnginecc("");
                 setYear("");
                 setOwner("");
+                setKm("")
             } else {
                 console.error("Invalid response format:", response);
                 toast.error("An unexpected error occurred. Please try again later.", {
@@ -93,6 +95,7 @@ function SellCar() {
                
                     <input className='input-seller' type='text' value={color} placeholder='Color' onChange={(e)=>setColor(e.target.value)}/>
                   
+                    <input className='input-seller' type='number' value={km} placeholder='Kilometers' onChange={(e)=>setKm(e.target.value)}/>
                    
                     <input className='input-seller' type='number' value={price} placeholder='Price' onChange={(e)=>setPrice(e.target.value)}/>
                    

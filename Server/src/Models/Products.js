@@ -8,6 +8,7 @@ const productSchema=new mongoose.Schema({
     price:{type:Number,required:true},
     photo:{type:String,required:true},
     mileage:{type:Number,required:true},
+    km:{type:Number,required:true},
     year:{type:Number,required:true},
     fuel:{type:String,required:true},
     enginecc:{type:Number,required:true},
