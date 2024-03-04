@@ -23,7 +23,8 @@ export default function Search() {
       try
       {
         const response = await axios.post("http://localhost:5000/product/search",{search})
-        setData(response.data.searchProducts)
+        setData(response.data ? response.data.searchProducts : []);
+
       }
       catch(error)
       {
@@ -59,10 +60,12 @@ export default function Search() {
         toast.success(response.data.message, { transition: Flip });
         fetchIntrest();
       } catch (error) {
-        toast(error.response.data.message, { transition: Flip });
+        console.error("Error during intrestButton request:", error);
+        toast.error("An error occurred while processing your request", { transition: Flip });
       }
     }
   };
+  
 
 console.log(data);
 
@@ -94,16 +97,16 @@ console.log(data);
                     </div>
                     <h2 className='user-product-name'>{data.name}</h2>
                     <h3 className='user-home-product-brand'>{data.brand}</h3>
-                    <h3 className='user-home-product-brand'><IoMdSpeedometer />{data.km}</h3>
-                    <h4 className='user-home-product-price'>₹ {data.price}</h4>
+                    <h5 className='user-home-product-km'><IoMdSpeedometer />{data.km}km</h5>
+                    <h4 className='user-home-product-price'>₹ {data.price.toLocaleString()}</h4>
 
                  </Link> 
                 </div>
               ))}
       </div>
       ):( 
-      <div>
-          <img src='https://thumbs.dreamstime.com/z/page-not-found-design-template-error-flat-line-concept-link-to-non-existent-document-no-results-magnifying-glass-156396935.jpg?ct=jpeg' className='no-match-image' alt='nothing found' />
+      <div className='se-no'>
+          <img src='https://cdn-icons-png.flaticon.com/512/2748/2748558.png' className='no-match-image' alt='nothing found' />
       </div>
       )}
     </div>

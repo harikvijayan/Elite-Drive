@@ -132,7 +132,9 @@ try
         const results=search.toLowerCase();
         return (
             item.brand.toLowerCase().includes(results) ||
-            item.name.toLowerCase().includes(results)
+            item.name.toLowerCase().includes(results) ||
+            item.color.toLowerCase().includes(results) ||
+            item.fuel.toLowerCase().includes(results)
         )
     })
     return res.status(200).json({searchProducts})

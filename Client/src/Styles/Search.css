@@ -1,3 +1,113 @@
-.search-container{
-    padding-top: 150px;
+
+
+.search-container {
+    padding: 200px;
+    min-height: 100vh;
+    background-color: #000000;
+  }
+  
+  .search-section {
+    margin-bottom: 20px;
+  }
+  
+  .search-input-ection {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  .search-input::placeholder{
+    color: grey;
+  }
+  
+  .search-logo {
+    background-color:orangered;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .user-product-list {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .user-product-card {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: fit-content;
+  }
+  
+  .sold-home-product {
+    opacity: 0.7;
+  }
+  
+  .sold-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #f00;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .product-user-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .user-product-container {
+    position: relative;
+  }
+  
+  .user-product-images {
+    width: 100%;
+    height: auto;
+  }
+  
+  .user-home-like-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .product-like {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .user-product-name,
+  .user-home-product-brand,
+  .user-home-product-km,
+  .user-home-product-price {
+    margin: 10px 0;
+  }
+  
+  .no-match-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+  
+.se-no{
+    display: flex;
+    justify-content: center;
 }
+  

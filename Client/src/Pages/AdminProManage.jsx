@@ -70,7 +70,7 @@ console.log(products);
           <div className='adm-pro-detail'>
             <h2 className='adm-pro-model'>{car.name}</h2>
             <h3 className='adm-pro-brand'>{car.brand}</h3>
-            <h4 className='adm-pro-price'>₹ {car.price}</h4>
+            <h4 className='adm-pro-price'>₹ {car.price.toLocaleString()}</h4>
             <h4 className='adm-pro-price'><IoMdSpeedometer />{car.km}</h4>
             <div className='adm-pro-specs'>
               <p className='adm-pro-thing'><IoColorPalette className='admin-home-icon' /><br/>{car.color}</p>

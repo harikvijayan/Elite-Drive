@@ -45,13 +45,17 @@
   }
   
   .user-product-name {
-    margin: 10px 0;
+    margin: 5px 0;
     font-size: 16px;
   }
   
   .user-product-brand {
     color: #777;
     font-size: 14px;
+  }
+
+  .user-product-km{
+    color: #31df31;
   }
   
   .user-product-price {
