@@ -63,8 +63,8 @@ export default function Search() {
         toast.success(response.data.message, { transition: Flip });
         fetchIntrest();
       } catch (error) {
-        const errorMessage = error.response?.data.message || "Error occurred";
-        toast.error(errorMessage, {
+        
+        toast.error(error.response.data.message,{
           transition:Flip
         });;
       }
