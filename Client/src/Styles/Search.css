@@ -1,113 +1,157 @@
-
+/* Search.css */
 
 .search-container {
-    padding: 200px;
-    min-height: 100vh;
-    background-color: #000000;
-  }
-  
-  .search-section {
-    margin-bottom: 20px;
-  }
-  
-  .search-input-ection {
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-
-  .search-input::placeholder{
-    color: grey;
-  }
-  
-  .search-logo {
-    background-color:orangered;
-    color: #000000;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .user-product-list {
-    display: flex;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .user-product-card {
-    position: relative;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    height: fit-content;
-  }
-  
-  .sold-home-product {
-    opacity: 0.7;
-  }
-  
-  .sold-tag {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #f00;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-  }
-  
-  .product-user-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .user-product-container {
-    position: relative;
-  }
-  
-  .user-product-images {
-    width: 100%;
-    height: auto;
-  }
-  
-  .user-home-like-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .product-like {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .user-product-name,
-  .user-home-product-brand,
-  .user-home-product-km,
-  .user-home-product-price {
-    margin: 10px 0;
-  }
-  
-  .no-match-image {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-  }
-  
-.se-no{
-    display: flex;
-    justify-content: center;
+  min-width: 100%;
+  margin: 0 auto;
+  padding: 120px;
+  background: #000;
+  min-height: 100vh;
 }
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input-section {
+  display: flex;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 3px solid #fff4f4;
+  border-radius: 5px;
+}
+
+.search-input::placeholder{
+  color: grey;
+}
+
+.search-logo {
+  background-color: orangered;
+  color: #000000;
+  border: 3px solid #fff2f2;
+  border-radius: 5px;
+  cursor: pointer;
+  width:35px;
+  margin-left: 5px;
+}
+
+.se-product-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: center;
   
+}
+
+.se-product-card {
+  width: 250px;
+  margin-bottom: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  background: black;
+  transition: transform 0.2s ease-in-out;
+  height: 300px;
+  margin-right: 30px;
+}
+
+.se-product-card:hover {
+  transform: scale(1.05);
+}
+
+
+.se-sold-tag {
+  background-color: #f00;
+  color: #fff;
+  padding: 5px;
+  position: absolute;
+  margin-left: 4px;
+  margin-top: 4px;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.se-product-container {
+  position: relative;
+  text-decoration: none;
+  
+}
+
+.se-product-images {
+  width: 100%;
+  height: 100%;
+}
+
+.se-home-like-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.se-product-like {
+  width: 30px;
+  height: 30px;
+}
+
+.se-product-details {
+  padding: 10px 50px;
+  text-decoration: none; 
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.se-product-name,
+.se-home-product-brand,
+.se-home-product-km,
+.se-home-product-price {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+
+}
+
+.se-product-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.no-match-image {
+  width: 100px;
+  height: auto;
+}
+
+.se-no {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.se-user-link{
+  text-decoration: none;
+}
+
+.se-product-name
+{
+  color:orangered ;
+  margin-left: 5px;
+}
+
+
+.se-home-product-km
+{
+  color:white;
+}
+
+.se-home-product-price{
+  color: yellow;
+}

@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import '../Styles/Search.css'
 import userID from '../Hooks/User.js'
 import axios from 'axios';
-import { Flip, toast } from 'react-toastify'
+import { Flip, toast ,Bounce } from 'react-toastify'
 import like from '../Icons/Liked.png'
 import dis from '../Icons/Disliked.png'
 import { Link } from 'react-router-dom';
@@ -51,7 +51,10 @@ export default function Search() {
         toast.success(response.data.message, { transition: Flip });
         fetchIntrest();
       } catch (error) {
-        toast(error.response.data.message, { transition: Flip });
+        const errorMessage = error.response?.data.message || "Error occurred";
+    toast.error(errorMessage, {
+      transition:Bounce
+    }); 
       }
     } else {
       try {
@@ -60,8 +63,10 @@ export default function Search() {
         toast.success(response.data.message, { transition: Flip });
         fetchIntrest();
       } catch (error) {
-        console.error("Error during intrestButton request:", error);
-        toast.error("An error occurred while processing your request", { transition: Flip });
+        const errorMessage = error.response?.data.message || "Error occurred";
+        toast.error(errorMessage, {
+          transition:Flip
+        });;
       }
     }
   };
@@ -73,7 +78,7 @@ console.log(data);
   return (
     <div className='search-container'>
       <div className='search-section'>
-        <div className='search-input-ection'>
+        <div className='search-input-section'>
           <input
            className='search-input'
             value={search}
@@ -84,21 +89,21 @@ console.log(data);
         </div>
       </div>
       {data.length !==0 ? ( 
-      <div className="user-product-list">
+      <div className="se-product-list">
               {data.map((data, index) => (
-                <div key={index} className={`user-product-card ${data.sold ? 'sold-home-product' : ''}`}>
-                 <Link className='product-user-link' to={`/cardetail/${data._id}`}>
-                  {data.sold && <div className="sold-tag">Sold</div>}
-                    <div className="user-product-container">
-                      <img className='user-product-images' src={data.photo} alt={data.brand} />
-                      <button className='user-home-like-button' onClick={(e) => { intrestButton(data._id); e.preventDefault() }}>
-                        {intrest.some((ele) => ele._id === data._id) ? <img className='product-like' src={like} alt='like' />: <img className='product-like' src={dis} alt='dislike' />}
+                <div key={index} className={`se-product-card ${data.sold ? 'se-sold-home-product' : ''}`}>
+                 <Link className='se-user-link' to={`/cardetail/${data._id}`}>
+                  {data.sold && <div className="se-sold-tag">Sold</div>}
+                    <div className="se-product-container">
+                      <img className='se-product-images' src={data.photo} alt={data.brand} />
+                      <button className='se-home-like-button' onClick={(e) => { intrestButton(data._id); e.preventDefault() }}>
+                        {intrest.some((ele) => ele._id === data._id) ? <img className='se-product-like' src={like} alt='like' />: <img className='se-product-like' src={dis} alt='dislike' />}
                       </button>
                     </div>
-                    <h2 className='user-product-name'>{data.name}</h2>
-                    <h3 className='user-home-product-brand'>{data.brand}</h3>
-                    <h5 className='user-home-product-km'><IoMdSpeedometer />{data.km}km</h5>
-                    <h4 className='user-home-product-price'>₹ {data.price.toLocaleString()}</h4>
+                    <h2 className='se-product-name'>{data.name}</h2>
+                    <h3 className='se-home-product-brand'>{data.brand}</h3>
+                    <h5 className='se-home-product-km'><IoMdSpeedometer />{data.km}km</h5>
+                    <h4 className='se-home-product-price'>₹ {data.price.toLocaleString()}</h4>
 
                  </Link> 
                 </div>

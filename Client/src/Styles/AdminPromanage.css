@@ -26,7 +26,7 @@
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 15px;
-    background-color: #6feed2;
+    background-color: #d6fc02;
     margin-left: 200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -113,4 +113,9 @@
     height: 25px;
     margin-left: 10px;
     color: rgb(0, 0, 0);
+  }
+
+  .adm-pro-km{
+    color: rgb(216, 40, 193);
+    margin-bottom: 10px;
   }

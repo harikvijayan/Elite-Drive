@@ -85,7 +85,7 @@ console.log("value",toggle);
 			</ul>
 			</div>
 			<div class="detail-group">
-				<h2 className="detail-h2"><sup className="detail-sup">₹</sup>{car.price.toLocaleString()}<small className="detail-small">.00</small></h2>
+				<h2 className="detail-h2"><sup className="detail-sup">₹</sup>{car.price}<small className="detail-small">.00</small></h2>
 				<button className="detail-a" onClick={()=>{fetchSeller(car.loginid), sellerContact()}}>Contact Seller</button>
 			</div>
 		</div>

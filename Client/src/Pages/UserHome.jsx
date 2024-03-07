@@ -215,7 +215,7 @@ const intrestButton = async (itemid) => {
                   </div>
                   <h2 className='user-product-name'>{product.name}</h2>
                   <h3 className='user-home-product-brand'>{product.brand}</h3>
-                  <h3 className='user-home-product-brand'><IoMdSpeedometer />{product.km}</h3>
+                  <h3 className='user-home-product-brand'><IoMdSpeedometer />{product.km}km</h3>
                   <h4 className='user-home-product-price'>₹ {product.price.toLocaleString()}</h4> 
                   </Link> 
                 </div>
