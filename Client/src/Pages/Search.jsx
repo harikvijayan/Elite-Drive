@@ -47,7 +47,7 @@ export default function Search() {
     if (isItemInIntrest) {
       try {
         const response = await axios.put(`http://localhost:5000/auth/removefromintrest/${useID}`, { itemid });
-        getAllCommodities();
+        
         toast.success(response.data.message, { transition: Flip });
         fetchIntrest();
       } catch (error) {
@@ -59,7 +59,7 @@ export default function Search() {
     } else {
       try {
         const response = await axios.put(`http://localhost:5000/auth/addtointrest/${useID}`, { itemid });
-        getAllCommodities();
+       
         toast.success(response.data.message, { transition: Flip });
         fetchIntrest();
       } catch (error) {
