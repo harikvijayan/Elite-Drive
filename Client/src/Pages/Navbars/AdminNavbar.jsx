@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import logo from '../../Icons/logo.png'
 import '../../Styles/AdminNavbar.css';
 import { useNavigate,Link } from 'react-router-dom';
-import {  toast,Flip } from 'react-toastify';
+import {  toast,Flip, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -25,7 +25,7 @@ function AdminNavbar() {
           draggable: true,
           progress: undefined,
           theme: "dark",
-          transition: Flip,
+          transition: Bounce,
           };
   };
                                       
