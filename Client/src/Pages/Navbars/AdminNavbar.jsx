@@ -28,7 +28,7 @@ function AdminNavbar() {
           transition: Bounce,
           };
   };
-                                      
+   console.log(Cookie);                                   
   return (
     <nav className="admin-navbar">
       <div className='admin-navbar-brand'>
