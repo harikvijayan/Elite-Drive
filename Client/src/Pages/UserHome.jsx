@@ -9,6 +9,11 @@ import like from '../Icons/Liked.png'
 import dis from '../Icons/Disliked.png'
 import { Link } from 'react-router-dom';
 import { IoMdSpeedometer } from "react-icons/io";
+import { CiYoutube } from "react-icons/ci";
+import { CiInstagram } from "react-icons/ci";
+import { FaTwitter } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import logo from '../Icons/logo.png'
 
 function UserHome() {
   const[toggle,setToggle]=useState(0)
@@ -242,6 +247,49 @@ const intrestButton = async (itemid) => {
                 ))}
            </div>
           )}
+          </div>
+          <div className='contact-sec'>
+              <div className='contact-brand-sec'>
+                <div className='contact-home-content'>
+                    <img className='contact-home-logo' src={logo} alt='logo'/>
+                    <h2 className='contact-home-brand'>EliteDrive</h2>
+                    <div className='contact-home-para'>
+                        <p className='contact-home-p'>Welcome to EliteDrive, your premier destination for buying and selling second-hand premium vehicles in India.We redefine the automotive experience by offering a curated selection of top-tier, pre-owned vehicles that combine luxury, performance, and reliability. Our commitment to excellence ensures that every vehicle on EliteDrive meets the highest standards, making us the go-to destination for those seeking quality and sophistication in their automotive choices. Explore the epitome of luxury and reliability with EliteDrive – where every drive is an elite experience!</p>
+                    </div>
+                </div>
+              </div>
+              <div className='contact-about-sec'>
+              <h2 className='colo-title'>Write To Us</h2>
+                  <div className='write-us'>
+                      <h4 className='connect-email'>elitedrive@gmail.com</h4>
+                  </div>
+                  <div className='connect-us'>
+                      <h2 className='colo-title'>Meet Us</h2>
+                      <p className='connect-address'>
+                        Vytilla,Ernakulam <br/>
+                        Kerala
+                        <br/><br/>
+                        NH-66, Bypass Road <br/>
+                        Kozhikode - Kerala<br/>
+                        <br/><br/>
+                        MG Road, Machingal <br/>
+                        Malappuram - Kerala<br/>
+                        <br/><br/>
+                        Common Road, Angels Road <br/>
+                        Trivandrum - Kerala<br/>
+                        <br/><br/>
+                      </p>
+                  </div>
+                  <div className='connect-with-us'>
+                      <h2 className='colo-title'>Connect With Us</h2>
+                      <div className='image-links'>
+                          <h2><CiYoutube className='link-image'/></h2>
+                          <h2><CiInstagram className='link-image'/></h2>
+                          <h2><FaTwitter className='link-image'/></h2>
+                          <h2><FaFacebook className='link-image'/></h2>
+                      </div>
+                  </div>
+              </div>
           </div>
         
     </div>
