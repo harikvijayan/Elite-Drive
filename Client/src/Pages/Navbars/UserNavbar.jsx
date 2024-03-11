@@ -4,7 +4,7 @@ import logo from '../../Icons/logo.png'
 import '../../Styles/UserNavbar.css'
 import { GoReport } from "react-icons/go";
 import { ImProfile } from "react-icons/im";
-import fav from '../../Icons/Favourite.png'
+import { FaHeart } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
@@ -45,7 +45,7 @@ function UserNavbar() {
             <ul className='navbar-elements'>
                 <li className='navbar-element'><Link to='/search' className='admin-navbar-link'><FaSearch className='lo-nav' /></Link></li>
                 <li className='navbar-element'><Link to='/userhome' className='admin-navbar-link'><FaHome className='lo-navu'/></Link></li>
-                <li className='navbar-element'><Link to='/intrest' className='admin-navbar-link'><img src={fav} className='nav-fav'/></Link></li>
+                <li className='navbar-element'><Link to='/intrest' className='admin-navbar-link'><FaHeart className='lo-navu' /></Link></li>
                 <li className='navbar-element'><Link to='/userreport' className='admin-navbar-link'><GoReport className='lo-navu'/></Link></li>
                 <li className='navbar-element'><Link to='/useredit' className='admin-navbar-link'><ImProfile className='lo-navu'/></Link></li>
                 <li className='navbar-element' onClick={Logout}><AiOutlineLogout className='lo-navu' /></li>
