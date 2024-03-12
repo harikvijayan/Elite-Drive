@@ -7,20 +7,22 @@ import axios from 'axios';
 import { Flip, toast } from 'react-toastify'
 import like from '../Icons/Liked.png'
 import dis from '../Icons/Disliked.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { IoMdSpeedometer } from "react-icons/io";
 import { CiYoutube } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import logo from '../Icons/logo.png'
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { SiAppstore } from "react-icons/si";
 
 function UserHome() {
   const[toggle,setToggle]=useState(0)
   const[products,setProducts]=useState([])
   const[intrest,setIntrest]=useState([])
   const useID=userID()
-
+  const nav=useNavigate()
 
 
 useEffect(()=>{
@@ -67,6 +69,14 @@ const sortLow = async() => {
   const sortToLow=[...products]
   sortToLow.sort((a,b)=>b.price - a.price)
   setProducts(sortToLow)
+  
+}
+
+const App =() =>{
+  
+}
+
+const Play =() =>{
   
 }
 
@@ -248,6 +258,21 @@ const intrestButton = async (itemid) => {
            </div>
           )}
           </div>
+          <div className='review'>
+              <div className='review-section'>
+                  <div className='review-gif'>
+                    <img src="https://www.icegif.com/wp-content/uploads/car-icegif.gif" className='review-img' alt='gif' />
+                  </div>
+                  <div className='review-write'>
+                    <h1 className='review-head'>Thank You EliteDrive...💕</h1>
+                    <img src='https://assets-v2.lottiefiles.com/a/928212b4-1150-11ee-b7fa-cfbac1ad505d/uUewFeuJ4H.gif' className='review-star' alt='rate' />
+                    <div className='domu'>
+                    <p className='review-text'>Best place to buy luxury cars at an affordable price. They have some quality checks for ensuring the condition of the car. So no worries regarding the trouble after buying the car. They have an excellent customer service. It's worth to visit the showroom for purchase of pre owned luxury cars. The only truly trustable premium multibrand used car showroom in Kerala, have had good experience in both buying and selling cars from them...Best wishes Team Royal drive 🤩❤️😇🍃</p>
+                    </div>
+                    <h3 className='review-name' >WellDone Vasu</h3>
+                  </div>
+              </div>
+          </div>
           <div className='contact-sec'>
               <div className='contact-brand-sec'>
                 <div className='contact-home-content'>
@@ -256,11 +281,17 @@ const intrestButton = async (itemid) => {
                     <div className='contact-home-para'>
                         <p className='contact-home-p'>Welcome to EliteDrive, your premier destination for buying and selling second-hand premium vehicles in India.We redefine the automotive experience by offering a curated selection of top-tier, pre-owned vehicles that combine luxury, performance, and reliability. Our commitment to excellence ensures that every vehicle on EliteDrive meets the highest standards, making us the go-to destination for those seeking quality and sophistication in their automotive choices. Explore the epitome of luxury and reliability with EliteDrive – where every drive is an elite experience!</p>
                     </div>
+                    <h2 className='gums'>Download The App</h2>
+                    <div className='contact-buttons'>
+                      <button className='contact-button' onClick={()=>{Play()}}><IoLogoGooglePlaystore className='koko'/>Playstore</button>
+                      <button className='contact-button' onClick={()=>{App()}}><SiAppstore className='koko'/>Appstore</button>
+                    </div>
                 </div>
               </div>
               <div className='contact-about-sec'>
-              <h2 className='colo-title'>Write To Us</h2>
+                  
                   <div className='write-us'>
+                      <h2 className='colo-title'>Write To Us</h2>
                       <h4 className='connect-email'>elitedrive@gmail.com</h4>
                   </div>
                   <div className='connect-us'>
@@ -283,10 +314,11 @@ const intrestButton = async (itemid) => {
                   <div className='connect-with-us'>
                       <h2 className='colo-title'>Connect With Us</h2>
                       <div className='image-links'>
+                          <h2><FaFacebook className='link-image'/></h2>
                           <h2><CiYoutube className='link-image'/></h2>
                           <h2><CiInstagram className='link-image'/></h2>
                           <h2><FaTwitter className='link-image'/></h2>
-                          <h2><FaFacebook className='link-image'/></h2>
+                          
                       </div>
                   </div>
               </div>

@@ -43,7 +43,14 @@
    width:100px
     
   }
+
+  .user-brand-div1{
+    width: fit-content;
+  }
   
+  .user-brand-div2{
+    width: fit-content;
+  }
   .user-home-elements {
     display: flex;
     flex-wrap: wrap;
@@ -227,22 +234,27 @@
 .contact-sec {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  padding-top: 150px;
+  width: 100%;
 }
 
 .contact-brand-sec {
-  /* Add styles for contact-brand-sec */
+  padding-left: 80px;
 }
 
 .contact-about-sec {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 600px;
   align-items: center;
+  padding-right: 200px;
+  background-color: rgb(37, 37, 36);
+  margin-right: 100px;
+  margin-bottom: 50px;
 }
 
 .write-us {
-  
+  margin-left: 0px;
 }
 
 .connect-email{
@@ -255,11 +267,13 @@
 }
 
 .colo-title {
-  color: #333; 
+  color: #d2f02b; 
 }
 
 .connect-address {
-  width:250px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .image-links {
@@ -269,6 +283,8 @@
 
 .link-image {
   color: #24dff8;
+  height: 30px;
+  width: 30px;
 }
 .contact-home-content{
   height: 500px;
@@ -291,6 +307,7 @@
   color: rgb(255, 255, 255);
   text-align: start;
   letter-spacing: 3px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .contact-home-para{
   margin-top: 20px;
@@ -299,5 +316,81 @@
 
 .colo-title{
   margin-bottom: 10px;
-  text-align: center;
+  text-align: start;
+}
+
+.review-section{
+  display: flex;
+  padding-top: 100px;
+}
+.review-gif{
+  padding: 20px;
+}
+
+.review-img{
+  height: 450px;
+  width: 650px;
+  border-radius: 10px;
+}
+
+.review{
+  width: 100%;
+}
+
+.review-star{
+  height:75px;
+  width:250px;
+ border-radius: 10px;
+ 
+}
+
+.review-write{
+  padding-top: 100px;
+  padding-left: 30px;
+}
+
+.review-head{
+  color: beige;
+  font-family: Tahoma;
+  padding-bottom: 30px;
+}
+
+.review-name{
+  color: cadetblue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 30px;
+}
+
+.review-text{
+  letter-spacing: 2px;
+  gap: 10px 10px;
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.domu{
+  width: 450px;
+}
+
+.gums{
+  margin-top: 30px;
+  color: burlywood;
+}
+
+.contact-button{
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  border: 3px solid white;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+
+.contact-buttons{
+  margin-top: 10px;
+}
+.koko{
+  margin-right: 5px;
 }

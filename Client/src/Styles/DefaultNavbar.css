@@ -17,8 +17,10 @@
   }
 
   .admin-navbar-head{
-    letter-spacing: 3px;
+    letter-spacing: 0px;
+    font-family: monospace;
     color:skyblue;
+    
  }
 
   .admin-navbar-image{
