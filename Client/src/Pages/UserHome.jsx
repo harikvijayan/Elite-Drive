@@ -128,7 +128,7 @@ const intrestButton = async (itemid) => {
       </div>
       <div>
         <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 5" />
-        <p className="legend">PORSCHE Panamera</p>
+        <p className="legend">PORSCHE PANAMERA</p>
       </div>
       <div>
         <img src="https://images.unsplash.com/photo-1549632891-a0bea6d0355b?q=80&w=1463&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 6" />
