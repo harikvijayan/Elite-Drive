@@ -265,7 +265,7 @@ const intrestButton = async (itemid) => {
                   </div>
                   <div className='review-write'>
                     <h1 className='review-head'>Thank You EliteDrive...💕</h1>
-                    <img src='https://assets-v2.lottiefiles.com/a/928212b4-1150-11ee-b7fa-cfbac1ad505d/uUewFeuJ4H.gif' className='review-star' alt='rate' />
+                    <img src='https://media2.giphy.com/media/Kfgp1x5oActk6vi5BD/giphy.gif?cid=6c09b952queyfg963tpooyyeixuvpe2lkffs5uzzg6ew00rd&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s' className='review-star' alt='rate' />
                     <div className='domu'>
                     <p className='review-text'>Best place to buy luxury cars at an affordable price. They have some quality checks for ensuring the condition of the car. So no worries regarding the trouble after buying the car. They have an excellent customer service. It's worth to visit the showroom for purchase of pre owned luxury cars. The only truly trustable premium multibrand used car showroom in Kerala, have had good experience in both buying and selling cars from them...Best wishes Team Royal drive 🤩❤️😇🍃</p>
                     </div>

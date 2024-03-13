@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import logo from '../../Icons/logo.png'
 import '../../Styles/AdminNavbar.css';
 import { useNavigate,Link } from 'react-router-dom';
-import {  toast,Flip, Bounce } from 'react-toastify';
+import {  toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 

@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     background-color: black;
+    min-width:fit-content;
   }
   
   .user-home-carousel {
@@ -68,7 +69,7 @@
   }
   
   .user-product-card {
-    border: 1px solid #24dff8;
+    border: 3px solid rgb(234, 248, 32);
     position: relative;
     border-radius: 8px;
     margin: 10px;
@@ -100,7 +101,7 @@
   }
 
   .user-product-name{
-    color:rgb(250, 250, 3);
+    color:rgb(100, 243, 236);
     font-weight: 100px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
@@ -251,6 +252,7 @@
   background-color: rgb(37, 37, 36);
   margin-right: 100px;
   margin-bottom: 50px;
+  border-radius: 10px;
 }
 
 .write-us {
@@ -338,14 +340,12 @@
 }
 
 .review-star{
-  height:75px;
-  width:250px;
- border-radius: 10px;
+  height: 100px;
  
 }
 
 .review-write{
-  padding-top: 100px;
+  padding-top: 50px;
   padding-left: 30px;
 }
 
