@@ -79,8 +79,8 @@ console.log(products);
               <p className='adm-pro-thing'><PiEngineBold className='admin-home-icon' /><br/>{car.enginecc}cc</p>
               <p className='adm-pro-thing'><BsFuelPump className='admin-home-icon' /><br/>{car.fuel}</p>
               <p className='adm-pro-thing'><IoIosPerson className='admin-home-icon' /><br/>{car.owner}</p>
-              <button className='adm-del-button' onClick={() => { proDelete(car._id) }}>Delete</button>
             </div>
+            <button className='adm-del-button' onClick={() => { proDelete(car._id) }}>Delete</button>
             <h6 className='adm-pro-sellerid'>Seller ID: {car.loginid}</h6>
             <h4 className='adm-pro-status'>Vehicle Status : {car.sold ? " SOLD " : " UNSOLD "}</h4>
           </div>

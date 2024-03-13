@@ -107,7 +107,7 @@ function Registration(){
         <div>
         <button className='user-reg-button' onClick={addUser}>Submit</button>
         </div>
-        <p className='user-reg-para'>alredy have an account?<Link to='/'>login</Link></p>
+        <p className='user-reg-para'>alredy have an account?<Link to='/login'>login</Link></p>
       </div>  
     </div>
   

@@ -69,7 +69,7 @@
   }
   
   .user-product-card {
-    border: 3px solid rgb(234, 248, 32);
+    border: 3px solid rgb(3, 0, 196);
     position: relative;
     border-radius: 8px;
     margin: 10px;
@@ -101,7 +101,7 @@
   }
 
   .user-product-name{
-    color:rgb(100, 243, 236);
+    color:rgb(213, 255, 61);
     font-weight: 100px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
@@ -301,7 +301,7 @@
   
 }
 .contact-home-brand{
-  font-family: 'Lucida Sans Regular';
+  font-family: 'Courier New', Courier, monospace;
   letter-spacing: 5px;
   color: chartreuse;
 }
@@ -340,7 +340,8 @@
 }
 
 .review-star{
-  height: 100px;
+  height: 150px;
+  width:200px;
  
 }
 
@@ -352,7 +353,6 @@
 .review-head{
   color: beige;
   font-family: Tahoma;
-  padding-bottom: 30px;
 }
 
 .review-name{
@@ -393,4 +393,5 @@
 }
 .koko{
   margin-right: 5px;
+  color: rgb(236, 66, 236);
 }
