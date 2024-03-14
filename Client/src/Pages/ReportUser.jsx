@@ -65,7 +65,7 @@ const submitReport = async() => {
     }
     
 }
-
+console.log(report);
   return (
 <div className='report-body'>
         <div className='report-container'>
@@ -86,7 +86,7 @@ const submitReport = async() => {
                     {report.length !== 0 ? (  
                     <div className='report-mapping-container'> 
                         <div className='report-map-table'>
-                            <h3 className='report-map-heading'>Your Most Recent Report</h3>
+                            <h3 className='report-map-heading'>Your Submitted Reports</h3>
                             <table className='map-report-table'>
                                 <thead className='map-report-head'>
                                     <tr>
@@ -95,12 +95,12 @@ const submitReport = async() => {
                                     </tr>
                                 </thead>
                                 <tbody className='map-report-tbody'>
-                        
-                                    <tr className='map-report-row' key={report._id}>
-                                     <td className='map-report-data'>{report.userreport}</td>
-                                     <td className='map-report-data'>{report.seen ? "Received" : "Pending "}</td>
+                                 {report.map((data)=>(
+                                    <tr className='map-report-row' key={data._id}>
+                                     <td className='map-report-data'>{data.userreport}</td>
+                                     <td className='map-report-data'>{data.seen ? "Received" : "Pending "}</td>
                                     </tr>
-    
+                                 ))}
                                 </tbody>
 
                             </table>

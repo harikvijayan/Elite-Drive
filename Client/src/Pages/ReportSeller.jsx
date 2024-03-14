@@ -102,12 +102,12 @@ console.log("report",report);
                                     </tr>
                                 </thead>
                                 <tbody className='map-report-tbody'>
-                        
-                                    <tr className='map-report-row' key={report._id}>
-                                     <td className='map-report-data'>{report.sellerreport}</td>
-                                     <td className='map-report-data'>{report.seen ? "Received" : "Pending"}</td>
+                                 {report.map((data)=>(
+                                    <tr className='map-report-row' key={data._id}>
+                                     <td className='map-report-data'>{data.sellerreport}</td>
+                                     <td className='map-report-data'>{data.seen ? "Received" : "Pending"}</td>
                                     </tr>
-    
+                                 ))}
                                 </tbody>
 
                             </table>

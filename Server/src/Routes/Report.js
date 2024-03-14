@@ -65,7 +65,7 @@ router.get("/getuserreport",async(req,res)=>{
 router.get("/getuserreport/:id",async(req,res)=>{
     try{
         const {id}=req.params
-        const userReport = await userReportModel.findOne({ loginid: id });
+        const userReport = await userReportModel.find({ loginid: id });
         return res.status(200).send(userReport)
     }
     catch(error)
@@ -88,7 +88,7 @@ router.get("/getsellerreport",async(req,res)=>{
 router.get("/getsellerreport/:id",async(req,res)=>{
     try{
         const {id}=req.params
-        const sellerReport = await sellerReportModel.findOne({ loginid: id });
+        const sellerReport = await sellerReportModel.find({ loginid: id });
         return res.status(200).send(sellerReport)
     }
     catch(error)
