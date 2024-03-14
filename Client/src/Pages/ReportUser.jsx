@@ -45,6 +45,7 @@ const submitReport = async() => {
         theme: 'dark',
         transition: Flip,
       });
+      setMessage("")
       fetchUser()
       fetchReport()
     }

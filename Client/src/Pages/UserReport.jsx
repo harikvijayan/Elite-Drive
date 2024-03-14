@@ -28,6 +28,20 @@ export default function UserReport() {
     }
 console.log(userReports);
 
+const deleteButton = async (id) =>{
+  try{
+    const response = await axios.delete(`http://localhost:5000/userreport/deluserreport/${id}`)
+    toast.success(response.data.message,{
+      transition:Flip
+    })
+    fetchUserReports();
+  }
+  catch(error)
+  {
+    console.log(error);
+  }
+}
+
 const seenButton = async (userID, seen) => {
   try {
     const response = await axios.put(`http://localhost:5000/userreport/seenuserreport/${userID}`, {
@@ -75,6 +89,7 @@ const seenButton = async (userID, seen) => {
                   <td className='sell-report-data'>{reports.userreport}</td>
                   <td className='sell-report-data'>
                     <button className='sell-report-button' onClick={() => seenButton(reports._id, reports.seen)}>{reports.seen ?"Mark as Unread":"Mark as Read"}</button>
+                    <button className='sell-report-delete-button' onClick={() => deleteButton(reports._id)}>Delete</button>
                   </td>
                 </tr>
                 ))}

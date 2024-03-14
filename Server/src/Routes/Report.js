@@ -128,4 +128,28 @@ router.put('/seenuserreport/:id',async(req,res)=>{
       }
 })
 
+router.delete("/deluserreport/:id",async(req,res)=>{
+    try{
+        const {id}=req.params
+        await userReportModel.findByIdAndDelete(id);
+        return res.status(200).json({message:"Report Deleted Successfully"})
+    }
+    catch(error)
+    {
+        return res.status(400).json({message:"Error Deleting Report"})
+    }
+})
+
+router.delete("/delsellerreport/:id",async(req,res)=>{
+    try{
+        const {id}=req.params
+        await sellerReportModel.findByIdAndDelete(id);
+        return res.status(200).json({message:"Report deleted Successfully.."})
+    }
+    catch(error)
+    {
+        return res.status(400).json({message:"Error Deleting Report"})
+    }
+})
+
 module.exports=router
