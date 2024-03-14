@@ -20,7 +20,6 @@ const SellerNavbar = () => {
     setCookie("seller_token","")
         localStorage.removeItem("sellerID")
         nav('/')
-        window.location.reload()
         toast("You Have Been Logged Out"), {
           position: "top-center",
           autoClose: 3000,
@@ -32,6 +31,7 @@ const SellerNavbar = () => {
           theme: "dark",
           transition: Flip,
           };
+          window.location.reload()
   };
 
   return (

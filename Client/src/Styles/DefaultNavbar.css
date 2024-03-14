@@ -32,6 +32,7 @@
   .home-navbar-elements {
     list-style-type: none;
     display: flex;
+    align-items: center;
   }
   
   .home-navbar-element {
@@ -44,9 +45,12 @@
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s;
+    padding-top: 20px;
+    cursor:grabbing;
   }
   
-  .home-navbar-link:hover {
-    background-color: #333;
+  .adm-logo{
+    height: 40px;
+    width: 40px;
+    color: greenyellow;
   }
-  

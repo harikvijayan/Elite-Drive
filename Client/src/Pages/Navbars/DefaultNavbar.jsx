@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../Styles/DefaultNavbar.css';
 import logo from '../../Icons/logo.png'
+import { MdAdminPanelSettings } from "react-icons/md";
 
 const HomeNavbar = () => {
   return (
@@ -23,7 +24,7 @@ const HomeNavbar = () => {
         </li>
         <li className="home-navbar-element">
           <Link to="/adminlogin" className="home-navbar-link">
-            Admin Login
+          <MdAdminPanelSettings  className='adm-logo'/>
           </Link>
         </li>
       </ul>
