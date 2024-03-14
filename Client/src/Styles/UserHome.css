@@ -6,6 +6,7 @@
     align-items: center;
     background-color: black;
     min-width:fit-content;
+    
   }
   
   .user-home-carousel {
@@ -20,6 +21,7 @@
   .user-home-carousel img {
     width: 100%;
     height: auto;
+   
   }
 
   .user-home-brands {
