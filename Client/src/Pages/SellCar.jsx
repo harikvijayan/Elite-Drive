@@ -92,7 +92,7 @@ function SellCar() {
                     <input className='input-seller' placeholder="Model" type='text' value={name}  onChange={(e)=>setName(e.target.value)}/>
                  
                     <input className='input-seller' type='text' value={brand} placeholder='Brand' onChange={(e)=>setBrand(e.target.value)}/>
-               
+
                     <input className='input-seller' type='text' value={color} placeholder='Color' onChange={(e)=>setColor(e.target.value)}/>
                   
                     <input className='input-seller' type='number' value={km} placeholder='Kilometers' onChange={(e)=>setKm(e.target.value)}/>
