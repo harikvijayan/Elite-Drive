@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import  axios from 'axios'
-import {  toast,Flip } from 'react-toastify';
+import {  toast,Flip, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../Styles/UserRegistration.css'
 
@@ -25,7 +25,7 @@ function Registration(){
                 draggable: true,
                 progress: undefined,
                 theme: "dark",
-                transition: Flip,
+                transition: Bounce,
                 };
             setNewpassword("")
             setMail("")
@@ -59,7 +59,7 @@ function Registration(){
                 draggable: true,
                 progress: undefined,
                 theme: "dark",
-                transition: Flip,  
+                transition: Bounce,  
             })
         }
 
