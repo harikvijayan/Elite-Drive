@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { toast, Flip } from 'react-toastify';
+import { toast, Flip, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom'
 import '../Styles/SellerRegistration.css'
@@ -44,7 +44,7 @@ function SellerRegistration() {
           draggable: true,
           progress: undefined,
           theme: 'dark',
-          transition: Flip,
+          transition: Bounce,
         });
       }
     } else {
@@ -57,7 +57,7 @@ function SellerRegistration() {
         draggable: true,
         progress: undefined,
         theme: 'dark',
-        transition: Flip,
+        transition: Bounce,
       });
     }
   };
