@@ -269,7 +269,7 @@ const intrestButton = async (itemid) => {
                     <div className='domu'>
                     <p className='review-text'>Best place to buy luxury cars at an affordable price. They have some quality checks for ensuring the condition of the car. So no worries regarding the trouble after buying the car. They have an excellent customer service. It's worth to visit the showroom for purchase of pre owned luxury cars. The only truly trustable premium multibrand used car showroom in Kerala, have had good experience in both buying and selling cars from them...Best wishes Team Royal drive 🤩❤️😇🍃</p>
                     </div>
-                    <h3 className='review-name' >WellDone Vasu</h3>
+                    <h3 className='review-name' >Shyamin James..❧❧❧</h3>
                   </div>
               </div>
           </div>
