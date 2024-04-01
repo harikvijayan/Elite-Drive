@@ -11,6 +11,8 @@ import { FaSearch } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom'
 import {  toast,Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 
 function UserNavbar() {
@@ -35,6 +37,12 @@ function UserNavbar() {
           };
   };
 
+  const Search = (props) => (
+    <Tooltip id="button-tooltip" {...props} >
+       <label style={{color:"#0043fc",zIndex:'-1'}}>Search</label>
+    </Tooltip>
+  );
+
   return (
     <div className='navbar-container'>
     
@@ -43,7 +51,7 @@ function UserNavbar() {
           <h2 className='navbar-head'>EliteDrive</h2>
             </div>
             <ul className='navbar-elements'>
-                <li className='navbar-element'><Link to='/search' className='admin-navbar-link'><FaSearch className='lo-nav' /></Link></li>
+                <li className='navbar-element'><OverlayTrigger placement="bottom" delay={{ show: 50, hide: 100 }} overlay={Search}><Link to='/search' className='admin-navbar-link'><FaSearch className='lo-nav' /></Link></OverlayTrigger></li>
                 <li className='navbar-element'><Link to='/userhome' className='admin-navbar-link'><FaHome className='lo-navu'/></Link></li>
                 <li className='navbar-element'><Link to='/intrest' className='admin-navbar-link'><FaHeart className='lo-navu' /></Link></li>
                 <li className='navbar-element'><Link to='/userreport' className='admin-navbar-link'><GoReport className='lo-navu'/></Link></li>
