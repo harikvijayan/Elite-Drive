@@ -19,13 +19,14 @@
   
   .int-home-title {
     text-align: center;
-    color: #eba549;
+    color: #d89339;
   }
   
   .int-con-sec {
     display: flex;
     flex-wrap: wrap;
     justify-content:space-evenly;
+    margin-top: 30px;
   }
   
   .user-product-card {
@@ -36,6 +37,7 @@
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     width: 250px;
     text-align: center;
+    
     
   }
   
