@@ -39,7 +39,7 @@ function UserNavbar() {
 
   const Search = (props) => (
     <Tooltip id="button-tooltip" {...props} >
-       <label style={{color:"#0043fc",zIndex:'-1'}}>Search</label>
+       <label style={{color:"#0043fc",zIndex:'-1'}}></label>
     </Tooltip>
   );
 

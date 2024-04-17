@@ -33,12 +33,13 @@
   .admin-navbar-elements {
     list-style: none;
     display: flex;
-    color: violet;
+    /* color: violet; */
   }
   
   .admin-navbar-element {
     margin: 0 10px;
     cursor: pointer;
+    margin-right: 80px;
   }
 
   .admin-navbar-link{
@@ -63,3 +64,34 @@
     }
   }
   
+  .use-log{
+    height:40px;
+    width:40px;
+    color: yellowgreen;
+  }
+  .sel-log{
+    height:40px;
+    width:40px;
+    color: violet;
+  }
+  .use-rep{
+    height:40px;
+    width:40px;
+    color: yellowgreen;
+
+  }
+  .sel-rep{
+    height:40px;
+    width:40px;
+    color: violet;
+  }
+  .adm-man{
+    height:40px;
+    width:40px;
+    color: red;
+  }
+  .adm-out{
+    height:40px;
+    width:40px;
+    color: aqua;
+  }
